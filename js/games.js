@@ -182,7 +182,21 @@ const movies = [
   {title:'Eternal Sunshine',genre:'drama',year:2004,why:'¿Borrarías tus recuerdos juntos?',mood:'pensar'},
   {title:'The Grand Budapest Hotel',genre:'comedia',year:2014,why:'Visual y excéntrica.',mood:'reír'},
   {title:'Pride & Prejudice',genre:'romance',year:2005,why:'La declaración bajo la lluvia.',mood:'llorar'},
-  {title:'Amélie',genre:'romance',year:2001,why:'Creatividad y amor silencioso.',mood:'reír'}
+  {title:'Amélie',genre:'romance',year:2001,why:'Creatividad y amor silencioso.',mood:'reír'},
+  {title:'Superbad',genre:'comedia',year:2007,why:'Humor absurdo. Reirán sin parar.',mood:'reír'},
+  {title:'The Menu',genre:'thriller',year:2022,why:'Tensión + humor negro.',mood:'pensar'},
+  {title:'Midsommar',genre:'thriller',year:2019,why:'Perturbador. Discutirán después.',mood:'pensar'},
+  {title:'Crazy Rich Asians',genre:'comedia',year:2018,why:'Romántica y divertida.',mood:'reír'},
+  {title:'A Star Is Born',genre:'drama',year:2018,why:'Lloraran. Los dos.',mood:'llorar'},
+  {title:'Jojo Rabbit',genre:'comedia',year:2019,why:'Risa y llanto en 2 horas.',mood:'llorar'},
+  {title:'Spider-Man: Across the Spider-Verse',genre:'animacion',year:2023,why:'Visual increíble. Para todos.',mood:'reír'},
+  {title:'Marriage Story',genre:'drama',year:2019,why:'Duro pero necesario. Hablaran después.',mood:'pensar'},
+  {title:'The Proposal',genre:'comedia',year:2009,why:'Clásica rom-com. Sin complicarse.',mood:'reír'},
+  {title:'Soul',genre:'animacion',year:2020,why:'Sobre encontrar tu propósito.',mood:'pensar'},
+  {title:'Dune',genre:'scifi',year:2021,why:'Épica. Visual. Inmersiva.',mood:'pensar'},
+  {title:'Bridesmaids',genre:'comedia',year:2011,why:'Humor sin filtro.',mood:'reír'},
+  {title:'Call Me By Your Name',genre:'drama',year:2017,why:'Amor de verano devastador.',mood:'llorar'},
+  {title:'Encanto',genre:'animacion',year:2021,why:'Familia, música, llorar.',mood:'llorar'}
 ];
 
 let movieSwipeIdx = 0;

@@ -59,6 +59,20 @@ function renderHome() {
   // Reto del día
   html += `<div class="card"><h3 style="font-size:0.9rem;margin-bottom:8px;">🎯 Reto de hoy</h3><p id="reto-text" style="font-size:0.85rem;line-height:1.4;">${retos[dayOfYear()%retos.length]}</p><button class="btn-primary" style="margin-top:12px;" onclick="completeMission('reto');addXP(15);this.textContent='✅ +15 XP';this.disabled=true;">✅ ¡Hecho!</button><button class="btn-ghost" style="font-size:0.75rem;" onclick="refreshReto()">🔄 Otro reto</button></div>`;
 
+  // MATCH DIARIO (destacado)
+  const dm = getDailyMatch();
+  const matchDone = dm.today === today() && dm.todayAnswers;
+  html += `<div class="card" style="border:2px solid ${matchDone?'#4caf50':'var(--primary)'};cursor:pointer;" onclick="renderDailyMatch()">
+    <div style="display:flex;align-items:center;gap:12px;">
+      <span style="font-size:1.8rem;">${matchDone?'✅':'💕'}</span>
+      <div style="flex:1;">
+        <h4 style="font-size:0.9rem;margin-bottom:2px;">${matchDone?'Match completado':'Match Diario — ¡5 preguntas!'}</h4>
+        <p style="font-size:0.75rem;color:var(--text-light);">${matchDone?'Toca para ver resultados':'Respondan y vean en qué coinciden hoy'}</p>
+      </div>
+      <span style="color:var(--primary);font-size:1.1rem;">→</span>
+    </div>
+  </div>`;
+
   // Pregunta del día
   const pregunta = preguntasDelDia[dayOfYear() % preguntasDelDia.length];
   html += `<div class="card" style="border-left:4px solid var(--glow);">
