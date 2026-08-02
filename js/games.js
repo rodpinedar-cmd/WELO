@@ -132,20 +132,29 @@ let tdLevel='medio';
 function setTDLevel(l){tdLevel=l;document.querySelectorAll('.card .btn-outline').forEach(b=>{b.style.borderColor='#eee';});event.target.style.borderColor='var(--primary)';}
 
 function showTruth() {
-  const t = truths[Math.floor(Math.random()*truths.length)];
+  // Filter by level
+  const suave = truths.slice(0,10);
+  const medio = truths.slice(10,20);
+  const spicy = truths.slice(20,30);
+  const pool = tdLevel==='suave'?suave:tdLevel==='spicy'?spicy:medio;
+  const t = pool[Math.floor(Math.random()*pool.length)];
   document.getElementById('app-content').innerHTML = `
     <div class="card" style="text-align:center;">
-      <h3>😳 Verdad</h3>
+      <h3>😳 Verdad <span style="font-size:0.7rem;color:var(--text-light);">(${tdLevel})</span></h3>
       <p style="font-size:1.1rem;font-style:italic;margin:20px 0;line-height:1.5;">${t}</p>
       <button class="btn-primary" onclick="addXP(5);gameTruthDare()">✅ Respondida</button>
       <button class="btn-ghost" onclick="gameTruthDare()">⏭️ Otra</button>
     </div>`;
 }
 function showDare() {
-  const d = dares[Math.floor(Math.random()*dares.length)];
+  const suave = dares.slice(0,10);
+  const medio = dares.slice(10,20);
+  const spicy = dares.slice(20,30);
+  const pool = tdLevel==='suave'?suave:tdLevel==='spicy'?spicy:medio;
+  const d = pool[Math.floor(Math.random()*pool.length)];
   document.getElementById('app-content').innerHTML = `
     <div class="card" style="text-align:center;">
-      <h3>🔥 Reto</h3>
+      <h3>🔥 Reto <span style="font-size:0.7rem;color:var(--text-light);">(${tdLevel})</span></h3>
       <p style="font-size:1.1rem;font-weight:600;margin:20px 0;line-height:1.5;">${d}</p>
       <button class="btn-primary" onclick="addXP(5);gameTruthDare()">✅ ¡Hecho!</button>
       <button class="btn-ghost" onclick="gameTruthDare()">😅 Paso</button>

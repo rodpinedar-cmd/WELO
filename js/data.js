@@ -50,8 +50,13 @@ function generateDailyMissions() {
     {id:'pregunta',name:'Responde la pregunta del día',emoji:'💬',xp:10},
     {id:'dato',name:'Descubre un dato curioso',emoji:'💡',xp:3},
   ];
-  // Pick 3 random missions
-  const shuffled = [...allMissions].sort(()=>Math.random()-0.5);
+  // Seeded shuffle based on date (consistent per day, different each day)
+  const seed = t.split('-').join('') * 1;
+  const shuffled = [...allMissions].sort((a,b) => {
+    const ha = ((seed * 31 + a.id.charCodeAt(0)) % 100);
+    const hb = ((seed * 31 + b.id.charCodeAt(0)) % 100);
+    return ha - hb;
+  });
   const picked = shuffled.slice(0,3);
   const missions = { date:t, list:picked.map(p=>({...p,done:false})), chestOpened:false };
   setMissions(missions);
@@ -111,8 +116,13 @@ function addXP(n) {
   setCouple(co);
   // Check level up celebration
   if(typeof celebrateIfNewLevel === 'function') celebrateIfNewLevel();
-  // Show streak multiplier toast if > 1
-  if(multiplier > 1 && n > 2) showToast(`+${earned} XP (x${multiplier} racha 🔥)`);
+  // Show streak multiplier toast if > 1 (only once per day)
+  if(multiplier > 1 && n > 2) {
+    if(!window._toastShownToday) {
+      showToast(`+${earned} XP (x${multiplier} racha 🔥)`);
+      window._toastShownToday = true;
+    }
+  }
 }
 function getLevel(xp) {
   if(xp>=2000) return '💎 Leyendas';
