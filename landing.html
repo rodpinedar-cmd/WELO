@@ -153,6 +153,16 @@ footer{padding:48px 0;background:var(--dark);color:white;}
       <a href="index.html" class="btn-hero btn-hero-primary">Empezar gratis</a>
       <a href="#features" class="btn-hero btn-hero-secondary">Descubre más</a>
     </div>
+    <div style="margin-top:32px;display:flex;flex-direction:column;align-items:center;gap:8px;">
+      <canvas id="qr-hero" style="border-radius:12px;"></canvas>
+      <p style="font-size:0.8rem;color:var(--text-light);">Escanea con tu móvil para abrir la app</p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.4/build/qrcode.min.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded',function(){
+      QRCode.toCanvas(document.getElementById('qr-hero'),'https://rodpinedar-cmd.github.io/WELO/index.html',{width:130,margin:2,color:{dark:'#2d3436',light:'#ffffff'}});
+    });
+    </script>
     <div class="hero-stats">
       <div class="stat"><div class="stat-number">2.4K+</div><div class="stat-label">Parejas activas</div></div>
       <div class="stat"><div class="stat-number">89%</div><div class="stat-label">Mejor comunicación</div></div>
