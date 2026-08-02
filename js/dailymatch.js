@@ -55,10 +55,121 @@ function renderDailyMatch() {
   const questions = getTodayMatchQuestions();
   let html = `<div class="gradient-header"><h2>💕 Match Diario</h2><p>5 preguntas rápidas • Ve en qué coinciden</p></div>`;
   
-  html += `<div class="card" style="text-align:center;padding:14px;">
-    <p style="font-size:0.8rem;color:var(--text-light);">Cada uno responde por separado. Después ven los matches.</p>
+  // Mode selector
+  html += `<div class="card" style="display:flex;gap:8px;">
+    <button class="btn-primary" style="flex:1;font-size:0.8rem;" onclick="startMatchTogether()">👫 Juntos (1 móvil)</button>
+    <button class="btn-outline" style="flex:1;font-size:0.8rem;" onclick="startMatchSolo()">📱 Cada uno por su lado</button>
   </div>`;
   
+  html += `<button class="btn-ghost" onclick="renderHome();renderLumiCorner('home');">← Volver</button>`;
+  document.getElementById('app-content').innerHTML = html;
+}
+
+// MODE: Together (same device)
+let togetherAnswers = {ella:{},el:{}};
+let togetherIdx = 0;
+
+function startMatchTogether() {
+  togetherAnswers = {ella:{},el:{}};
+  togetherIdx = 0;
+  renderTogetherQuestion();
+}
+
+function renderTogetherQuestion() {
+  const questions = getTodayMatchQuestions();
+  if(togetherIdx >= questions.length) {
+    showTogetherResults();
+    return;
+  }
+  const q = questions[togetherIdx];
+  document.getElementById('app-content').innerHTML = `
+    <div class="card" style="text-align:center;">
+      <p style="font-size:0.75rem;color:var(--text-light);">${togetherIdx+1}/5</p>
+      <h3 style="font-size:1.1rem;margin:12px 0;">${q.q}</h3>
+      <p style="font-size:0.8rem;color:var(--text-light);margin-bottom:16px;">Cada uno elige sin que el otro vea. Digan "ya" y revelen.</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+        <div>
+          <p style="font-size:0.75rem;font-weight:700;color:var(--primary);margin-bottom:8px;">👩 Ella</p>
+          ${q.opts.map(opt => `<button onclick="togetherPick('ella',${togetherIdx},'${opt.replace(/'/g,"\\'")}')" style="display:block;width:100%;padding:8px;margin:4px 0;border:1.5px solid #eee;border-radius:10px;font-size:0.75rem;background:white;cursor:pointer;font-family:inherit;" data-tp="ella-${togetherIdx}">${opt}</button>`).join('')}
+        </div>
+        <div>
+          <p style="font-size:0.75rem;font-weight:700;color:#4a90d9;margin-bottom:8px;">👨 Él</p>
+          ${q.opts.map(opt => `<button onclick="togetherPick('el',${togetherIdx},'${opt.replace(/'/g,"\\'")}')" style="display:block;width:100%;padding:8px;margin:4px 0;border:1.5px solid #eee;border-radius:10px;font-size:0.75rem;background:white;cursor:pointer;font-family:inherit;" data-tp="el-${togetherIdx}">${opt}</button>`).join('')}
+        </div>
+      </div>
+      <button id="together-next" class="btn-primary" style="margin-top:16px;display:none;" onclick="togetherIdx++;renderTogetherQuestion();">Siguiente →</button>
+    </div>`;
+}
+
+function togetherPick(role, idx, answer) {
+  togetherAnswers[role][idx] = answer;
+  // Highlight
+  document.querySelectorAll(`[data-tp="${role}-${idx}"]`).forEach(b => {b.style.borderColor='#eee';b.style.background='white';});
+  event.target.style.borderColor = role==='ella'?'var(--primary)':'#4a90d9';
+  event.target.style.background = role==='ella'?'rgba(255,107,157,0.06)':'rgba(74,144,217,0.06)';
+  // Show next if both picked
+  if(togetherAnswers.ella[idx] && togetherAnswers.el[idx]) {
+    document.getElementById('together-next').style.display = 'block';
+  }
+}
+
+function showTogetherResults() {
+  const questions = getTodayMatchQuestions();
+  let matches = 0;
+  let html = `<div class="gradient-header"><h2>💕 Resultados</h2><p>¡Veamos en qué coinciden!</p></div><div class="card">`;
+  
+  questions.forEach((q,i) => {
+    const a1 = togetherAnswers.ella[i] || '—';
+    const a2 = togetherAnswers.el[i] || '—';
+    const isMatch = a1 === a2;
+    if(isMatch) matches++;
+    html += `<div style="padding:10px 0;border-bottom:1px solid #f5f5f5;${isMatch?'background:rgba(76,175,80,0.04);margin:0 -20px;padding-left:20px;padding-right:20px;':''}">
+      <p style="font-size:0.72rem;color:var(--text-light);">${q.q}</p>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-top:4px;">
+        <span style="font-size:0.8rem;">👩 ${a1}</span>
+        <span style="font-size:0.9rem;">${isMatch?'✅':'❌'}</span>
+        <span style="font-size:0.8rem;">👨 ${a2}</span>
+      </div>
+    </div>`;
+  });
+  html += `</div>`;
+  
+  const pct = Math.round((matches/5)*100);
+  html += `<div class="card" style="text-align:center;">
+    <p style="font-size:2.5rem;font-weight:900;color:${pct>=60?'#4caf50':pct>=40?'var(--primary)':'var(--text-light)'};">${pct}%</p>
+    <p style="font-size:0.9rem;font-weight:600;">${matches}/5 coincidencias</p>
+    <p style="font-size:0.8rem;color:var(--text-light);margin-top:8px;">${pct>=80?'¡Piensan igual! 🔥':pct>=60?'¡Buena conexión! 💕':pct>=40?'Variedad = descubrir juntos 🌱':'¡Opuestos hoy! Sorpréndanse ✨'}</p>
+  </div>`;
+  
+  // Save
+  const dm = getDailyMatch();
+  dm.today = today();
+  dm.todayAnswers = togetherAnswers.ella;
+  dm.week.push({date:today(),role:'ella',answers:togetherAnswers.ella});
+  dm.week.push({date:today(),role:'el',answers:togetherAnswers.el});
+  if(dm.week.length > 14) dm.week = dm.week.slice(-14);
+  setDailyMatch(dm);
+  addXP(10);
+  completeMission('pregunta');
+  
+  // Weekly suggestion if enough data
+  if(dm.week.length >= 10) {
+    html += `<div class="card" style="border-left:4px solid var(--primary);">
+      <h4 style="font-size:0.9rem;margin-bottom:8px;">🎯 Cita de la semana</h4>
+      <p style="font-size:0.85rem;color:var(--text-light);">${generateDateSuggestion(dm.week)}</p>
+      <button class="btn-primary" style="margin-top:10px;font-size:0.8rem;" onclick="markPlanDone('Cita Match Semanal')">✅ ¡La hicimos!</button>
+    </div>`;
+  }
+  
+  html += `<button class="btn-ghost" onclick="renderHome();renderLumiCorner('home');">← Volver</button>`;
+  document.getElementById('app-content').innerHTML = html;
+}
+
+let matchAnswers = {};
+function startMatchSolo() {
+  matchAnswers = {};
+  const questions = getTodayMatchQuestions();
+  let html = `<div class="gradient-header"><h2>💕 Match Diario</h2><p>Responde tú. Tu pareja después.</p></div>`;
   html += `<div id="match-questions">`;
   questions.forEach((q, i) => {
     html += `<div class="card" id="mq-${i}">
@@ -69,14 +180,11 @@ function renderDailyMatch() {
     </div>`;
   });
   html += `</div>`;
-  
-  html += `<button class="btn-primary" id="submit-match" style="display:none;" onclick="submitDailyMatch()">Ver matches →</button>`;
-  html += `<button class="btn-ghost" onclick="renderHome();renderLumiCorner('home');">← Volver</button>`;
-  
+  html += `<button class="btn-primary" id="submit-match" style="display:none;" onclick="submitDailyMatch()">Enviar →</button>`;
+  html += `<button class="btn-ghost" onclick="renderDailyMatch()">← Volver</button>`;
   document.getElementById('app-content').innerHTML = html;
 }
 
-let matchAnswers = {};
 function selectMatchAnswer(qIdx, answer) {
   matchAnswers[qIdx] = answer;
   // Visual feedback
