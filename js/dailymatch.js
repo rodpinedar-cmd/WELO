@@ -207,22 +207,26 @@ function submitDailyMatch() {
   const profile = getProfile();
   const role = profile.role;
   
-  // Save answers
+  // Save locally
   if(!dm.week) dm.week = [];
   dm.today = t;
   dm.todayAnswers = {...matchAnswers};
   dm.todayRole = role;
-  
-  // Save to weekly history
   dm.week.push({date:t, role:role, answers:{...matchAnswers}});
-  // Keep only this week (last 7)
   if(dm.week.length > 14) dm.week = dm.week.slice(-14);
-  
   setDailyMatch(dm);
+  
+  // Save to Supabase (async)
+  if(supabase) {
+    saveMatchAnswers(matchAnswers).then(res => {
+      if(res.error) console.warn('Match save error:', res.error);
+      else console.log('Match saved to DB');
+    });
+  }
+  
   matchAnswers = {};
   addXP(10);
   completeMission('pregunta');
-  
   renderMatchResults();
 }
 

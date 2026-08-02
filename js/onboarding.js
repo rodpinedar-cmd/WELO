@@ -1,5 +1,8 @@
 // WELO — Onboarding
 (function(){
+  // Init Supabase
+  if(typeof initSupabase === 'function') initSupabase();
+
   // If already logged in, skip to app
   if(getProfile()) {
     document.getElementById('onboarding').style.display = 'none';
@@ -28,7 +31,19 @@
     const role = btn.dataset.role;
 
     if(action === 'signup') {
-      showStep('step-role');
+      const email = document.getElementById('inp-email').value;
+      const pass = document.getElementById('inp-pass').value;
+      if(email && pass && supabase) {
+        // Real signup with Supabase
+        signUp(email, pass, 'pending').then(res => {
+          if(res.error) { showToast('Error: ' + res.error); return; }
+          showToast('✅ Cuenta creada');
+          showStep('step-role');
+        });
+      } else {
+        // Offline mode (no email or no supabase)
+        showStep('step-role');
+      }
     }
     else if(role === 'ella') {
       showStep('step-cycle');
@@ -43,6 +58,8 @@
       const pd = parseInt(document.getElementById('inp-periodduration').value) || 5;
       const code = genCode();
       setProfile({role:'ella', lastPeriodStart:lp, cycleLength:cl, periodDuration:pd, coupleCode:code, sharePhase:true, shareMood:true});
+      // Create couple in Supabase
+      if(supabase) createCouple(code).then(()=>console.log('Couple created in DB'));
       document.getElementById('display-code').textContent = code;
       showStep('step-code');
     }
@@ -57,6 +74,11 @@
       const code = (document.getElementById('inp-code').value || 'WLO-TEST').toUpperCase();
       const dd = new Date(); dd.setDate(dd.getDate()-10);
       setProfile({role:'el', coupleCode:code, lastPeriodStart:dd.toISOString().split('T')[0], cycleLength:28, periodDuration:5, sharePhase:true, shareMood:true});
+      // Join couple in Supabase
+      if(supabase) joinCouple(code).then(res => {
+        if(res.error) console.warn('Join couple:', res.error);
+        else console.log('Joined couple in DB');
+      });
       // Welcome bonus
       const co = getCouple();
       if(!co.glow) { co.glow = 20; co.streak = 1; co.lastActive = today(); setCouple(co); }

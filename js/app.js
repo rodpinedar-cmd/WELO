@@ -101,7 +101,8 @@ function renderHome() {
   // Reconocimiento
   html += `<div class="card">
     <h3 style="font-size:0.9rem;margin-bottom:8px;">💕 ¿Cómo te hizo sentir hoy?</h3>
-    <div style="display:flex;flex-wrap:wrap;gap:6px;">
+    <div id="recognition-received"></div>
+    <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;">
       <button class="btn-outline" style="font-size:0.75rem;padding:8px 12px;" onclick="sendRecognition('escuchad@')">💬 Escuchad@</button>
       <button class="btn-outline" style="font-size:0.75rem;padding:8px 12px;" onclick="sendRecognition('querid@')">🤗 Querid@</button>
       <button class="btn-outline" style="font-size:0.75rem;padding:8px 12px;" onclick="sendRecognition('apoyad@')">💪 Apoyad@</button>
@@ -109,6 +110,17 @@ function renderHome() {
       <button class="btn-outline" style="font-size:0.75rem;padding:8px 12px;" onclick="sendRecognition('sorprendid@')">🎁 Sorpresa</button>
     </div>
   </div>`;
+  
+  // Load recognitions from partner (async)
+  if(supabase) {
+    getRecognitionsForMe().then(recs => {
+      const el = document.getElementById('recognition-received');
+      if(el && recs.length > 0) {
+        const latest = recs[0];
+        el.innerHTML = `<div style="padding:10px;background:rgba(255,107,157,0.05);border-radius:10px;margin-bottom:8px;"><p style="font-size:0.8rem;color:var(--secondary);">Tu pareja se sintió <strong>${latest.type}</strong> gracias a ti 💕</p></div>`;
+      }
+    });
+  }
 
   // Dato curioso + blog access
   html += `<div class="card" style="padding:14px 18px;display:flex;justify-content:space-between;align-items:center;">
@@ -456,6 +468,14 @@ function sendRecognition(type) {
   setLogs(logs);
   addXP(10);
   completeMission('reconocimiento');
+  
+  // Send to Supabase (partner will see it)
+  if(supabase) {
+    sendRecognitionDB(type).then(res => {
+      if(res.error) console.warn('Recognition error:', res.error);
+    });
+  }
+  
   const profile = getProfile();
   const other = profile.role === 'ella' ? 'Él' : 'Ella';
   // Show confirmation
