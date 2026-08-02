@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>100+ Preguntas para Parejas — Generador Gratis | WELO</title>
+<meta name="description" content="Generador de preguntas para parejas: profundas, divertidas, picantes, para conocerse mejor. Nueva pregunta al instante. Gratis y sin registro.">
+<meta name="keywords" content="preguntas para parejas, preguntas para conocerse, preguntas profundas pareja, juegos de preguntas pareja, preguntas divertidas pareja, preguntas intimas pareja">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{--pink:#ff6b9d;--dark-pink:#c44569;--light:#fef0f5;--text:#2d3436;--text-light:#636e72;}
+body{font-family:'Inter',sans-serif;color:var(--text);background:var(--light);min-height:100vh;}
+.container{max-width:650px;margin:0 auto;padding:24px;}
+nav{background:white;padding:16px 24px;border-bottom:1px solid #f0f0f0;display:flex;justify-content:space-between;align-items:center;}
+.nav-logo{font-size:1.2rem;font-weight:900;background:linear-gradient(135deg,var(--pink),var(--dark-pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.nav-cta{padding:8px 20px;background:linear-gradient(135deg,var(--pink),var(--dark-pink));color:white;border-radius:50px;font-size:0.85rem;font-weight:600;text-decoration:none;}
+h1{font-size:1.8rem;font-weight:800;text-align:center;margin:32px 0 8px;}
+.subtitle{text-align:center;color:var(--text-light);margin-bottom:24px;}
+.card{background:white;border-radius:16px;padding:24px;margin-bottom:16px;box-shadow:0 2px 12px rgba(0,0,0,0.04);}
+.cat-pills{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:24px;}
+.pill{padding:10px 18px;border-radius:50px;border:2px solid #eee;background:white;font-size:0.85rem;font-weight:600;cursor:pointer;font-family:inherit;transition:all 0.2s;}
+.pill.active,.pill:hover{border-color:var(--pink);color:var(--pink);background:rgba(255,107,157,0.05);}
+.question-display{min-height:180px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20px;}
+.question-text{font-size:1.3rem;font-weight:700;line-height:1.5;margin-bottom:20px;}
+.question-cat{font-size:0.75rem;color:var(--text-light);text-transform:uppercase;letter-spacing:1px;}
+.btn{display:block;width:100%;padding:16px;border:none;border-radius:50px;background:linear-gradient(135deg,var(--pink),var(--dark-pink));color:white;font-size:1.1rem;font-weight:700;cursor:pointer;font-family:inherit;margin-top:12px;}
+.btn:active{transform:scale(0.97);}
+.btn-outline{background:none;border:2px solid var(--pink);color:var(--dark-pink);}
+.counter{text-align:center;font-size:0.8rem;color:var(--text-light);margin-top:12px;}
+.cta-box{margin-top:24px;padding:24px;background:linear-gradient(135deg,var(--pink),var(--dark-pink));border-radius:16px;color:white;text-align:center;}
+.cta-box p{font-size:0.85rem;opacity:0.9;margin:8px 0 14px;}
+.cta-box a{display:inline-block;padding:12px 28px;background:white;color:var(--dark-pink);border-radius:50px;font-weight:700;text-decoration:none;}
+footer{text-align:center;padding:32px;color:var(--text-light);font-size:0.8rem;}
+footer a{color:var(--pink);}
+</style>
+</head>
+<body>
+<nav><a href="landing.html" class="nav-logo">✨ WELO</a><a href="index.html" class="nav-cta">Probar App</a></nav>
+<div class="container">
+  <h1>💬 Preguntas para Parejas</h1>
+  <p class="subtitle">100+ preguntas para conocerse mejor. Nueva al instante.</p>
+  <div class="cat-pills">
+    <button class="pill active" onclick="setCat('all')">🌟 Todas</button>
+    <button class="pill" onclick="setCat('deep')">🧠 Profundas</button>
+    <button class="pill" onclick="setCat('fun')">😂 Divertidas</button>
+    <button class="pill" onclick="setCat('spicy')">🔥 Picantes</button>
+    <button class="pill" onclick="setCat('future')">🔮 Futuro</button>
+    <button class="pill" onclick="setCat('memory')">📸 Recuerdos</button>
+  </div>
+  <div class="card question-display" id="q-display">
+    <p class="question-text" id="q-text">Cargando...</p>
+    <p class="question-cat" id="q-cat"></p>
+  </div>
+  <button class="btn" onclick="nextQ()">🔄 Otra pregunta</button>
+  <button class="btn btn-outline" onclick="shareQ()">📲 Compartir esta pregunta</button>
+  <p class="counter" id="counter"></p>
+  <div class="cta-box">
+    <h3>¿Quieres una pregunta nueva cada día?</h3>
+    <p>En WELO recibes preguntas diarias, retos, juegos y mucho más para tu relación.</p>
+    <a href="index.html">Probar WELO gratis →</a>
+  </div>
+</div>
+<footer><p>© 2026 WELO — <a href="landing.html">Inicio</a> • <a href="biblioteca.html">Biblioteca</a> • <a href="test-apego.html">Test Apego</a> • <a href="calculadora-ciclo.html">Calculadora</a></p></footer>
+<script>
+const qs=[
+{t:'Si pudieras revivir un solo día juntos, ¿cuál elegirías?',c:'memory'},
+{t:'¿Qué es lo primero que pensaste cuando me viste la primera vez?',c:'memory'},
+{t:'¿Cuál fue el momento exacto en que supiste que me amabas?',c:'deep'},
+{t:'¿Hay algo que nunca me hayas dicho por miedo a mi reacción?',c:'deep'},
+{t:'¿Qué es lo que más admiras de mí que nunca dices en voz alta?',c:'deep'},
+{t:'Si nuestra relación fuera una película, ¿de qué género sería?',c:'fun'},
+{t:'¿Qué superpoder le darías al otro y por qué?',c:'fun'},
+{t:'¿Cuál es tu recuerdo más vergonzoso conmigo?',c:'fun'},
+{t:'Si pudiéramos teletransportarnos ahora a cualquier lugar, ¿dónde?',c:'fun'},
+{t:'¿Qué nota le pondrías a nuestra vida sexual del 1 al 10?',c:'spicy'},
+{t:'¿Cuál es tu fantasía que nunca me has contado?',c:'spicy'},
+{t:'¿Hay algo que te gustaría que probemos en la intimidad?',c:'spicy'},
+{t:'¿Cuándo fue la última vez que me deseaste con locura?',c:'spicy'},
+{t:'¿Dónde nos ves en 5 años?',c:'future'},
+{t:'¿Cuántos hijos querrías tener (si alguno)?',c:'future'},
+{t:'¿Cuál es tu sueño más grande para nosotros?',c:'future'},
+{t:'¿Qué es lo que más te preocupa de nuestro futuro?',c:'future'},
+{t:'¿Hay algo que cambiarías de cómo nos conocimos?',c:'memory'},
+{t:'¿Cuál es tu canción que te recuerda a mí?',c:'memory'},
+{t:'¿Cuándo te sentiste más orgullosa/o de mí?',c:'deep'},
+{t:'¿Qué necesitas de mí que no te estoy dando?',c:'deep'},
+{t:'¿Cuál es tu mayor inseguridad en esta relación?',c:'deep'},
+{t:'¿Qué es lo que más te enamora de mí hoy (no al principio)?',c:'deep'},
+{t:'Si me describieras en 3 palabras a un extraño, ¿cuáles?',c:'fun'},
+{t:'¿Qué es lo más raro que te parece atractivo de mí?',c:'fun'},
+{t:'¿Preferirías que leyera tus pensamientos o que tú leyeras los míos?',c:'fun'},
+{t:'¿Cuál es tu parte favorita de mi cuerpo y por qué?',c:'spicy'},
+{t:'¿Hay algún lugar donde te gustaría que hiciéramos el amor?',c:'spicy'},
+{t:'¿Te acuerdas de nuestro primer beso? Descríbelo.',c:'memory'},
+{t:'¿Cuál fue nuestra mejor cita hasta ahora?',c:'memory'},
+{t:'¿En qué momento sentiste que casi nos separamos?',c:'deep'},
+{t:'¿Qué sacrificarías por esta relación?',c:'deep'},
+{t:'¿Si ganaras la lotería mañana, qué es lo primero que harías por nosotros?',c:'future'},
+{t:'¿Dónde te gustaría envejecer juntos?',c:'future'},
+{t:'¿Cuál es la tradición que más te gustaría tener como pareja?',c:'future'},
+{t:'Si pudieras borrar una pelea de nuestra historia, ¿cuál?',c:'memory'},
+{t:'¿Qué aprendiste de mí que no esperabas?',c:'deep'},
+{t:'¿Hay algo de ti que sientes que no conozco?',c:'deep'},
+{t:'¿Cuál es tu love language y sientes que te lo doy?',c:'deep'},
+{t:'¿Qué haríamos si tuviéramos un día entero sin responsabilidades?',c:'fun'},
+{t:'¿Cuál es el hobbie que te gustaría que hiciéramos juntos?',c:'fun'},
+{t:'¿Verdad o reto? (el otro elige)',c:'spicy'},
+{t:'¿Cuál es la cosa más loca que harías por amor?',c:'fun'},
+{t:'¿Te casarías conmigo mañana si pudieras?',c:'future'},
+{t:'¿Qué nombre le pondrías a nuestro primer hijo/a?',c:'future'},
+{t:'¿Cuál es tu mayor miedo sobre nosotros?',c:'deep'},
+{t:'¿Sientes que te escucho de verdad? ¿Cuándo sí y cuándo no?',c:'deep'},
+{t:'¿Qué es lo más bonito que alguien te ha dicho en la vida?',c:'memory'}
+];
+let cat='all',shown=0;
+const catNames={all:'Todas',deep:'Profunda',fun:'Divertida',spicy:'Picante',future:'Futuro',memory:'Recuerdo'};
+function getFiltered(){return cat==='all'?qs:qs.filter(q=>q.c===cat);}
+function nextQ(){
+  const f=getFiltered();
+  const q=f[Math.floor(Math.random()*f.length)];
+  document.getElementById('q-text').textContent=q.t;
+  document.getElementById('q-cat').textContent=catNames[q.c];
+  shown++;
+  document.getElementById('counter').textContent=`Preguntas vistas: ${shown} • Total disponibles: ${f.length}`;
+}
+function setCat(c){
+  cat=c;
+  document.querySelectorAll('.pill').forEach(p=>p.classList.remove('active'));
+  event.target.classList.add('active');
+  nextQ();
+}
+function shareQ(){
+  const text=document.getElementById('q-text').textContent+'\n\n— Generado con WELO 💕\n👉 weloapp.com/preguntas-parejas';
+  if(navigator.share)navigator.share({title:'Pregunta para parejas',text}).catch(()=>{});
+  else{navigator.clipboard.writeText(text);alert('¡Copiada!');}
+}
+nextQ();
+</script>
+</body>
+</html>

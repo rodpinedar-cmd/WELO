@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Planes para Parejas en Barcelona — Agosto 2026 | WELO</title>
+<meta name="description" content="Los mejores planes para parejas en Barcelona: restaurantes románticos, atardeceres, conciertos, escapadas, actividades gratis. Actualizado agosto 2026.">
+<meta name="keywords" content="planes parejas Barcelona, citas Barcelona, restaurantes románticos Barcelona, que hacer en pareja Barcelona, actividades parejas Barcelona, planes gratis Barcelona">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{--pink:#ff6b9d;--dark-pink:#c44569;--text:#2d3436;--text-light:#636e72;--bg:#fafafa;--card:#fff;}
+body{font-family:'Inter',sans-serif;color:var(--text);background:var(--bg);}
+a{text-decoration:none;color:inherit;}
+.container{max-width:1100px;margin:0 auto;padding:0 24px;}
+</style>
+</head>
+<body>
+<style>
+/* NAV */
+nav{background:white;border-bottom:1px solid #f0f0f0;padding:16px 0;position:sticky;top:0;z-index:100;}
+nav .container{display:flex;justify-content:space-between;align-items:center;}
+.nav-logo{font-size:1.3rem;font-weight:900;background:linear-gradient(135deg,var(--pink),var(--dark-pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.nav-links{display:flex;gap:24px;align-items:center;}
+.nav-links a{font-size:0.85rem;color:var(--text-light);font-weight:500;}
+.nav-links a:hover{color:var(--pink);}
+.nav-cta{padding:8px 20px;background:linear-gradient(135deg,var(--pink),var(--dark-pink));color:white;border-radius:50px;font-size:0.85rem;font-weight:600;}
+
+/* HERO */
+.hero-plans{padding:60px 0 40px;text-align:center;background:linear-gradient(180deg,#fff,var(--bg));}
+.hero-plans h1{font-size:2.4rem;font-weight:900;line-height:1.2;margin-bottom:12px;}
+.hero-plans h1 span{background:linear-gradient(135deg,var(--pink),var(--dark-pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.hero-plans p{color:var(--text-light);font-size:1.05rem;max-width:600px;margin:0 auto;}
+
+/* FILTERS */
+.filters{padding:24px 0;position:sticky;top:60px;background:var(--bg);z-index:50;border-bottom:1px solid #f0f0f0;}
+.filter-row{display:flex;gap:10px;overflow-x:auto;padding-bottom:8px;-webkit-overflow-scrolling:touch;}
+.filter-row::-webkit-scrollbar{display:none;}
+.filter-pill{white-space:nowrap;padding:8px 18px;border-radius:50px;border:1.5px solid #e0e0e0;background:white;font-size:0.82rem;font-weight:600;cursor:pointer;transition:all 0.2s;}
+.filter-pill:hover,.filter-pill.active{border-color:var(--pink);color:var(--pink);background:rgba(255,107,157,0.04);}
+
+/* PLAN CARDS */
+.plans-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:24px;padding:32px 0;}
+.plan-card{background:var(--card);border-radius:16px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,0.05);transition:transform 0.2s,box-shadow 0.2s;}
+.plan-card:hover{transform:translateY(-4px);box-shadow:0 12px 36px rgba(0,0,0,0.1);}
+.plan-img{width:100%;height:200px;background:#e8e8e8;display:flex;align-items:center;justify-content:center;color:#aaa;font-size:0.85rem;position:relative;}
+.plan-img .badge{position:absolute;top:12px;left:12px;padding:4px 12px;border-radius:20px;font-size:0.7rem;font-weight:700;color:white;}
+.plan-body{padding:20px;}
+.plan-body h3{font-size:1.05rem;font-weight:700;margin-bottom:6px;line-height:1.3;}
+.plan-body .desc{font-size:0.85rem;color:var(--text-light);line-height:1.5;margin-bottom:12px;}
+.plan-meta{display:flex;gap:12px;flex-wrap:wrap;font-size:0.75rem;color:var(--text-light);}
+.plan-meta span{display:flex;align-items:center;gap:4px;}
+.plan-actions{display:flex;gap:8px;margin-top:14px;padding-top:14px;border-top:1px solid #f5f5f5;}
+.plan-actions a,.plan-actions button{flex:1;padding:8px;border-radius:10px;font-size:0.75rem;font-weight:600;text-align:center;cursor:pointer;border:none;font-family:inherit;}
+.plan-actions .btn-save{background:rgba(255,107,157,0.08);color:var(--dark-pink);}
+.plan-actions .btn-link{background:#f5f5f5;color:var(--text);}
+
+/* SECTION */
+.section-header{padding:40px 0 16px;display:flex;justify-content:space-between;align-items:center;}
+.section-header h2{font-size:1.4rem;font-weight:800;}
+.section-header a{font-size:0.85rem;color:var(--pink);font-weight:600;}
+
+/* EVENTO CARD (horizontal) */
+.event-card{display:flex;background:white;border-radius:14px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,0.04);margin-bottom:16px;transition:transform 0.2s;}
+.event-card:hover{transform:translateX(4px);}
+.event-img{width:120px;min-height:100px;background:#e8e8e8;display:flex;align-items:center;justify-content:center;color:#bbb;font-size:0.75rem;flex-shrink:0;}
+.event-body{padding:16px;flex:1;}
+.event-body h4{font-size:0.95rem;font-weight:700;margin-bottom:4px;}
+.event-body p{font-size:0.8rem;color:var(--text-light);line-height:1.4;}
+.event-body .event-meta{margin-top:8px;font-size:0.72rem;color:var(--text-light);}
+
+/* CTA */
+.cta-section{padding:60px 0;background:linear-gradient(135deg,var(--pink),var(--dark-pink));color:white;text-align:center;margin-top:40px;}
+.cta-section h2{font-size:2rem;font-weight:800;margin-bottom:12px;}
+.cta-section p{opacity:0.9;margin-bottom:24px;max-width:500px;margin-left:auto;margin-right:auto;}
+.cta-section a{display:inline-block;padding:14px 36px;background:white;color:var(--dark-pink);border-radius:50px;font-weight:700;}
+
+footer{padding:40px 0;text-align:center;color:var(--text-light);font-size:0.8rem;}
+footer a{color:var(--pink);margin:0 8px;}
+@media(max-width:768px){.plans-grid{grid-template-columns:1fr;}.hero-plans h1{font-size:1.8rem;}.event-card{flex-direction:column;}.event-img{width:100%;height:120px;}}
+</style>
+
+<nav><div class="container"><a href="landing.html" class="nav-logo">WELO</a><div class="nav-links"><a href="landing.html">Inicio</a><a href="biblioteca.html">Biblioteca</a><a href="calculadora-ciclo.html">Calculadora</a><a href="index.html" class="nav-cta">Abrir App</a></div></div></nav>
+
+<section class="hero-plans">
+  <div class="container">
+    <h1>Planes para parejas en <span>Barcelona</span></h1>
+    <p>Planes actualizados, recomendaciones personalizadas y eventos que no te puedes perder. Agosto 2026.</p>
+  </div>
+</section>
+
+<div class="filters">
+  <div class="container">
+    <div class="filter-row">
+      <button class="filter-pill active" onclick="filterPlans('all')">Todos</button>
+      <button class="filter-pill" onclick="filterPlans('romantico')">❤️ Romántico</button>
+      <button class="filter-pill" onclick="filterPlans('restaurante')">🍽 Restaurantes</button>
+      <button class="filter-pill" onclick="filterPlans('gratis')">💸 Gratis</button>
+      <button class="filter-pill" onclick="filterPlans('atardecer')">🌅 Atardeceres</button>
+      <button class="filter-pill" onclick="filterPlans('musica')">🎵 Música</button>
+      <button class="filter-pill" onclick="filterPlans('naturaleza')">🏞 Naturaleza</button>
+      <button class="filter-pill" onclick="filterPlans('bienestar')">🧘 Bienestar</button>
+      <button class="filter-pill" onclick="filterPlans('aventura')">🎮 Experiencias</button>
+      <button class="filter-pill" onclick="filterPlans('lluvia')">🌧 Lluvia</button>
+      <button class="filter-pill" onclick="filterPlans('escapada')">🏕 Escapadas</button>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+<!-- ESTA SEMANA -->
+<div class="section-header"><h2>🔥 Esta semana en Barcelona</h2><a href="https://barcelonasecreta.com" target="_blank">Ver más →</a></div>
+
+<div class="event-card" data-cat="musica">
+  <div class="event-img">📸 Imagen evento</div>
+  <div class="event-body"><h4>Festes de Gràcia 2026</h4><p>Las calles del barrio decoradas por los vecinos. Conciertos, verbenas y gastronomía. El evento del verano.</p><div class="event-meta">📅 15-21 agosto • 📍 Gràcia • 💸 Gratis • <a href="https://barcelonasecreta.com/fiestas-de-gracia-2026-fechas-programa-calles-decoradas-barcelona/" target="_blank" style="color:var(--pink);">Info →</a></div></div>
+</div>
+<div class="event-card" data-cat="musica">
+  <div class="event-img">📸 Imagen evento</div>
+  <div class="event-body"><h4>Conciertos Candlelight</h4><p>Música clásica y contemporánea a la luz de miles de velas. Sesiones íntimas en edificios históricos.</p><div class="event-meta">📅 Todo agosto • 📍 Varios • 💰 Desde 15€ • <a href="https://barcelonasecreta.com/candlelight-barcelona-conciertos/" target="_blank" style="color:var(--pink);">Entradas →</a></div></div>
+</div>
+<div class="event-card" data-cat="gratis">
+  <div class="event-img">📸 Imagen evento</div>
+  <div class="event-body"><h4>Cine al aire libre en la playa</h4><p>Películas bajo las estrellas junto al mar. Lleva manta y algo de picoteo.</p><div class="event-meta">📅 Julio-Agosto • 📍 Barceloneta • 💸 Gratis • <a href="https://www.timeout.es/barcelona/es/que-hacer/que-hacer-en-barcelona-en-agosto" target="_blank" style="color:var(--pink);">Ver programación →</a></div></div>
+</div>
+
+<!-- PLANES DESTACADOS -->
+<div class="section-header"><h2>✨ Planes destacados</h2></div>
+<div class="plans-grid" id="plans-grid">
+
+  <div class="plan-card" data-cat="atardecer romantico gratis">
+    <div class="plan-img" style="background:linear-gradient(180deg,#ff9a56 0%,#ff6b9d 100%);color:white;font-weight:600;">
+      📸 Espacio para imagen<br><span style="font-size:0.7rem;opacity:0.7;">Bunkers del Carmel</span>
+      <span class="badge" style="background:rgba(0,0,0,0.4);">💸 Gratis</span>
+    </div>
+    <div class="plan-body">
+      <h3>Atardecer en Bunkers del Carmel</h3>
+      <p class="desc">Vistas 360° de Barcelona. Lleven una botella de cava y algo para picar. El mejor atardecer gratuito de la ciudad.</p>
+      <div class="plan-meta">
+        <span>⏱ 2h</span><span>💰 Gratis</span><span>❤️ 9/10</span><span>🌅 Tarde</span>
+      </div>
+      <div class="plan-actions">
+        <button class="btn-save">♡ Guardar</button>
+        <a href="https://maps.google.com/?q=41.4190,2.1620" target="_blank" class="btn-link">📍 Mapa</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="plan-card" data-cat="restaurante romantico">
+    <div class="plan-img" style="background:linear-gradient(180deg,#2d3436,#636e72);color:white;font-weight:600;">
+      📸 Espacio para imagen<br><span style="font-size:0.7rem;opacity:0.7;">Restaurante romántico</span>
+      <span class="badge" style="background:var(--dark-pink);">❤️ Romántico</span>
+    </div>
+    <div class="plan-body">
+      <h3>Cena en terraza con vistas al mar</h3>
+      <p class="desc">Restaurantes en la Barceloneta con terraza sobre el paseo marítimo. Pescado fresco, brisa marina y puesta de sol.</p>
+      <div class="plan-meta">
+        <span>⏱ 2.5h</span><span>💰 €€-€€€</span><span>❤️ 10/10</span><span>🌙 Noche</span>
+      </div>
+      <div class="plan-actions">
+        <button class="btn-save">♡ Guardar</button>
+        <a href="https://www.thefork.es/restaurantes/barcelona-c41710/terraza-t370" target="_blank" class="btn-link">Reservar →</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="plan-card" data-cat="bienestar romantico">
+    <div class="plan-img" style="background:linear-gradient(180deg,#4ecdc4,#2d9b93);color:white;font-weight:600;">
+      📸 Espacio para imagen<br><span style="font-size:0.7rem;opacity:0.7;">Aire Ancient Baths</span>
+      <span class="badge" style="background:rgba(0,0,0,0.4);">🧘 Bienestar</span>
+    </div>
+    <div class="plan-body">
+      <h3>Baños árabes en pareja</h3>
+      <p class="desc">Circuito de aguas termales en un edificio del siglo XVII. Piscinas calientes, frías, hammam y masaje opcional.</p>
+      <div class="plan-meta">
+        <span>⏱ 2h</span><span>💰 €€€</span><span>❤️ 10/10</span><span>🌧 Indoor</span>
+      </div>
+      <div class="plan-actions">
+        <button class="btn-save">♡ Guardar</button>
+        <a href="https://beaire.com/es/aire-ancient-baths-barcelona" target="_blank" class="btn-link">Web oficial →</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="plan-card" data-cat="aventura">
+    <div class="plan-img" style="background:linear-gradient(180deg,#a855f7,#7c3aed);color:white;font-weight:600;">
+      📸 Espacio para imagen<br><span style="font-size:0.7rem;opacity:0.7;">Sharma Climbing BCN</span>
+      <span class="badge" style="background:rgba(0,0,0,0.4);">🎮 Experiencia</span>
+    </div>
+    <div class="plan-body">
+      <h3>Escalada indoor en pareja</h3>
+      <p class="desc">Confianza extrema. No necesitan experiencia previa — hay cursos para principiantes. Centro de Chris Sharma.</p>
+      <div class="plan-meta">
+        <span>⏱ 2h</span><span>💰 €€</span><span>❤️ 7/10</span><span>🌧 Indoor</span>
+      </div>
+      <div class="plan-actions">
+        <button class="btn-save">♡ Guardar</button>
+        <a href="https://sharmabcn.com" target="_blank" class="btn-link">Reservar →</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="plan-card" data-cat="naturaleza gratis">
+    <div class="plan-img" style="background:linear-gradient(180deg,#4caf50,#2e7d32);color:white;font-weight:600;">
+      📸 Espacio para imagen<br><span style="font-size:0.7rem;opacity:0.7;">Collserola</span>
+      <span class="badge" style="background:rgba(0,0,0,0.4);">🏞 Naturaleza</span>
+    </div>
+    <div class="plan-body">
+      <h3>Ruta por Collserola al amanecer</h3>
+      <p class="desc">8.000 hectáreas de bosque a 20 min del centro. Rutas de 1-3h con vistas a toda la ciudad. Silencio y naturaleza.</p>
+      <div class="plan-meta">
+        <span>⏱ 2-3h</span><span>💰 Gratis</span><span>❤️ 8/10</span><span>☀️ Mañana</span>
+      </div>
+      <div class="plan-actions">
+        <button class="btn-save">♡ Guardar</button>
+        <a href="https://maps.google.com/?q=41.4200,2.1100" target="_blank" class="btn-link">📍 Mapa</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="plan-card" data-cat="lluvia aventura">
+    <div class="plan-img" style="background:linear-gradient(180deg,#ff9800,#f57c00);color:white;font-weight:600;">
+      📸 Espacio para imagen<br><span style="font-size:0.7rem;opacity:0.7;">Escape Room</span>
+      <span class="badge" style="background:rgba(0,0,0,0.4);">🧩 Indoor</span>
+    </div>
+    <div class="plan-body">
+      <h3>Escape Room para dos</h3>
+      <p class="desc">Resolver misterios juntos fortalece la comunicación. Hay salas desde terror hasta fantasía. 60 min de adrenalina.</p>
+      <div class="plan-meta">
+        <span>⏱ 1.5h</span><span>💰 €€</span><span>❤️ 7/10</span><span>🌧 Indoor</span>
+      </div>
+      <div class="plan-actions">
+        <button class="btn-save">♡ Guardar</button>
+        <a href="https://www.fever.me/barcelona/escape-rooms" target="_blank" class="btn-link">Ver salas →</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- RESTAURANTES -->
+<div class="section-header"><h2>🍽 Restaurantes románticos</h2><a href="https://www.thefork.es/restaurantes/barcelona-c41710/romantico-t5" target="_blank">TheFork →</a></div>
+<div class="event-card" data-cat="restaurante">
+  <div class="event-img">📸 Foto</div>
+  <div class="event-body"><h4>Bellafila — Cocina de temporada</h4><p>Distinguido en la Guía de Restauración 2026. Producto de proximidad, menú degustación, ambiente íntimo en Ciutat Vella.</p><div class="event-meta">📍 Ciutat Vella • 💰 €€€ • ❤️ 9/10</div></div>
+</div>
+<div class="event-card" data-cat="restaurante">
+  <div class="event-img">📸 Foto</div>
+  <div class="event-body"><h4>Terraza en el Born</h4><p>Callejuelas medievales, luces al caer la tarde, tapas creativas. Reserva con anticipación en verano.</p><div class="event-meta">📍 El Born • 💰 €€ • ❤️ 8/10 • <a href="https://www.timeout.es/barcelona/es/comer-y-beber/los-50-mejores-restaurantes-de-barcelona" target="_blank" style="color:var(--pink);">Time Out →</a></div></div>
+</div>
+
+<!-- GRATIS -->
+<div class="section-header"><h2>💸 Planes gratis</h2></div>
+<div class="event-card" data-cat="gratis">
+  <div class="event-img">📸</div>
+  <div class="event-body"><h4>Museos gratuitos en domingo</h4><p>MACBA, MNAC, Picasso y Fundació Miró abren gratis el primer domingo de mes. Cultura sin coste.</p><div class="event-meta">📅 1er domingo • 📍 Varios • <a href="https://www.timeout.es/barcelona/es/que-hacer/que-hacer-en-barcelona-en-agosto" target="_blank" style="color:var(--pink);">Info →</a></div></div>
+</div>
+<div class="event-card" data-cat="gratis atardecer">
+  <div class="event-img">📸</div>
+  <div class="event-body"><h4>Paseo nocturno por la Barceloneta</h4><p>Pies en la arena, sonido del mar, farolas. Sin agenda, sin prisa. Solo estar juntos.</p><div class="event-meta">📍 Barceloneta • 💰 Gratis • 🌙 Noche</div></div>
+</div>
+
+<!-- ESCAPADAS -->
+<div class="section-header"><h2>🏕 Escapadas de fin de semana</h2></div>
+<div class="event-card" data-cat="escapada naturaleza">
+  <div class="event-img">📸</div>
+  <div class="event-body"><h4>Costa Brava — Calas escondidas</h4><p>A 1h de Barcelona. Calas de aguas cristalinas, pueblos medievales, cenas frente al mar. Perfecto para desconectar.</p><div class="event-meta">📍 1h coche • 💰 €-€€ • ⏱ 1-2 días</div></div>
+</div>
+<div class="event-card" data-cat="escapada">
+  <div class="event-img">📸</div>
+  <div class="event-body"><h4>Montseny — Naturaleza y masía</h4><p>Bosques, ríos, silencio total. Alojamiento en masía rural con cena incluida. A 50 min de BCN.</p><div class="event-meta">📍 50 min • 💰 €€ • ⏱ 1-2 días</div></div>
+</div>
+</div><!-- end container -->
+
+<!-- MORE SECTIONS -->
+<div class="container">
+
+<div class="section-header"><h2>☕ Cafeterías con encanto</h2></div>
+<div class="event-card" data-cat="restaurante">
+  <div class="event-img">📸</div>
+  <div class="event-body"><h4>Cafeterías specialty en el Born</h4><p>Nomad Coffee, Satan's Coffee Corner, Syra. Café de origen, latte art, brunch. Ambiente creativo.</p><div class="event-meta">📍 El Born • 💰 € • ☀️ Mañana/Tarde</div></div>
+</div>
+<div class="event-card" data-cat="restaurante lluvia">
+  <div class="event-img">📸</div>
+  <div class="event-body"><h4>Cafés con juegos de mesa</h4><p>Board Game Café en Gràcia. Más de 200 juegos, café artesanal, tartas caseras. Ideal para tardes de lluvia.</p><div class="event-meta">📍 Gràcia • 💰 € • 🌧 Indoor • ⏱ 2-3h</div></div>
+</div>
+
+<div class="section-header"><h2>🎨 Cultura y exposiciones</h2><a href="https://www.timeout.es/barcelona/es/arte" target="_blank">Time Out →</a></div>
+<div class="event-card" data-cat="lluvia aventura">
+  <div class="event-img">📸</div>
+  <div class="event-body"><h4>MOCO Museum — Arte inmersivo</h4><p>Banksy, Kaws, Kusama. Exposiciones interactivas y fotogénicas. Ideal para parejas creativas.</p><div class="event-meta">📍 Montcada • 💰 €€ • ⏱ 1.5h • <a href="https://mocomuseum.com/barcelona" target="_blank" style="color:var(--pink);">Entradas →</a></div></div>
+</div>
+<div class="event-card" data-cat="gratis lluvia">
+  <div class="event-img">📸</div>
+  <div class="event-body"><h4>MNAC — Mirador + arte gratis</h4><p>Desde románico hasta modernismo. Terraza con la mejor vista de Montjuïc. Gratis sábados desde las 15h.</p><div class="event-meta">📍 Montjuïc • 💸 Gratis sáb • ⏱ 2h</div></div>
+</div>
+
+<div class="section-header"><h2>🌙 Planes nocturnos</h2></div>
+<div class="event-card" data-cat="musica romantico">
+  <div class="event-img">📸</div>
+  <div class="event-body"><h4>Jazz en vivo — Jamboree</h4><p>Jazz y blues en una cueva gótica bajo Plaça Reial. Íntimo e histórico.</p><div class="event-meta">📍 Plaça Reial • 💰 €-€€ • 🌙 Noche • <a href="https://www.masimas.com/jamboree" target="_blank" style="color:var(--pink);">Web →</a></div></div>
+</div>
+<div class="event-card" data-cat="musica">
+  <div class="event-img">📸</div>
+  <div class="event-body"><h4>Sala Apolo — Conciertos</h4><p>Indie, electrónica, hip-hop. El ambiente más auténtico de Barcelona.</p><div class="event-meta">📍 Paral·lel • 💰 €-€€ • 🌙 Noche • <a href="https://www.sala-apolo.com" target="_blank" style="color:var(--pink);">Programación →</a></div></div>
+</div>
+
+<div class="section-header"><h2>🚲 Planes activos</h2></div>
+<div class="event-card" data-cat="naturaleza aventura">
+  <div class="event-img">📸</div>
+  <div class="event-body"><h4>Kayak al amanecer</h4><p>Remad juntos mientras sale el sol sobre el Mediterráneo. Instructor + equipo incluido.</p><div class="event-meta">📍 Port Olímpic • 💰 €€ • ☀️ 7am • ⏱ 1.5h</div></div>
+</div>
+<div class="event-card" data-cat="aventura gratis">
+  <div class="event-img">📸</div>
+  <div class="event-body"><h4>Bici por la costa</h4><p>8km carril bici junto al mar. Llano, sin coches, con paradas para café.</p><div class="event-meta">📍 Barceloneta→Badalona • 💰 € • ☀️ Mañana • ⏱ 2h</div></div>
+</div>
+
+<div class="section-header"><h2>🌧 Para días de lluvia</h2></div>
+<div class="event-card" data-cat="lluvia romantico">
+  <div class="event-img">📸</div>
+  <div class="event-body"><h4>Fort de cobijas + maratón pelis</h4><p>Fuerte en el salón. Palomitas, mantas, celulares fuera. La watchlist de WELO como guía.</p><div class="event-meta">📍 Casa • 💸 Gratis • 🌧 • ⏱ 3h+</div></div>
+</div>
+<div class="event-card" data-cat="lluvia aventura">
+  <div class="event-img">📸</div>
+  <div class="event-body"><h4>Taller de cerámica</h4><p>Aprendan a hacer piezas juntos. Se llevan lo que crean. 2-3h en Gràcia o Poblenou.</p><div class="event-meta">📍 Gràcia • 💰 €€ • 🌧 • ⏱ 2-3h</div></div>
+</div>
+<div class="event-card" data-cat="lluvia bienestar">
+  <div class="event-img">📸</div>
+  <div class="event-body"><h4>Spa casero</h4><p>Mascarillas, velas, aceites, playlist relajante, masajes mutuos. 10€ inversión, resultado invaluable.</p><div class="event-meta">📍 Casa • 💰 € • 🌧 • ⏱ 1.5h</div></div>
+</div>
+
+<!-- CÓMO FUNCIONA EL MOTOR -->
+<div style="margin-top:48px;padding:40px 0;border-top:1px solid #eee;">
+  <h2 style="font-size:1.4rem;font-weight:800;text-align:center;margin-bottom:32px;">¿Cómo funciona la recomendación personalizada?</h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;">
+    <div style="text-align:center;padding:20px;"><p style="font-size:1.8rem;margin-bottom:8px;">1</p><h4 style="font-size:0.9rem;margin-bottom:6px;">Comparte tus gustos</h4><p style="font-size:0.8rem;color:var(--text-light);">Comida, música, deporte, presupuesto. Solo lo que quieras.</p></div>
+    <div style="text-align:center;padding:20px;"><p style="font-size:1.8rem;margin-bottom:8px;">2</p><h4 style="font-size:0.9rem;margin-bottom:6px;">Detectamos coincidencias</h4><p style="font-size:0.8rem;color:var(--text-light);">Analizamos qué tienen en común como pareja.</p></div>
+    <div style="text-align:center;padding:20px;"><p style="font-size:1.8rem;margin-bottom:8px;">3</p><h4 style="font-size:0.9rem;margin-bottom:6px;">Score de compatibilidad</h4><p style="font-size:0.8rem;color:var(--text-light);">Cada plan recibe una puntuación basada en ambos perfiles.</p></div>
+    <div style="text-align:center;padding:20px;"><p style="font-size:1.8rem;margin-bottom:8px;">4</p><h4 style="font-size:0.9rem;margin-bottom:6px;">Mejora con cada cita</h4><p style="font-size:0.8rem;color:var(--text-light);">Valora, guarda favoritos. Cada semana mejor.</p></div>
+  </div>
+</div>
+
+</div>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container">
+    <h2>¿Quieres planes personalizados cada día?</h2>
+    <p>En la app, Lumi te recomienda planes según tu mood, tu fase del ciclo y tu historial. Siempre algo nuevo.</p>
+    <a href="index.html">Probar WELO gratis →</a>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 WELO — Barcelona</p>
+  <p><a href="landing.html">Inicio</a><a href="biblioteca.html">Biblioteca</a><a href="test-apego.html">Test Apego</a><a href="calculadora-ciclo.html">Calculadora</a><a href="preguntas-parejas.html">Preguntas</a></p>
+  <p style="margin-top:8px;font-size:0.75rem;">Fuentes: Time Out, Barcelona Secreta, TheFork, Fever, webs oficiales. Actualizado agosto 2026.</p>
+</footer>
+
+<script>
+function filterPlans(cat){
+  document.querySelectorAll('.filter-pill').forEach(p=>p.classList.remove('active'));
+  event.target.classList.add('active');
+  document.querySelectorAll('.plan-card,.event-card').forEach(c=>{
+    if(cat==='all') c.style.display='';
+    else c.style.display=c.dataset.cat&&c.dataset.cat.includes(cat)?'':'none';
+  });
+}
+// Save button interaction
+document.querySelectorAll('.btn-save').forEach(btn=>{
+  btn.onclick=function(){this.textContent='♥ Guardado';this.style.background='rgba(255,107,157,0.15)';};
+});
+</script>
+</body>
+</html>

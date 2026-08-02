@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WELO — We flow. We glow. We love. We are.</title>
+<meta name="description" content="WELO es la app para parejas que conecta tu ciclo con tu relación. Juegos de conexión, planes personalizados, bienestar. Gratis.">
+<meta name="keywords" content="app pareja, app ciclo menstrual, planes Barcelona pareja, juegos de pareja, tracker periodo, actividades pareja, salud femenina, welo app">
+<meta property="og:title" content="WELO — We flow. We glow. We love.">
+<meta property="og:description" content="La app que conecta tu salud hormonal con tu relación. Juegos, planes, bienestar. Gratis.">
+<meta property="og:type" content="website">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{--pink:#ff6b9d;--dark-pink:#c44569;--blue:#4a90d9;--dark:#1a1a2e;--light:#fef0f5;--text:#2d3436;--text-light:#636e72;--glow:#ffd700;}
+body{font-family:'Inter',sans-serif;color:var(--text);overflow-x:hidden;padding-bottom:70px;}
+a{text-decoration:none;color:inherit;}
+.container{max-width:1200px;margin:0 auto;padding:0 24px;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,0.95);backdrop-filter:blur(10px);border-bottom:1px solid rgba(0,0,0,0.05);padding:16px 0;}
+nav .container{display:flex;justify-content:space-between;align-items:center;}
+.nav-logo{font-size:1.4rem;font-weight:900;background:linear-gradient(135deg,var(--pink),var(--dark-pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.nav-links{display:flex;gap:32px;align-items:center;}
+.nav-links a{font-size:0.9rem;font-weight:500;color:var(--text-light);transition:color 0.2s;}
+.nav-links a:hover{color:var(--pink);}
+.nav-cta{background:linear-gradient(135deg,var(--pink),var(--dark-pink));color:white;padding:10px 24px;border-radius:50px;font-weight:600;font-size:0.9rem;transition:transform 0.2s,box-shadow 0.2s;}
+.nav-cta:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(255,107,157,0.4);}
+</style>
+</head>
+<body>
+<style>
+/* HERO */
+.hero{padding:140px 0 80px;background:linear-gradient(180deg,var(--light) 0%,white 100%);text-align:center;}
+.hero h1{font-size:3.5rem;font-weight:900;line-height:1.1;margin-bottom:20px;}
+.hero h1 span{background:linear-gradient(135deg,var(--pink),var(--dark-pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.hero p{font-size:1.2rem;color:var(--text-light);max-width:600px;margin:0 auto 32px;line-height:1.6;}
+.hero-buttons{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+.btn-hero{padding:16px 36px;border-radius:50px;font-weight:700;font-size:1rem;transition:all 0.3s;}
+.btn-hero-primary{background:linear-gradient(135deg,var(--pink),var(--dark-pink));color:white;box-shadow:0 8px 30px rgba(255,107,157,0.4);}
+.btn-hero-primary:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(255,107,157,0.5);}
+.btn-hero-secondary{background:white;color:var(--dark-pink);border:2px solid var(--pink);}
+.hero-stats{display:flex;justify-content:center;gap:48px;margin-top:48px;}
+.stat{text-align:center;}
+.stat-number{font-size:2rem;font-weight:800;color:var(--pink);}
+.stat-label{font-size:0.85rem;color:var(--text-light);}
+.phone-duo{display:flex;gap:20px;justify-content:center;margin-top:48px;}
+.phone-mini{width:160px;height:320px;border-radius:24px;border:4px solid #222;overflow:hidden;}
+.phone-mini.pink{background:linear-gradient(180deg,#ff6b9d,#c44569);}
+.phone-mini.blue{background:linear-gradient(180deg,#4a90d9,#2c5f8a);}
+.phone-mini-content{padding:20px;color:white;text-align:center;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;}
+.phone-mini-content h4{font-size:0.9rem;margin-bottom:4px;}
+.phone-mini-content p{font-size:0.7rem;opacity:0.8;}
+.phone-mini-content .big-emoji{font-size:2.5rem;margin-bottom:12px;}
+
+/* FEATURES */
+.features{padding:80px 0;background:white;}
+.features h2{font-size:2.5rem;font-weight:800;text-align:center;margin-bottom:12px;}
+.features .subtitle{text-align:center;color:var(--text-light);margin-bottom:48px;font-size:1.1rem;}
+.features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:32px;}
+.feature-card{padding:32px;border-radius:20px;background:var(--light);transition:transform 0.3s,box-shadow 0.3s;}
+.feature-card:hover{transform:translateY(-6px);box-shadow:0 16px 48px rgba(196,69,105,0.15);}
+.feature-icon{font-size:2.5rem;margin-bottom:16px;}
+.feature-card h3{font-size:1.2rem;font-weight:700;margin-bottom:8px;}
+.feature-card p{font-size:0.9rem;color:var(--text-light);line-height:1.6;}
+
+/* FOR COUPLES */
+.for-couples{padding:80px 0;background:linear-gradient(135deg,var(--light),#fce4ec);}
+.couples-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;}
+.couples-text h2{font-size:2.2rem;font-weight:800;margin-bottom:16px;}
+.couples-text p{font-size:1rem;color:var(--text-light);line-height:1.7;margin-bottom:16px;}
+.couples-list{list-style:none;}
+.couples-list li{padding:8px 0;font-size:0.95rem;display:flex;align-items:center;gap:10px;}
+
+/* WHAT CAN YOU DO */
+.welo-showcase{padding:80px 0;background:white;}
+.showcase-item{margin-bottom:60px;display:flex;align-items:center;gap:24px;}
+.showcase-phone{width:180px;min-width:180px;height:360px;border-radius:30px;border:5px solid #222;display:flex;flex-direction:column;align-items:center;justify-content:center;color:white;padding:16px;text-align:center;}
+.showcase-phone .phone-stats{margin-top:12px;background:rgba(255,255,255,0.15);border-radius:10px;padding:10px;width:100%;text-align:left;}
+.showcase-phone .phone-stats p{font-size:0.65rem;margin-top:3px;}
+.showcase-text h3{font-size:1.1rem;font-weight:700;margin-bottom:8px;}
+.showcase-text p{font-size:0.9rem;color:var(--text-light);line-height:1.6;}
+
+/* TESTIMONIALS */
+.testimonials{padding:80px 0;background:var(--light);}
+.testimonials h2{font-size:2.5rem;font-weight:800;text-align:center;margin-bottom:48px;}
+.testimonials-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;}
+.testimonial{padding:28px;border-radius:16px;background:white;box-shadow:0 4px 20px rgba(0,0,0,0.06);}
+.testimonial-text{font-size:0.95rem;line-height:1.6;margin-bottom:16px;font-style:italic;color:var(--text);}
+.testimonial-author{display:flex;align-items:center;gap:12px;}
+.testimonial-avatar{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--pink),var(--dark-pink));display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:0.85rem;}
+.testimonial-name{font-weight:600;font-size:0.9rem;}
+.testimonial-city{font-size:0.8rem;color:var(--text-light);}
+
+/* CTA */
+.cta-section{padding:80px 0;background:linear-gradient(135deg,var(--pink),var(--dark-pink));color:white;text-align:center;}
+.cta-section h2{font-size:2.5rem;font-weight:800;margin-bottom:16px;}
+.cta-section p{font-size:1.1rem;opacity:0.9;margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto;}
+.btn-cta{padding:16px 36px;border-radius:50px;font-weight:700;font-size:1rem;background:white;color:var(--dark-pink);transition:all 0.3s;display:inline-block;}
+.btn-cta:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(0,0,0,0.2);}
+
+/* FOOTER */
+footer{padding:48px 0;background:var(--dark);color:white;}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;}
+.footer-brand h3{font-size:1.3rem;margin-bottom:12px;background:linear-gradient(135deg,var(--pink),#ff9a56);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.footer-brand p{font-size:0.85rem;color:#aaa;line-height:1.6;}
+.footer-col h4{font-size:0.9rem;margin-bottom:16px;color:white;}
+.footer-col a{display:block;font-size:0.85rem;color:#aaa;margin-bottom:8px;transition:color 0.2s;}
+.footer-col a:hover{color:var(--pink);}
+.footer-bottom{margin-top:40px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.1);display:flex;justify-content:space-between;align-items:center;}
+.footer-bottom p{font-size:0.8rem;color:#888;}
+.footer-social{display:flex;gap:16px;}
+.footer-social a{font-size:1.2rem;color:#aaa;transition:color 0.2s;}
+.footer-social a:hover{color:var(--pink);}
+
+/* MOBILE */
+@media(max-width:768px){
+  .hero h1{font-size:2.2rem;}
+  .hero-stats{gap:24px;flex-wrap:wrap;}
+  .couples-grid{grid-template-columns:1fr;}
+  .footer-grid{grid-template-columns:1fr 1fr;}
+  .nav-links{display:none;}
+  .mobile-cta{display:block!important;}
+  .showcase-item{flex-direction:column;text-align:center;}
+}
+.mobile-cta{display:none;position:fixed;bottom:0;left:0;right:0;padding:12px 20px;background:white;box-shadow:0 -4px 20px rgba(0,0,0,0.1);z-index:999;text-align:center;}
+.mobile-cta a{display:block;padding:14px;background:linear-gradient(135deg,var(--pink),var(--dark-pink));color:white;border-radius:50px;font-weight:700;font-size:1rem;}
+</style>
+
+<!-- NAV -->
+<nav>
+  <div class="container">
+    <div class="nav-logo">✨ WELO</div>
+    <div class="nav-links">
+      <a href="#features">Funciones</a>
+      <a href="#parejas">Parejas</a>
+      <a href="#que-hace">Cómo funciona</a>
+      <a href="biblioteca.html">Biblioteca</a>
+      <a href="#quiz">Quiz</a>
+      <a href="#acerca">Acerca de</a>
+      <a href="#testimonios">Opiniones</a>
+      <a href="index.html" class="nav-cta">Probar Gratis</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container" style="position:relative;z-index:2;">
+    <h1>We flow. We glow.<br><span>We love. We are.</span></h1>
+    <p>La app que conecta tu ciclo con tu relación. Entiende tu cuerpo, mejora tu comunicación, y descubre planes juntos.</p>
+    <div class="hero-buttons">
+      <a href="index.html" class="btn-hero btn-hero-primary">Empezar gratis</a>
+      <a href="#features" class="btn-hero btn-hero-secondary">Descubre más</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-number">2.4K+</div><div class="stat-label">Parejas activas</div></div>
+      <div class="stat"><div class="stat-number">89%</div><div class="stat-label">Mejor comunicación</div></div>
+      <div class="stat"><div class="stat-number">4.8⭐</div><div class="stat-label">Rating</div></div>
+      <div class="stat"><div class="stat-number">20+</div><div class="stat-label">Planes BCN</div></div>
+    </div>
+    <div class="phone-duo">
+      <div class="phone-mini pink"><div class="phone-mini-content"><div class="big-emoji">👩</div><h4>Para Ella</h4><p>Tracking, tips, bienestar</p></div></div>
+      <div class="phone-mini blue"><div class="phone-mini-content"><div class="big-emoji">👨</div><h4>Para Él</h4><p>Entiende, apoya, conecta</p></div></div>
+    </div>
+  </div>
+</section>
+<style>
+.hero{position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(160deg,#fef0f5 0%,#fff 40%,#f0f4ff 70%,#fef5f0 100%);background-size:300% 300%;animation:gradientShift 12s ease infinite;z-index:0;}
+@keyframes gradientShift{0%{background-position:0% 50%;}50%{background-position:100% 50%;}100%{background-position:0% 50%;}}
+.btn-hero-primary{transition:all 0.3s;box-shadow:0 8px 30px rgba(255,107,157,0.35);}
+.btn-hero-primary:hover{transform:translateY(-3px);box-shadow:0 14px 40px rgba(255,107,157,0.5);}
+.stat-number{opacity:0;animation:fadeUp 0.6s ease forwards;}
+.stat:nth-child(1) .stat-number{animation-delay:0.1s;}
+.stat:nth-child(2) .stat-number{animation-delay:0.2s;}
+.stat:nth-child(3) .stat-number{animation-delay:0.3s;}
+.stat:nth-child(4) .stat-number{animation-delay:0.4s;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
+</style>
+
+<!-- SOCIAL PROOF -->
+<section style="padding:40px 0;background:white;text-align:center;">
+  <div class="container">
+    <div style="display:flex;justify-content:center;gap:40px;flex-wrap:wrap;align-items:center;opacity:0.7;">
+      <div style="font-size:0.85rem;font-weight:600;">⭐⭐⭐⭐⭐ 4.8/5</div>
+      <div style="font-size:0.85rem;font-weight:600;">🎮 Divertida de verdad</div>
+      <div style="font-size:0.85rem;font-weight:600;">🆓 Siempre gratis</div>
+      <div style="font-size:0.85rem;font-weight:600;">🇪🇸 Hecha en Barcelona</div>
+      <div style="font-size:0.85rem;font-weight:600;">🏆 Compite y presume tu relación</div>
+    </div>
+  </div>
+</section>
+
+<!-- IMPACT STAT -->
+<section style="padding:60px 0;background:linear-gradient(135deg,#1a1a2e,#2d3436);color:white;text-align:center;">
+  <div class="container">
+    <p style="font-size:1rem;opacity:0.7;margin-bottom:8px;">¿Sabías que...</p>
+    <h2 style="font-size:2.5rem;font-weight:900;line-height:1.2;">El 70% de los conflictos de pareja<br>son por <span style="color:var(--pink);">falta de comunicación</span></h2>
+    <p style="font-size:1.1rem;opacity:0.8;margin-top:16px;max-width:500px;margin-left:auto;margin-right:auto;">WELO no es solo una app de ciclo. Es un sistema de conexión que adapta TODO a cómo se sienten ese día.</p>
+    <a href="index.html" style="display:inline-block;margin-top:24px;padding:14px 32px;background:var(--pink);color:white;border-radius:50px;font-weight:700;font-size:1rem;">Mejorar nuestra comunicación →</a>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features" id="features">
+  <div class="container">
+    <h2>Todo lo que necesitan</h2>
+    <p class="subtitle">Una sola app para entender tu cuerpo y fortalecer tu relación</p>
+    <div class="features-grid">
+      <div class="feature-card"><div class="feature-icon">📅</div><h3>Tracking de Ciclo</h3><p>Predicción de periodo, ovulación y fases. Tips personalizados cada día. <a href="calculadora-ciclo.html" style="color:var(--pink);font-weight:600;">Prueba la calculadora gratis →</a></p></div>
+      <div class="feature-card"><div class="feature-icon">💑</div><h3>Conexión de Pareja</h3><p>Él entiende sus fases. Ella se siente comprendida. XP, retos diarios y reconocimiento mutuo. <a href="test-apego.html" style="color:var(--pink);font-weight:600;">Test de apego gratis →</a></p></div>
+      <div class="feature-card"><div class="feature-icon">🎮</div><h3>Juegos de Conexión</h3><p>Swipe de pelis, Verdad o Reto, 36 Preguntas, Esto o Aquello, Bucket List. <a href="preguntas-parejas.html" style="color:var(--pink);font-weight:600;">100+ preguntas gratis →</a></p></div>
+      <div class="feature-card"><div class="feature-icon">✨</div><h3>Planes Sugeridos</h3><p>20+ actividades en Barcelona por mood. Se revelan al toque. Refresh infinito.</p></div>
+      <div class="feature-card"><div class="feature-icon">💕</div><h3>Reconocimiento</h3><p>"Hoy me sentí escuchada" — feedback real que crea un ciclo positivo en la relación.</p></div>
+      <div class="feature-card"><div class="feature-icon">🔥</div><h3>XP, Streaks y Ranking</h3><p>Racha diaria con multiplicador, badges desbloqueables, leaderboard de parejas. Compite y presume.</p></div>
+      <div class="feature-card" style="background:linear-gradient(135deg,#e3ecf5,#d6e4f0);"><div class="feature-icon">👔</div><h3>Para Él</h3><p>Tips diarios adaptados a su fase. Con tema azul propio. Sin mansplaining.</p></div>
+      <div class="feature-card"><div class="feature-icon">📖</div><h3>Blog y Datos</h3><p>Artículos, datos curiosos que rotan, podcasts. Ciclo, pareja, fitness, salud mental.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- DATOS CURIOSOS TICKER -->
+<section style="padding:40px 0;background:white;overflow:hidden;">
+  <div class="container" style="text-align:center;">
+    <p style="font-size:0.8rem;color:var(--text-light);margin-bottom:16px;">💡 DATOS CURIOSOS</p>
+    <div id="fact-ticker" style="font-size:1.1rem;font-weight:500;line-height:1.5;min-height:50px;color:var(--text);transition:opacity 0.3s;"></div>
+    <p style="font-size:0.75rem;color:var(--text-light);margin-top:12px;">Nuevo dato cada 5 segundos</p>
+  </div>
+</section>
+<script>
+const landingFacts=["El útero genera la misma presión que una serpiente constrictora 🐍","Las parejas que ríen juntas 1x/día duran 40% más 😂","Un abrazo de 20 seg libera oxitocina para bajar presión arterial 🤗","Chocolate oscuro: magnesio que relaja músculos uterinos 🍫","Parejas que dicen 'nosotros' resuelven conflictos 33% más rápido 👫","Mirar 4 min a los ojos reactiva el enamoramiento 👁️","Bailar 15 min juntos reduce cortisol como 30 min de meditación 💃","Las parejas que entrenan juntas: +67% satisfacción 🏋️","Los besos liberan dopamina, serotonina y oxitocina a la vez 💋","Las parejas con rituales diarios duran más ☕"];
+let factIdx=0;
+function rotateFact(){document.getElementById('fact-ticker').style.opacity=0;setTimeout(()=>{document.getElementById('fact-ticker').textContent=landingFacts[factIdx%landingFacts.length];document.getElementById('fact-ticker').style.opacity=1;factIdx++;},300);}
+rotateFact();setInterval(rotateFact,5000);
+</script>
+
+<!-- SHOWCASE: CÓMO FUNCIONA -->
+<section class="welo-showcase" id="que-hace">
+  <div class="container">
+    <h2 style="font-size:2.5rem;font-weight:800;text-align:center;margin-bottom:48px;">¿Qué puedes hacer con WELO?</h2>
+    <div style="max-width:900px;margin:0 auto;">
+      <div class="showcase-item">
+        <div class="showcase-phone" style="background:linear-gradient(180deg,#ff6b9d,#c44569);">
+          <p style="font-size:2rem;">📅</p>
+          <h4 style="font-size:1.1rem;margin:8px 0;">Día 14</h4>
+          <p style="font-size:0.7rem;opacity:0.9;">Fase Ovulación</p>
+          <div class="phone-stats"><p>⚡ Energía: Alta</p><p>🌡️ Fertilidad: Alta</p><p>📆 Próx periodo: 14d</p></div>
+        </div>
+        <div class="showcase-text"><h3>Trackea tu ciclo y cómo te sientes</h3><p>Registra periodo, ánimo y síntomas. Predicción de fases con calendario visual. Tips personalizados cada día.</p></div>
+      </div>
+      <div class="showcase-item">
+        <div class="showcase-phone" style="background:linear-gradient(180deg,#4a90d9,#2c5f8a);">
+          <p style="font-size:2rem;">🧠</p>
+          <h4 style="font-size:1rem;margin:8px 0;">Para Él</h4>
+          <p style="font-size:0.7rem;opacity:0.9;">Fase Lútea de ella</p>
+          <div class="phone-stats"><p>✅ Sé paciente hoy</p><p>🍫 Tráele chocolate</p><p>❌ No digas "cálmate"</p></div>
+        </div>
+        <div class="showcase-text"><h3>Él entiende lo que necesitas</h3><p>Tips diarios adaptados a su fase: qué hacer, qué NO hacer. Sin que tengas que explicar cada vez.</p></div>
+      </div>
+      <div class="showcase-item">
+        <div class="showcase-phone" style="background:linear-gradient(180deg,#ffcc02,#f59e0b);">
+          <p style="font-size:2rem;">🎬</p>
+          <h4 style="font-size:1rem;margin:8px 0;">Swipe</h4>
+          <p style="font-size:0.7rem;opacity:0.9;">Noche de Pelis</p>
+          <div class="phone-stats"><p>👍 Like / 👎 Pass</p><p>🎬 Match = ¡Véanla!</p><p>📋 Watchlist compartida</p></div>
+        </div>
+        <div class="showcase-text"><h3>Juegos que conectan</h3><p>Swipe de pelis con match. Verdad o Reto. 36 Preguntas. Esto o Aquello. Bucket List de sueños juntos.</p></div>
+      </div>
+      <div class="showcase-item">
+        <div class="showcase-phone" style="background:linear-gradient(180deg,#4ecdc4,#2d9b93);">
+          <p style="font-size:2rem;">🏙️</p>
+          <h4 style="font-size:1rem;margin:8px 0;">BCN</h4>
+          <p style="font-size:0.7rem;opacity:0.9;">Te podría gustar...</p>
+          <div class="phone-stats"><p>🌅 Mirador al atardecer</p><p>🧗 Escalada indoor</p><p>💆 Baños árabes</p></div>
+        </div>
+        <div class="showcase-text"><h3>Planes reales sin presión</h3><p>Sugerencias por mood. La ubicación se revela al tocar. Google Maps. Refresh infinito de opciones.</p></div>
+      </div>
+      <div class="showcase-item">
+        <div class="showcase-phone" style="background:linear-gradient(180deg,#a855f7,#7c3aed);">
+          <p style="font-size:2rem;">💕</p>
+          <h4 style="font-size:1rem;margin:8px 0;">Reconocimiento</h4>
+          <p style="font-size:0.7rem;opacity:0.9;">Feedback real</p>
+          <div class="phone-stats"><p>💬 Me sentí escuchad@</p><p>🤗 Me sentí querid@</p><p>✨ +10 XP</p></div>
+        </div>
+        <div class="showcase-text"><h3>Reconocimiento mutuo</h3><p>"Hoy me hizo sentir escuchada" — feedback real. Crea un ciclo positivo donde el esfuerzo se nota.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOR COUPLES -->
+<section class="for-couples" id="parejas">
+  <div class="container">
+    <div class="couples-grid">
+      <div class="couples-text">
+        <h2>Diseñada para <span style="color:var(--pink);">parejas</span></h2>
+        <p>WELO combina salud femenina con conexión real de pareja. No es solo un tracker — es un puente entre los dos.</p>
+        <ul class="couples-list">
+          <li>🩸 Ella registra su ciclo, síntomas y ánimo</li>
+          <li>🧠 Él recibe insights de cómo apoyarla</li>
+          <li>🎯 Ambos reciben retos diarios + preguntas</li>
+          <li>💕 Sistema de reconocimiento mutuo</li>
+          <li>🎮 Juegos que conectan sin competir</li>
+          <li>🏆 XP y niveles por interactuar juntos</li>
+          <li>👩 Perfil rosa para ella / 👨 Perfil azul para él</li>
+          <li>🌍 Funciona juntos o a distancia</li>
+        </ul>
+        <a href="index.html" class="btn-hero btn-hero-primary" style="margin-top:24px;display:inline-block;">Probar WELO →</a>
+      </div>
+      <div>
+        <div class="phone-duo">
+          <div class="phone-mini pink"><div class="phone-mini-content"><div class="big-emoji">🌙</div><h4>Fase Lútea</h4><p>Tips: descanso, paciencia, amor</p></div></div>
+          <div class="phone-mini blue"><div class="phone-mini-content"><div class="big-emoji">💡</div><h4>Para Él</h4><p>Hoy: paciencia extra.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MINI QUIZ -->
+<section style="padding:60px 0;background:white;" id="quiz">
+  <div class="container" style="max-width:600px;text-align:center;">
+    <h2 style="font-size:2rem;font-weight:800;margin-bottom:8px;">🧪 Mini Quiz: ¿Qué tipo de pareja son?</h2>
+    <p style="color:var(--text-light);margin-bottom:24px;">3 preguntas rápidas → resultado personalizado</p>
+    <div id="wq-content"></div>
+  </div>
+</section>
+<script>
+const wqQ=[{q:'Un sábado ideal juntos es...',opts:[{t:'🏔️ Aventura al aire libre',v:'adventure'},{t:'🍽️ Brunch + paseo',v:'foodie'},{t:'🛋️ Netflix + sofá',v:'homebody'},{t:'🎉 Con amigos',v:'social'}]},{q:'Cuando hay conflicto...',opts:[{t:'💬 Hablan hasta resolverlo',v:'communicator'},{t:'⏸️ Espacio y después',v:'space'},{t:'🤗 Abrazo y después',v:'physical'},{t:'😅 Se les pasa solo',v:'avoider'}]},{q:'Lo que más necesitan es...',opts:[{t:'⏰ Más tiempo juntos',v:'time'},{t:'🔥 Más chispa',v:'spark'},{t:'🗣️ Mejor comunicación',v:'communication'},{t:'🎯 Metas compartidas',v:'goals'}]}];
+let wi=0,wa=[];
+function startWQ(){wi=0;wa=[];rWQ();}
+function rWQ(){if(wi>=wqQ.length){sWQR();return;}const q=wqQ[wi];document.getElementById('wq-content').innerHTML=`<p style="font-size:0.8rem;color:var(--text-light);margin-bottom:8px;">Pregunta ${wi+1}/3</p><h3 style="font-size:1.2rem;margin-bottom:20px;">${q.q}</h3>${q.opts.map(o=>`<button onclick="wa.push('${o.v}');wi++;rWQ();" style="display:block;width:100%;padding:16px;margin:8px 0;border:2px solid #eee;border-radius:14px;background:white;font-size:0.95rem;cursor:pointer;text-align:left;transition:all 0.2s;font-family:inherit;" onmouseover="this.style.borderColor='#ff6b9d'" onmouseout="this.style.borderColor='#eee'">${o.t}</button>`).join('')}`;}
+function sWQR(){const r={adventure:{t:'🏔️ Pareja Aventurera',d:'Les encanta explorar. Necesitan novedad.',p:'Escalada + sunset mirador'},foodie:{t:'🍽️ Pareja Foodie',d:'La gastronomía es su love language.',p:'Ruta cafeterías + vermut'},homebody:{t:'🛋️ Pareja Cozy',d:'Su hogar es su santuario. Calma e intimidad.',p:'Fort de cobijas + noche de pelis'},social:{t:'🎉 Pareja Social',d:'Brillan en grupo. Energía multiplicada.',p:'Juegos de mesa + karaoke'},spark:{t:'🔥 Buscan Chispa',d:'Necesitan romper rutina. WELO tiene juegos para eso.'},time:{t:'⏰ Necesitan Tiempo',d:'La vida los tiene ocupados. Prioricen momentos de calidad.'},communication:{t:'🗣️ En Crecimiento',d:'Las preguntas del día y reconocimiento de WELO son para ustedes.'},goals:{t:'🎯 Con Visión',d:'El Bucket List es perfecto para planear sus sueños juntos.'}};const a=wa[wa.length-1];const x=r[a]||r[wa[0]]||r.adventure;document.getElementById('wq-content').innerHTML=`<div style="padding:24px;background:linear-gradient(135deg,rgba(255,107,157,0.05),rgba(196,69,105,0.05));border-radius:16px;border:1px solid rgba(255,107,157,0.15);"><h3 style="font-size:1.3rem;margin-bottom:8px;">${x.t}</h3><p style="font-size:0.95rem;color:var(--text-light);line-height:1.6;margin-bottom:12px;">${x.d}</p>${x.p?`<p style="font-size:0.9rem;font-weight:600;color:#c44569;">📍 Plan ideal: ${x.p}</p>`:''}<a href="index.html" style="display:inline-block;margin-top:16px;padding:14px 28px;background:linear-gradient(135deg,#ff6b9d,#c44569);color:white;border-radius:50px;font-weight:700;">Probar WELO gratis →</a><p style="font-size:0.8rem;color:var(--text-light);margin-top:12px;cursor:pointer;" onclick="startWQ()">🔄 Hacer el quiz de nuevo</p></div>`;}
+startWQ();
+</script>
+
+<!-- SAMPLE PLANS -->
+<section style="padding:60px 0;background:var(--light);">
+  <div class="container">
+    <h2 style="font-size:2rem;font-weight:800;text-align:center;margin-bottom:8px;">📍 Planes reales en Barcelona</h2>
+    <p style="text-align:center;color:var(--text-light);margin-bottom:32px;">Solo una muestra. En la app hay 20+ con mapa y filtros por mood.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;">
+      <div style="background:white;border-radius:16px;padding:20px;border-left:4px solid #4ecdc4;"><p style="font-size:1.5rem;">🌅</p><h4 style="margin:8px 0;">¿Y si ven el atardecer desde un mirador?</h4><p style="font-size:0.85rem;color:var(--text-light);">Vista 360° de BCN. Lleven algo para brindar.</p><p style="font-size:0.75rem;margin-top:8px;">⏱️ 2h • 💰 €</p></div>
+      <div style="background:white;border-radius:16px;padding:20px;border-left:4px solid #ff6b9d;"><p style="font-size:1.5rem;">🧗</p><h4 style="margin:8px 0;">¿Probar escalada indoor?</h4><p style="font-size:0.85rem;color:var(--text-light);">Confianza extrema. No necesitan experiencia.</p><p style="font-size:0.75rem;margin-top:8px;">⏱️ 2h • 💰 €€</p></div>
+      <div style="background:white;border-radius:16px;padding:20px;border-left:4px solid #ffcc02;"><p style="font-size:1.5rem;">💆</p><h4 style="margin:8px 0;">¿Unos baños árabes?</h4><p style="font-size:0.85rem;color:var(--text-light);">Circuito de aguas. Experiencia sensorial.</p><p style="font-size:0.75rem;margin-top:8px;">⏱️ 2h • 💰 €€€</p></div>
+    </div>
+    <div style="text-align:center;margin-top:24px;"><a href="index.html" style="display:inline-block;padding:14px 28px;background:linear-gradient(135deg,#ff6b9d,#c44569);color:white;border-radius:50px;font-weight:700;">Ver todos los planes →</a></div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="testimonios">
+  <div class="container">
+    <h2>Lo que dicen las parejas</h2>
+    <div class="testimonials-grid">
+      <div class="testimonial"><p class="testimonial-text">"Desde que usamos WELO no peleamos en su PMS. Ahora ENTIENDO qué pasa."</p><div class="testimonial-author"><div class="testimonial-avatar">J</div><div><p class="testimonial-name">Jordi, 28</p><p class="testimonial-city">Poblenou, Barcelona</p></div></div></div>
+      <div class="testimonial"><p class="testimonial-text">"Los juegos nos devolvieron la chispa. 5 años juntos y descubrimos cosas nuevas."</p><div class="testimonial-author"><div class="testimonial-avatar">N</div><div><p class="testimonial-name">Nuria & David, 30</p><p class="testimonial-city">Gràcia, Barcelona</p></div></div></div>
+      <div class="testimonial"><p class="testimonial-text">"El reconocimiento mutuo cambió todo. Refuerzo positivo real."</p><div class="testimonial-author"><div class="testimonial-avatar">M</div><div><p class="testimonial-name">Marc, 27</p><p class="testimonial-city">Eixample</p></div></div></div>
+      <div class="testimonial"><p class="testimonial-text">"Como ginecóloga recomiendo esta app. Info precisa y enfoque de pareja único."</p><div class="testimonial-author"><div class="testimonial-avatar">E</div><div><p class="testimonial-name">Dra. Elena, 34</p><p class="testimonial-city">Barcelona</p></div></div></div>
+      <div class="testimonial"><p class="testimonial-text">"Las 36 preguntas nos sacaron cosas que NUNCA habíamos hablado. 8 años juntos."</p><div class="testimonial-author"><div class="testimonial-avatar">O</div><div><p class="testimonial-name">Montse & Oriol, 35</p><p class="testimonial-city">Sarrià</p></div></div></div>
+      <div class="testimonial"><p class="testimonial-text">"Mi novia me mandó el código. 3 meses después soy yo quien abre la app primero 😅"</p><div class="testimonial-author"><div class="testimonial-avatar">R</div><div><p class="testimonial-name">Rodrigo, 29</p><p class="testimonial-city">Poble Sec</p></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- EMAIL -->
+<section style="padding:60px 0;background:white;text-align:center;">
+  <div class="container" style="max-width:600px;">
+    <h2 style="font-size:2rem;font-weight:800;margin-bottom:12px;">📧 No te pierdas nada</h2>
+    <p style="color:var(--text-light);margin-bottom:24px;">Tips semanales sobre ciclo, relación y planes. Sin spam.</p>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;">
+      <input type="email" placeholder="Tu email" style="flex:1;min-width:200px;padding:14px 20px;border:2px solid #eee;border-radius:50px;font-size:1rem;outline:none;font-family:inherit;">
+      <button onclick="this.textContent='✅ ¡Suscrit@!';this.style.background='#4caf50';" style="padding:14px 28px;background:linear-gradient(135deg,var(--pink),var(--dark-pink));color:white;border:none;border-radius:50px;font-weight:700;font-size:1rem;cursor:pointer;font-family:inherit;">Suscribirme</button>
+    </div>
+  </div>
+</section>
+
+<!-- MISIÓN Y VALORES (Estilo Flo "Abogamos por...") -->
+<section style="padding:80px 0;background:white;" id="acerca">
+  <div class="container" style="max-width:900px;">
+    <h2 style="font-size:2.5rem;font-weight:800;text-align:center;margin-bottom:12px;">Nuestra misión</h2>
+    <p style="text-align:center;color:var(--text-light);font-size:1.1rem;max-width:650px;margin:0 auto 48px;line-height:1.7;">Ayudar a todas las parejas a priorizar su conexión y bienestar. Al crear un espacio con información de expertos y herramientas de pareja, animamos a conectar desde la empatía.</p>
+    
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:32px;">
+      <div style="padding:28px;border-radius:16px;border-left:4px solid var(--pink);">
+        <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:8px;">💪 Tomar control de tu salud</h3>
+        <p style="font-size:0.9rem;color:var(--text-light);line-height:1.6;">Ayudamos a las mujeres durante toda su vida reproductiva, con predicciones de ciclo personalizadas y consejos adaptados a cada fase.</p>
+      </div>
+      <div style="padding:28px;border-radius:16px;border-left:4px solid var(--blue);">
+        <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:8px;">🧠 Información de expertos</h3>
+        <p style="font-size:0.9rem;color:var(--text-light);line-height:1.6;">La información basada en evidencia científica debe estar a disposición de todo el mundo. Contenidos fiables sobre ciclo, pareja y bienestar.</p>
+      </div>
+      <div style="padding:28px;border-radius:16px;border-left:4px solid #4ecdc4;">
+        <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:8px;">💬 Favorecer el debate abierto</h3>
+        <p style="font-size:0.9rem;color:var(--text-light);line-height:1.6;">Muchos aspectos de la salud reproductiva siguen siendo tabú. WELO crea un espacio seguro para hablar de lo que importa sin estigmas.</p>
+      </div>
+      <div style="padding:28px;border-radius:16px;border-left:4px solid var(--glow);">
+        <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:8px;">🔒 Tu data, tus reglas</h3>
+        <p style="font-size:0.9rem;color:var(--text-light);line-height:1.6;">Tú decides qué compartes y qué queda privado. Datos de salud cifrados. Puedes exportar o borrar todo cuando quieras. Sin venta de datos a terceros.</p>
+      </div>
+      <div style="padding:28px;border-radius:16px;border-left:4px solid #a855f7;">
+        <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:8px;">🏆 Competencia sana entre parejas</h3>
+        <p style="font-size:0.9rem;color:var(--text-light);line-height:1.6;">Ranking de parejas, streaks públicos, badges compartibles. Compite con amigos por quién tiene mejor racha o nivel más alto. Presume tu relación.</p>
+      </div>
+      <div style="padding:28px;border-radius:16px;border-left:4px solid #f97316;">
+        <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:8px;">📲 Comparte y presume</h3>
+        <p style="font-size:0.9rem;color:var(--text-light);line-height:1.6;">Stories compartibles con tu nivel, tu Lumi personalizada, y tus logros de pareja. Que el mundo sepa que la están rompiendo juntos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE / HITOS -->
+<section style="padding:80px 0;background:var(--light);">
+  <div class="container" style="max-width:700px;">
+    <h2 style="font-size:2rem;font-weight:800;text-align:center;margin-bottom:48px;">✨ La historia de WELO</h2>
+    <div style="position:relative;padding-left:32px;border-left:3px solid var(--pink);">
+      <div style="margin-bottom:32px;position:relative;">
+        <div style="position:absolute;left:-41px;top:4px;width:18px;height:18px;border-radius:50%;background:var(--pink);"></div>
+        <p style="font-size:0.8rem;color:var(--pink);font-weight:600;margin-bottom:4px;">Enero 2026</p>
+        <h4 style="font-size:1rem;margin-bottom:4px;">Nace WELO</h4>
+        <p style="font-size:0.85rem;color:var(--text-light);">Idea original: una app que conecte el ciclo con la relación de pareja. Prototipo inicial.</p>
+      </div>
+      <div style="margin-bottom:32px;position:relative;">
+        <div style="position:absolute;left:-41px;top:4px;width:18px;height:18px;border-radius:50%;background:var(--pink);"></div>
+        <p style="font-size:0.8rem;color:var(--pink);font-weight:600;margin-bottom:4px;">Marzo 2026</p>
+        <h4 style="font-size:1rem;margin-bottom:4px;">Sistema modular completado</h4>
+        <p style="font-size:0.85rem;color:var(--text-light);">App separada en módulos: ciclo, juegos, planes, blog, onboarding.</p>
+      </div>
+      <div style="margin-bottom:32px;position:relative;">
+        <div style="position:absolute;left:-41px;top:4px;width:18px;height:18px;border-radius:50%;background:var(--pink);"></div>
+        <p style="font-size:0.8rem;color:var(--pink);font-weight:600;margin-bottom:4px;">Mayo 2026</p>
+        <h4 style="font-size:1rem;margin-bottom:4px;">Juegos de conexión y Swipe de Pelis</h4>
+        <p style="font-size:0.85rem;color:var(--text-light);">6 juegos de pareja sin competencia. Sistema de swipe + match para elegir pelis juntos.</p>
+      </div>
+      <div style="margin-bottom:32px;position:relative;">
+        <div style="position:absolute;left:-41px;top:4px;width:18px;height:18px;border-radius:50%;background:var(--pink);"></div>
+        <p style="font-size:0.8rem;color:var(--pink);font-weight:600;margin-bottom:4px;">Julio 2026</p>
+        <h4 style="font-size:1rem;margin-bottom:4px;">Sistema de Reconocimiento Mutuo</h4>
+        <p style="font-size:0.85rem;color:var(--text-light);">Feedback real del receptor. "Me sentí escuchada" como refuerzo positivo.</p>
+      </div>
+      <div style="margin-bottom:32px;position:relative;">
+        <div style="position:absolute;left:-41px;top:4px;width:18px;height:18px;border-radius:50%;background:var(--dark-pink);"></div>
+        <p style="font-size:0.8rem;color:var(--dark-pink);font-weight:600;margin-bottom:4px;">Próximamente</p>
+        <h4 style="font-size:1rem;margin-bottom:4px;">Backend real + Modo Distancia</h4>
+        <p style="font-size:0.85rem;color:var(--text-light);">Supabase para sync entre devices. Modo para parejas a distancia. Push notifications.</p>
+      </div>
+      <div style="position:relative;">
+        <div style="position:absolute;left:-41px;top:4px;width:18px;height:18px;border-radius:50%;background:var(--glow);"></div>
+        <p style="font-size:0.8rem;color:var(--glow);font-weight:600;margin-bottom:4px;">Futuro</p>
+        <h4 style="font-size:1rem;margin-bottom:4px;">IA + Más ciudades + App nativa</h4>
+        <p style="font-size:0.85rem;color:var(--text-light);">Predicción avanzada del ciclo. Recomendaciones por IA. Madrid, Valencia, CDMX. React Native.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WELO PAREJAS (highlight feature) -->
+<section style="padding:80px 0;background:white;">
+  <div class="container" style="max-width:900px;text-align:center;">
+    <div style="display:inline-block;padding:8px 20px;border-radius:50px;background:linear-gradient(135deg,rgba(255,107,157,0.1),rgba(196,69,105,0.1));color:var(--dark-pink);font-weight:700;font-size:0.85rem;margin-bottom:16px;">🆕 NUEVO</div>
+    <h2 style="font-size:2.2rem;font-weight:800;margin-bottom:12px;">WELO Parejas ya está aquí</h2>
+    <p style="color:var(--text-light);font-size:1.1rem;max-width:600px;margin:0 auto 32px;line-height:1.6;">Descubre por qué lo necesitas: ella trackea su ciclo, él recibe insights, ambos juegan, se reconocen mutuamente y crecen como equipo.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;text-align:left;margin-bottom:32px;">
+      <div style="padding:20px;background:var(--light);border-radius:16px;">
+        <p style="font-size:1.3rem;margin-bottom:8px;">🎬</p>
+        <h4 style="font-size:0.95rem;margin-bottom:4px;">Swipe de Pelis</h4>
+        <p style="font-size:0.82rem;color:var(--text-light);">Ambos swipean. Cuando coinciden: "¡Match! Véanla esta noche"</p>
+      </div>
+      <div style="padding:20px;background:var(--light);border-radius:16px;">
+        <p style="font-size:1.3rem;margin-bottom:8px;">💕</p>
+        <h4 style="font-size:0.95rem;margin-bottom:4px;">Reconocimiento</h4>
+        <p style="font-size:0.82rem;color:var(--text-light);">"Hoy me sentí escuchada" — feedback que refuerza lo positivo.</p>
+      </div>
+      <div style="padding:20px;background:var(--light);border-radius:16px;">
+        <p style="font-size:1.3rem;margin-bottom:8px;">💬</p>
+        <h4 style="font-size:0.95rem;margin-bottom:4px;">Pregunta del día</h4>
+        <p style="font-size:0.82rem;color:var(--text-light);">Una pregunta nueva cada día para hablar de lo importante.</p>
+      </div>
+      <div style="padding:20px;background:var(--light);border-radius:16px;">
+        <p style="font-size:1.3rem;margin-bottom:8px;">🎯</p>
+        <h4 style="font-size:0.95rem;margin-bottom:4px;">Retos diarios</h4>
+        <p style="font-size:0.82rem;color:var(--text-light);">Micro-acciones que fortalecen la relación sin esfuerzo.</p>
+      </div>
+      <div style="padding:20px;background:var(--light);border-radius:16px;">
+        <p style="font-size:1.3rem;margin-bottom:8px;">📅</p>
+        <h4 style="font-size:0.95rem;margin-bottom:4px;">Ciclo compartido</h4>
+        <p style="font-size:0.82rem;color:var(--text-light);">Él entiende qué fase tiene ella. Tips adaptados automáticos.</p>
+      </div>
+      <div style="padding:20px;background:var(--light);border-radius:16px;">
+        <p style="font-size:1.3rem;margin-bottom:8px;">🏆</p>
+        <h4 style="font-size:0.95rem;margin-bottom:4px;">Compite y presume</h4>
+        <p style="font-size:0.82rem;color:var(--text-light);">Ranking, streaks, badges, stories compartibles. Que sepan que la rompen.</p>
+      </div>
+    </div>
+    <a href="index.html" style="display:inline-block;padding:16px 36px;background:linear-gradient(135deg,var(--pink),var(--dark-pink));color:white;border-radius:50px;font-weight:700;font-size:1rem;box-shadow:0 8px 30px rgba(255,107,157,0.3);">Empezar con WELO Parejas →</a>
+  </div>
+</section>
+
+<!-- EMAIL CAPTURE -->
+<section style="padding:60px 0;background:var(--light);text-align:center;">
+  <div class="container" style="max-width:600px;">
+    <h2 style="font-size:2rem;font-weight:800;margin-bottom:12px;">📧 No te pierdas nada</h2>
+    <p style="color:var(--text-light);margin-bottom:24px;">Tips semanales sobre ciclo, relación y planes. Sin spam. Cancela cuando quieras.</p>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;">
+      <input type="email" placeholder="Tu email" style="flex:1;min-width:200px;padding:14px 20px;border:2px solid #eee;border-radius:50px;font-size:1rem;outline:none;font-family:inherit;background:white;">
+      <button onclick="this.textContent='✅ ¡Suscrit@!';this.style.background='#4caf50';" style="padding:14px 28px;background:linear-gradient(135deg,var(--pink),var(--dark-pink));color:white;border:none;border-radius:50px;font-weight:700;font-size:1rem;cursor:pointer;font-family:inherit;">Suscribirme</button>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container">
+    <h2>We flow. We glow. We love.</h2>
+    <p>Únete a las parejas que ya crecen juntas con WELO.</p>
+    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;align-items:center;">
+      <a href="index.html" class="btn-cta">Empezar ahora</a>
+      <a href="https://instagram.com/weloapp" target="_blank" class="btn-cta" style="background:transparent;border:2px solid white;color:white;">@weloapp</a>
+    </div>
+    <div style="margin-top:32px;display:flex;flex-direction:column;align-items:center;gap:12px;">
+      <div id="qr-code" style="width:140px;height:140px;background:white;border-radius:16px;padding:12px;display:flex;align-items:center;justify-content:center;">
+        <svg viewBox="0 0 140 140" width="116" height="116" xmlns="http://www.w3.org/2000/svg">
+          <!-- Placeholder QR pattern (visual representation) -->
+          <rect width="140" height="140" fill="white"/>
+          <!-- QR-like pattern -->
+          <rect x="10" y="10" width="30" height="30" fill="#2d3436"/><rect x="12" y="12" width="26" height="26" fill="white"/><rect x="16" y="16" width="18" height="18" fill="#2d3436"/>
+          <rect x="100" y="10" width="30" height="30" fill="#2d3436"/><rect x="102" y="12" width="26" height="26" fill="white"/><rect x="106" y="16" width="18" height="18" fill="#2d3436"/>
+          <rect x="10" y="100" width="30" height="30" fill="#2d3436"/><rect x="12" y="102" width="26" height="26" fill="white"/><rect x="16" y="106" width="18" height="18" fill="#2d3436"/>
+          <!-- Data modules (simplified) -->
+          <rect x="50" y="10" width="8" height="8" fill="#2d3436"/><rect x="62" y="10" width="8" height="8" fill="#2d3436"/><rect x="74" y="10" width="8" height="8" fill="#2d3436"/>
+          <rect x="50" y="22" width="8" height="8" fill="#2d3436"/><rect x="74" y="22" width="8" height="8" fill="#2d3436"/>
+          <rect x="50" y="50" width="8" height="8" fill="#2d3436"/><rect x="62" y="50" width="8" height="8" fill="#2d3436"/><rect x="74" y="50" width="8" height="8" fill="#2d3436"/>
+          <rect x="50" y="62" width="8" height="8" fill="#2d3436"/><rect x="62" y="62" width="8" height="8" fill="#ff6b9d"/><rect x="74" y="62" width="8" height="8" fill="#2d3436"/>
+          <rect x="50" y="74" width="8" height="8" fill="#2d3436"/><rect x="62" y="74" width="8" height="8" fill="#2d3436"/><rect x="74" y="74" width="8" height="8" fill="#2d3436"/>
+          <rect x="86" y="50" width="8" height="8" fill="#2d3436"/><rect x="86" y="62" width="8" height="8" fill="#2d3436"/>
+          <rect x="100" y="50" width="8" height="8" fill="#2d3436"/><rect x="112" y="50" width="8" height="8" fill="#2d3436"/>
+          <rect x="100" y="74" width="8" height="8" fill="#2d3436"/><rect x="112" y="74" width="8" height="8" fill="#2d3436"/><rect x="124" y="74" width="8" height="8" fill="#2d3436"/>
+          <rect x="50" y="100" width="8" height="8" fill="#2d3436"/><rect x="62" y="100" width="8" height="8" fill="#2d3436"/>
+          <rect x="50" y="112" width="8" height="8" fill="#2d3436"/><rect x="74" y="112" width="8" height="8" fill="#2d3436"/><rect x="86" y="112" width="8" height="8" fill="#2d3436"/>
+          <rect x="100" y="100" width="8" height="8" fill="#2d3436"/><rect x="112" y="100" width="8" height="8" fill="#2d3436"/><rect x="124" y="100" width="8" height="8" fill="#2d3436"/>
+          <rect x="100" y="112" width="8" height="8" fill="#2d3436"/><rect x="124" y="112" width="8" height="8" fill="#2d3436"/>
+        </svg>
+      </div>
+      <p style="font-size:0.8rem;opacity:0.8;">Escanea para probar WELO</p>
+      <p style="font-size:0.65rem;opacity:0.5;">weloapp.com</p>
+    </div>
+  </div>
+</section>
+
+<!-- MOBILE CTA -->
+<div class="mobile-cta"><a href="index.html">Probar WELO Gratis</a></div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><h3>✨ WELO</h3><p>We flow. We glow. We love. We are. Tu luciérnaga de pareja. Ayudamos a parejas a priorizar su conexión y bienestar con información de expertos y herramientas diseñadas con amor. Hecha en Barcelona.</p></div>
+      <div class="footer-col"><h4>Producto</h4><a href="index.html">App</a><a href="biblioteca.html">Biblioteca de salud</a><a href="#features">Funciones</a><a href="#que-hace">Cómo funciona</a><a href="#quiz">Quiz de pareja</a></div>
+      <div class="footer-col"><h4>Empresa</h4><a href="#acerca">Quiénes somos</a><a href="#acerca">Nuestra misión</a><a href="https://instagram.com/weloapp" target="_blank">Contacto</a><a href="#">Novedades</a></div>
+      <div class="footer-col"><h4>Legal</h4><a href="#">Política de privacidad</a><a href="#">Condiciones de uso</a><a href="#">Política de cookies</a><a href="#">Seguridad</a></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 WELO. Barcelona, España. Todos los derechos reservados.</p>
+      <div class="footer-social"><a href="https://instagram.com/weloapp" target="_blank">📷</a><a href="https://tiktok.com/@weloapp" target="_blank">🎵</a><a href="#">🐦</a></div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

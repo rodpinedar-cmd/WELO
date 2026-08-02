@@ -1,0 +1,115 @@
+/* WELO Mascot — Lumi the Firefly */
+
+.welo-mascot {
+  display: inline-block;
+  position: relative;
+  width: 64px;
+  height: 64px;
+}
+.welo-mascot.sm { width: 40px; height: 40px; }
+.welo-mascot.lg { width: 96px; height: 96px; }
+.welo-mascot.xl { width: 128px; height: 128px; }
+
+.welo-mascot svg {
+  width: 100%;
+  height: 100%;
+  animation: mascotFloat 3s ease-in-out infinite;
+}
+
+.welo-mascot .glow-circle {
+  animation: glowPulse 2s ease-in-out infinite;
+}
+
+.welo-mascot .wing-left {
+  animation: wingFlap 0.4s ease-in-out infinite alternate;
+  transform-origin: 55% 40%;
+}
+.welo-mascot .wing-right {
+  animation: wingFlap 0.4s ease-in-out infinite alternate-reverse;
+  transform-origin: 45% 40%;
+}
+
+/* Floating animation */
+@keyframes mascotFloat {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+
+/* Glow pulse */
+@keyframes glowPulse {
+  0%, 100% { opacity: 0.6; r: 18; }
+  50% { opacity: 1; r: 22; }
+}
+
+/* Wing flap */
+@keyframes wingFlap {
+  0% { transform: rotate(-5deg); }
+  100% { transform: rotate(5deg); }
+}
+
+/* Speech bubble */
+.mascot-speech {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(196,69,105,0.1);
+  font-size: 0.85rem;
+  line-height: 1.4;
+  color: #2d3436;
+  max-width: 280px;
+}
+.mascot-speech::before {
+  content: '';
+  position: absolute;
+  left: -8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-right: 8px solid white;
+}
+
+/* Corner mascot (fixed position in app) */
+.mascot-corner {
+  position: fixed;
+  bottom: 80px;
+  right: 16px;
+  z-index: 90;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+.mascot-corner:hover {
+  transform: scale(1.1);
+}
+.mascot-corner .mascot-tip {
+  display: none;
+  position: absolute;
+  bottom: 100%;
+  right: 0;
+  margin-bottom: 8px;
+  padding: 10px 14px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+  font-size: 0.8rem;
+  color: #2d3436;
+  white-space: nowrap;
+  max-width: 220px;
+  white-space: normal;
+}
+.mascot-corner:hover .mascot-tip,
+.mascot-corner.show-tip .mascot-tip {
+  display: block;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}

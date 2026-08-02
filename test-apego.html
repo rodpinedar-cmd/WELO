@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Test de Estilo de Apego Gratis — ¿Seguro, Ansioso o Evitante? | WELO</title>
+<meta name="description" content="Descubre tu estilo de apego en pareja: seguro, ansioso o evitante. Test gratis de 10 preguntas basado en teoría del apego. Resultados inmediatos.">
+<meta name="keywords" content="test estilo apego, apego ansioso, apego evitante, apego seguro, test apego pareja, teoria del apego test, attachment style quiz">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{--pink:#ff6b9d;--dark-pink:#c44569;--light:#fef0f5;--text:#2d3436;--text-light:#636e72;}
+body{font-family:'Inter',sans-serif;color:var(--text);background:var(--light);min-height:100vh;}
+.container{max-width:650px;margin:0 auto;padding:24px;}
+nav{background:white;padding:16px 24px;border-bottom:1px solid #f0f0f0;display:flex;justify-content:space-between;align-items:center;}
+.nav-logo{font-size:1.2rem;font-weight:900;background:linear-gradient(135deg,var(--pink),var(--dark-pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.nav-cta{padding:8px 20px;background:linear-gradient(135deg,var(--pink),var(--dark-pink));color:white;border-radius:50px;font-size:0.85rem;font-weight:600;text-decoration:none;}
+h1{font-size:1.8rem;font-weight:800;text-align:center;margin:32px 0 8px;line-height:1.3;}
+.subtitle{text-align:center;color:var(--text-light);margin-bottom:32px;font-size:0.95rem;}
+.card{background:white;border-radius:16px;padding:24px;margin-bottom:16px;box-shadow:0 2px 12px rgba(0,0,0,0.04);}
+.progress{height:6px;background:#eee;border-radius:3px;margin-bottom:24px;}
+.progress-bar{height:100%;background:linear-gradient(90deg,var(--pink),var(--dark-pink));border-radius:3px;transition:width 0.3s;}
+.question{font-size:1.05rem;font-weight:600;margin-bottom:16px;line-height:1.5;}
+.option{display:block;width:100%;padding:14px 18px;margin:8px 0;border:2px solid #eee;border-radius:12px;background:white;font-size:0.9rem;cursor:pointer;text-align:left;transition:all 0.2s;font-family:inherit;line-height:1.4;}
+.option:hover{border-color:var(--pink);background:rgba(255,107,157,0.03);}
+.result-card{text-align:center;padding:32px 24px;}
+.result-emoji{font-size:3rem;margin-bottom:12px;}
+.result-title{font-size:1.5rem;font-weight:800;margin-bottom:8px;}
+.result-pct{font-size:0.85rem;color:var(--text-light);margin-bottom:16px;}
+.result-desc{font-size:0.95rem;color:var(--text-light);line-height:1.7;margin-bottom:20px;text-align:left;}
+.btn{display:inline-block;padding:14px 32px;border-radius:50px;background:linear-gradient(135deg,var(--pink),var(--dark-pink));color:white;font-weight:700;font-size:1rem;text-decoration:none;border:none;cursor:pointer;font-family:inherit;}
+.btn-outline{background:none;border:2px solid var(--pink);color:var(--dark-pink);margin-left:8px;}
+.cta-box{margin-top:24px;padding:24px;background:linear-gradient(135deg,var(--pink),var(--dark-pink));border-radius:16px;color:white;text-align:center;}
+.cta-box p{font-size:0.85rem;opacity:0.9;margin:8px 0 14px;}
+.cta-box a{display:inline-block;padding:12px 28px;background:white;color:var(--dark-pink);border-radius:50px;font-weight:700;text-decoration:none;}
+footer{text-align:center;padding:32px;color:var(--text-light);font-size:0.8rem;}
+footer a{color:var(--pink);}
+</style>
+</head>
+<body>
+<nav>
+  <a href="landing.html" class="nav-logo">✨ WELO</a>
+  <a href="index.html" class="nav-cta">Probar App</a>
+</nav>
+
+<div class="container">
+  <h1>🧠 Test de Estilo de Apego</h1>
+  <p class="subtitle">¿Seguro, ansioso o evitante? 10 preguntas. Resultado inmediato.</p>
+  <div id="quiz-container"></div>
+</div>
+
+<footer>
+  <p>© 2026 WELO — <a href="landing.html">Inicio</a> • <a href="biblioteca.html">Biblioteca</a> • <a href="calculadora-ciclo.html">Calculadora Ciclo</a></p>
+  <p style="margin-top:8px;">Test informativo basado en teoría del apego (Bowlby/Ainsworth). No reemplaza evaluación profesional.</p>
+</footer>
+
+<script>
+const questions=[
+{q:'Cuando tu pareja no responde mensajes en horas, ¿qué sientes?',opts:[{t:'Tranquilidad — estará ocupad@',s:'secure'},{t:'Ansiedad — ¿le habrá pasado algo? ¿estará enfadad@?',s:'anxious'},{t:'Alivio — me gusta tener mi espacio',s:'avoidant'}]},
+{q:'En una discusión, ¿cuál es tu reacción natural?',opts:[{t:'Quiero resolverlo hablando, aunque sea incómodo',s:'secure'},{t:'Me preocupa que me deje. Busco reconciliación rápida.',s:'anxious'},{t:'Me cierro. Necesito irme y estar solo/a.',s:'avoidant'}]},
+{q:'¿Cómo te sientes con la vulnerabilidad emocional?',opts:[{t:'Me cuesta pero lo hago — confío en mi pareja',s:'secure'},{t:'Me abro mucho y rápido, a veces demasiado',s:'anxious'},{t:'Me incomoda. Prefiero mantener cierta distancia emocional.',s:'avoidant'}]},
+{q:'Tu pareja quiere hacer planes todos los fines de semana juntos. ¿Tú?',opts:[{t:'Me parece genial, pero también necesito mi tiempo a veces',s:'secure'},{t:'¡Sí! Cuanto más tiempo juntos, mejor.',s:'anxious'},{t:'Siento que me agobia un poco. Necesito más espacio.',s:'avoidant'}]},
+{q:'¿Cómo reaccionas cuando tu pareja sale con amigos sin ti?',opts:[{t:'Bien — cada uno tiene su vida social',s:'secure'},{t:'Me quedo pensando si se está divirtiendo más sin mí',s:'anxious'},{t:'Me alivia tener tiempo para mí',s:'avoidant'}]},
+{q:'Cuando sientes que la relación se pone muy intensa...',opts:[{t:'Me siento bien — la intimidad me nutre',s:'secure'},{t:'Quiero más. Nunca es "demasiado" cercano.',s:'anxious'},{t:'Necesito un poco de distancia para respirar',s:'avoidant'}]},
+{q:'¿Con qué frecuencia piensas en el estado de tu relación?',opts:[{t:'A veces. Cuando hay algo concreto que revisar.',s:'secure'},{t:'Constantemente. Analizo cada señal y gesto.',s:'anxious'},{t:'Poco. Prefiero no darle muchas vueltas.',s:'avoidant'}]},
+{q:'Tu pareja te dice "necesito hablar de algo". ¿Qué sientes?',opts:[{t:'Curiosidad. ¿De qué será?',s:'secure'},{t:'Pánico. ¿Me va a dejar? ¿Hice algo mal?',s:'anxious'},{t:'Tensión. Espero que no sea algo emocional pesado.',s:'avoidant'}]},
+{q:'¿Cómo describirías tu relación ideal?',opts:[{t:'Cercana pero con espacio para ser individuos también',s:'secure'},{t:'Muy unidos, compartir todo, estar siempre comunicados',s:'anxious'},{t:'Independiente, respetar espacios, sin drama emocional',s:'avoidant'}]},
+{q:'Cuando tu pareja te necesita emocionalmente...',opts:[{t:'Estoy presente. Me nace acompañar.',s:'secure'},{t:'Me vuelco totalmente, a veces descuidando mis propias necesidades',s:'anxious'},{t:'Me cuesta. No sé bien qué hacer con emociones intensas.',s:'avoidant'}]}
+];
+
+const results={
+secure:{emoji:'🛡️',title:'Apego Seguro',color:'#4caf50',desc:`<p><strong>Qué significa:</strong> Te sientes cómodo/a con la intimidad Y con la independencia. Confías en tu pareja, comunicas tus necesidades sin drama, y no interpretas distancia como rechazo ni cercanía como amenaza.</p><p><strong>En la relación:</strong> Eres el ancla estable. Puedes ofrecer apoyo sin perderte. Toleras conflictos sin catastrofizar. Tu pareja se siente segura contigo.</p><p><strong>Dato:</strong> 50-60% de personas tienen este estilo. Se puede desarrollar con trabajo consciente incluso si no lo tienes naturalmente.</p><p><strong>Tip WELO:</strong> Ayuda a tu pareja a sentirse segura. Tu estabilidad es un regalo — compártela con reconocimiento diario.</p>`},
+anxious:{emoji:'💓',title:'Apego Ansioso',color:'#ff9800',desc:`<p><strong>Qué significa:</strong> Necesitas validación frecuente y cercanía constante. Temes el abandono. Interpretas silencios o distancia como señal de que algo va mal. Puedes ser "intenso/a".</p><p><strong>En la relación:</strong> Amas profundamente pero a veces tu miedo al abandono te lleva a buscar reassurance excesiva, interpretar todo como señal, o sacrificarte demasiado.</p><p><strong>La trampa:</strong> Si tu pareja es evitante, cuanto más persigas → más huirá → más ansiedad → ciclo infinito.</p><p><strong>Cómo trabajarlo:</strong></p><ul><li>Practica autovalidación: "Estoy bien sin su respuesta inmediata"</li><li>Tolera la incomodidad de NO enviar ese mensaje de más</li><li>Cultiva vida propia (hobbies, amigos, metas)</li><li>Pregunta en vez de asumir: "¿Está todo bien?" vs inventar escenarios</li></ul><p><strong>Tip WELO:</strong> Los retos de comunicación y las preguntas del día son perfectos para ti — canalizan tu necesidad de conexión de forma sana.</p>`},
+avoidant:{emoji:'🏔️',title:'Apego Evitante',color:'#2196f3',desc:`<p><strong>Qué significa:</strong> Valoras mucho tu independencia. Te cuesta la vulnerabilidad emocional. Cuando la relación se siente "demasiado cercana", necesitas espacio. Puede parecer que no te importa, pero sí — solo no sabes expresarlo.</p><p><strong>En la relación:</strong> Puedes parecer frío/a o desinteresado/a cuando en realidad estás protegiendo tu espacio emocional. Te incomodan las demandas emocionales intensas.</p><p><strong>La trampa:</strong> Si tu pareja es ansiosa, cuanto más te alejes → más perseguirá → más claustrofobia sentirás → ciclo infinito.</p><p><strong>Cómo trabajarlo:</strong></p><ul><li>Practica vulnerabilidad en dosis pequeñas ("hoy me sentí...")</li><li>Comunica cuando necesitas espacio EN VEZ de desaparecer</li><li>Tolera la cercanía sin huir automáticamente</li><li>Reconoce que necesitar a alguien no es debilidad</li></ul><p><strong>Tip WELO:</strong> El reconocimiento mutuo y el journaling te ayudan a practicar vulnerabilidad de forma segura y gradual.</p>`}
+};
+
+let qi=0,scores={secure:0,anxious:0,avoidant:0};
+
+function renderQ(){
+  if(qi>=questions.length){showResult();return;}
+  const q=questions[qi];
+  const pct=Math.round((qi/questions.length)*100);
+  document.getElementById('quiz-container').innerHTML=`
+    <div class="card">
+      <div class="progress"><div class="progress-bar" style="width:${pct}%"></div></div>
+      <p style="font-size:0.8rem;color:var(--text-light);margin-bottom:12px;">${qi+1} de ${questions.length}</p>
+      <p class="question">${q.q}</p>
+      ${q.opts.map(o=>`<button class="option" onclick="answer('${o.s}')">${o.t}</button>`).join('')}
+    </div>`;
+}
+
+function answer(style){scores[style]++;qi++;renderQ();}
+
+function showResult(){
+  const total=questions.length;
+  const sorted=Object.entries(scores).sort((a,b)=>b[1]-a[1]);
+  const primary=sorted[0][0];
+  const r=results[primary];
+  const pcts={secure:Math.round((scores.secure/total)*100),anxious:Math.round((scores.anxious/total)*100),avoidant:Math.round((scores.avoidant/total)*100)};
+  
+  document.getElementById('quiz-container').innerHTML=`
+    <div class="card result-card">
+      <p class="result-emoji">${r.emoji}</p>
+      <p class="result-title" style="color:${r.color}">${r.title}</p>
+      <p class="result-pct">Seguro ${pcts.secure}% • Ansioso ${pcts.anxious}% • Evitante ${pcts.avoidant}%</p>
+      <div style="display:flex;gap:4px;height:8px;border-radius:4px;overflow:hidden;margin:12px 0;">
+        <div style="width:${pcts.secure}%;background:#4caf50;"></div>
+        <div style="width:${pcts.anxious}%;background:#ff9800;"></div>
+        <div style="width:${pcts.avoidant}%;background:#2196f3;"></div>
+      </div>
+      <div class="result-desc">${r.desc}</div>
+      <div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;">
+        <button class="btn" onclick="shareResult('${r.title}',${pcts.secure},${pcts.anxious},${pcts.avoidant})">📲 Compartir</button>
+        <button class="btn btn-outline" onclick="qi=0;scores={secure:0,anxious:0,avoidant:0};renderQ();">🔄 Repetir</button>
+      </div>
+    </div>
+    <div class="cta-box">
+      <h3>Trabaja tu apego con WELO</h3>
+      <p>Retos diarios de comunicación, reconocimiento mutuo, y juegos que fortalecen tu vínculo — adaptados a tu estilo.</p>
+      <a href="index.html">Probar WELO gratis →</a>
+    </div>
+    <div class="card" style="margin-top:16px;">
+      <h4 style="font-size:0.95rem;margin-bottom:12px;">📖 Artículos relacionados</h4>
+      <a href="biblioteca.html" style="display:block;padding:10px 0;border-bottom:1px solid #f0f0f0;color:var(--dark-pink);font-size:0.9rem;">Estilos de apego: guía completa →</a>
+      <a href="biblioteca.html" style="display:block;padding:10px 0;border-bottom:1px solid #f0f0f0;color:var(--dark-pink);font-size:0.9rem;">Los 4 Jinetes de Gottman →</a>
+      <a href="biblioteca.html" style="display:block;padding:10px 0;color:var(--dark-pink);font-size:0.9rem;">Cómo resolver conflictos →</a>
+    </div>`;
+}
+
+function shareResult(title,s,a,e){
+  const text=`🧠 Mi estilo de apego: ${title}\nSeguro ${s}% • Ansioso ${a}% • Evitante ${e}%\n\n¿Cuál es el tuyo? → weloapp.com/test-apego\n#WELO #EstiloDeApego`;
+  if(navigator.share)navigator.share({title:'Mi apego',text}).catch(()=>{});
+  else{navigator.clipboard.writeText(text);alert('¡Copiado!');}
+}
+
+renderQ();
+</script>
+</body>
+</html>

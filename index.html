@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#ff6b9d">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>WELO — We flow. We glow. We love.</title>
+<link rel="stylesheet" href="css/app.css">
+<link rel="stylesheet" href="css/mascot.css">
+</head>
+<body>
+
+<!-- ONBOARDING -->
+<div id="onboarding">
+  <div class="onb-container">
+    <!-- Step 0: Signup -->
+    <div class="step active" id="step-signup">
+      <div class="welo-mascot lg" id="onb-mascot" style="margin:0 auto 16px;"></div>
+      <h1>WELO</h1>
+      <p class="tagline">We flow. We glow. We love. We are.</p>
+      <input type="email" id="inp-email" placeholder="Tu email" class="input">
+      <input type="password" id="inp-pass" placeholder="Contraseña" class="input">
+      <button class="btn-primary" data-action="signup">Crear cuenta</button>
+      <div class="alt-login">
+        <button class="btn-outline" data-action="signup">🍎 Apple</button>
+        <button class="btn-outline" data-action="signup">G Google</button>
+      </div>
+      <p class="hint">🔒 Tus datos son solo tuyos. Privacidad total.</p>
+    </div>
+
+    <!-- Step 1: Role -->
+    <div class="step" id="step-role">
+      <div class="welo-mascot" style="margin:0 auto 16px;"></div>
+      <h2>¿Quién eres?</h2>
+      <p>Welo se adapta a ti</p>
+      <div class="role-grid">
+        <button class="role-card" data-role="ella"><span class="role-emoji">👩</span>Ella</button>
+        <button class="role-card" data-role="el"><span class="role-emoji">👨</span>Él</button>
+      </div>
+    </div>
+
+    <!-- Step 2a: Cycle (Ella) -->
+    <div class="step" id="step-cycle">
+      <div class="welo-mascot sm" style="margin:0 auto 12px;"></div>
+      <h2>Tu ciclo</h2>
+      <p>Welo te acompaña en cada fase</p>
+      <label>Último periodo</label>
+      <input type="date" id="inp-lastperiod" class="input">
+      <label>Duración del ciclo (días)</label>
+      <input type="number" id="inp-cyclelength" value="28" min="21" max="40" class="input">
+      <label>Duración del periodo</label>
+      <input type="number" id="inp-periodduration" value="5" min="2" max="8" class="input">
+      <button class="btn-primary" data-action="savecycle">Continuar →</button>
+      <button class="btn-ghost" data-action="skipcycle">Configurar después →</button>
+    </div>
+
+    <!-- Step 2b: Connect (El) -->
+    <div class="step" id="step-connect">
+      <div class="welo-mascot sm" style="margin:0 auto 12px;"></div>
+      <h2>Conectar</h2>
+      <p>Ingresa el código que ella te compartió</p>
+      <input type="text" id="inp-code" placeholder="WLO-XXXX" maxlength="8" class="input input-code">
+      <button class="btn-primary" data-action="connect">Conectar →</button>
+    </div>
+
+    <!-- Step 3: Code Display -->
+    <div class="step" id="step-code">
+      <div class="welo-mascot sm" style="margin:0 auto 12px;"></div>
+      <h2>Tu código de pareja</h2>
+      <p>Compártelo para que se conecte contigo</p>
+      <div class="code-box" id="display-code">WLO-XXXX</div>
+      <button class="btn-primary" data-action="done">¡Listo! Entrar →</button>
+      <button class="btn-outline" data-action="copycode">📋 Copiar código</button>
+    </div>
+  </div>
+</div>
+
+<!-- APP -->
+<div id="app" style="display:none;">
+  <div id="app-content">Cargando WELO...</div>
+  <nav id="bottom-nav">
+    <button class="nav-btn active" data-tab="home"><span>🏠</span>Inicio</button>
+    <button class="nav-btn" data-tab="calendar"><span>📅</span>Ciclo</button>
+    <button class="nav-btn" data-tab="plans"><span>✨</span>Plans</button>
+    <button class="nav-btn" data-tab="games"><span>🎮</span>Juegos</button>
+    <button class="nav-btn" data-tab="settings"><span>⚙️</span>Gustos</button>
+  </nav>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/articles.js"></script>
+<script src="js/preferences.js"></script>
+<script src="js/mascot.js"></script>
+<script src="js/memories.js"></script>
+<script src="js/games.js"></script>
+<script src="js/plans.js"></script>
+<script src="js/blog.js"></script>
+<script src="js/onboarding.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

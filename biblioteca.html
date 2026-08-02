@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Biblioteca de Salud — WELO | Ciclo, Pareja, Fitness, Bienestar</title>
+<meta name="description" content="Biblioteca completa de salud femenina, relaciones de pareja, fitness, nutrición y men's health. Artículos por profesionales. WELO Barcelona.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Inter',sans-serif;background:#fef0f5;color:#2d3436;}
+a{text-decoration:none;color:inherit;}
+.container{max-width:900px;margin:0 auto;padding:0 20px;}
+nav{background:white;padding:16px 0;border-bottom:1px solid #f0f0f0;position:sticky;top:0;z-index:100;}
+nav .container{display:flex;justify-content:space-between;align-items:center;}
+.nav-logo{font-size:1.3rem;font-weight:900;background:linear-gradient(135deg,#ff6b9d,#c44569);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.nav-links a{margin-left:20px;font-size:0.85rem;color:#636e72;}
+.nav-links a:hover{color:#ff6b9d;}
+.hero-lib{padding:48px 0 32px;text-align:center;}
+.hero-lib h1{font-size:2.2rem;font-weight:800;margin-bottom:12px;}
+.hero-lib p{color:#636e72;font-size:1rem;}
+</style>
+</head>
+<body>
+<style>
+.categories{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;padding:20px 0;position:sticky;top:60px;background:#fef0f5;z-index:50;}
+.cat-pill{padding:8px 18px;border-radius:50px;background:white;font-size:0.85rem;font-weight:600;cursor:pointer;border:2px solid #eee;transition:all 0.2s;}
+.cat-pill:hover,.cat-pill.active{border-color:#ff6b9d;color:#ff6b9d;background:rgba(255,107,157,0.05);}
+.article-card{background:white;border-radius:16px;padding:24px;margin-bottom:16px;box-shadow:0 2px 12px rgba(0,0,0,0.04);transition:transform 0.2s;cursor:pointer;}
+.article-card:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(196,69,105,0.12);}
+.article-card h3{font-size:1.05rem;font-weight:700;margin-bottom:6px;}
+.article-card p{font-size:0.88rem;color:#636e72;line-height:1.5;}
+.article-card .tags{margin-top:10px;display:flex;gap:8px;flex-wrap:wrap;}
+.article-card .tag{font-size:0.7rem;padding:3px 10px;border-radius:20px;background:#f8f9fa;color:#636e72;}
+.article-full{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:#fef0f5;z-index:200;overflow-y:auto;padding:20px;}
+.article-full.open{display:block;}
+.article-content{max-width:700px;margin:0 auto;padding:20px 0 60px;}
+.article-content h1{font-size:1.8rem;font-weight:800;margin-bottom:8px;line-height:1.3;}
+.article-content .meta{font-size:0.8rem;color:#636e72;margin-bottom:24px;}
+.article-content .body p{font-size:0.95rem;line-height:1.8;margin-bottom:16px;}
+.article-content .body h2{font-size:1.2rem;font-weight:700;margin:24px 0 12px;color:#c44569;}
+.article-content .body ul{padding-left:20px;margin-bottom:16px;}
+.article-content .body li{font-size:0.9rem;line-height:1.7;margin-bottom:6px;}
+.back-btn{display:inline-flex;align-items:center;gap:6px;padding:10px 20px;border-radius:50px;background:white;font-size:0.85rem;font-weight:600;color:#c44569;margin-bottom:20px;box-shadow:0 2px 8px rgba(0,0,0,0.06);cursor:pointer;}
+.cta-box{margin-top:32px;padding:24px;background:linear-gradient(135deg,#ff6b9d,#c44569);border-radius:16px;color:white;text-align:center;}
+.cta-box h3{margin-bottom:8px;}
+.cta-box p{font-size:0.85rem;opacity:0.9;margin-bottom:16px;}
+.cta-box a{display:inline-block;padding:12px 28px;background:white;color:#c44569;border-radius:50px;font-weight:700;}
+.cat-section{margin-bottom:48px;padding-top:16px;}
+.cat-section h2{font-size:1.5rem;font-weight:700;margin-bottom:8px;padding-bottom:12px;border-bottom:2px solid #ff6b9d;}
+.cat-section .cat-desc{font-size:0.9rem;color:#636e72;margin-bottom:20px;}
+.sub-section{margin-bottom:8px;}
+footer{background:#1a1a2e;color:white;padding:40px 0;text-align:center;}
+footer p{font-size:0.8rem;color:#aaa;}
+footer .foot-links{margin-top:12px;}
+footer .foot-links a{color:#ff6b9d;margin:0 12px;font-size:0.85rem;}
+@media(max-width:600px){.hero-lib h1{font-size:1.6rem;}}
+</style>
+
+<nav><div class="container"><a href="landing.html" class="nav-logo">✨ WELO</a><div class="nav-links"><a href="landing.html">Inicio</a><a href="#articles-grid">Artículos</a><a href="#podcasts-section">Podcasts</a><a href="index.html">App</a></div></div></nav>
+
+<div class="hero-lib"><div class="container"><h1>📚 Biblioteca de Salud</h1><p>Artículos para entender tu cuerpo, mejorar tu relación y cuidar tu bienestar</p></div></div>
+
+<!-- MEGA CATEGORIES NAV (estilo Flo) -->
+<div class="container" style="margin-bottom:32px;">
+<div style="background:white;border-radius:20px;padding:32px;box-shadow:0 4px 20px rgba(0,0,0,0.06);">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;">
+    <a href="#sec-ciclo" style="padding:20px;background:#fef0f5;border-radius:16px;text-align:center;transition:transform 0.2s;"><p style="font-size:2rem;">🩸</p><h4 style="font-size:0.95rem;margin-top:8px;">Tu Ciclo</h4><p style="font-size:0.75rem;color:#636e72;margin-top:4px;">Fases, periodo, ovulación, PMS</p></a>
+    <a href="#sec-sexo" style="padding:20px;background:#fef0f5;border-radius:16px;text-align:center;transition:transform 0.2s;"><p style="font-size:2rem;">🔥</p><h4 style="font-size:0.95rem;margin-top:8px;">Sexo & Intimidad</h4><p style="font-size:0.75rem;color:#636e72;margin-top:4px;">Salud sexual, placer, anticonceptivos</p></a>
+    <a href="#sec-pareja" style="padding:20px;background:#fef0f5;border-radius:16px;text-align:center;transition:transform 0.2s;"><p style="font-size:2rem;">💑</p><h4 style="font-size:0.95rem;margin-top:8px;">Pareja</h4><p style="font-size:0.75rem;color:#636e72;margin-top:4px;">Comunicación, conflictos, apego</p></a>
+    <a href="#sec-belleza" style="padding:20px;background:#fef0f5;border-radius:16px;text-align:center;transition:transform 0.2s;"><p style="font-size:2rem;">✨</p><h4 style="font-size:0.95rem;margin-top:8px;">Belleza & Piel</h4><p style="font-size:0.75rem;color:#636e72;margin-top:4px;">Skincare hormonal, cabello, acné</p></a>
+    <a href="#sec-fitness" style="padding:20px;background:#fef0f5;border-radius:16px;text-align:center;transition:transform 0.2s;"><p style="font-size:2rem;">🏋️</p><h4 style="font-size:0.95rem;margin-top:8px;">Fitness & Deporte</h4><p style="font-size:0.75rem;color:#636e72;margin-top:4px;">Cycle syncing, yoga, running</p></a>
+    <a href="#sec-nutricion" style="padding:20px;background:#fef0f5;border-radius:16px;text-align:center;transition:transform 0.2s;"><p style="font-size:2rem;">🥗</p><h4 style="font-size:0.95rem;margin-top:8px;">Nutrición</h4><p style="font-size:0.75rem;color:#636e72;margin-top:4px;">Alimentos por fase, suplementos</p></a>
+    <a href="#sec-mental" style="padding:20px;background:#fef0f5;border-radius:16px;text-align:center;transition:transform 0.2s;"><p style="font-size:2rem;">🧠</p><h4 style="font-size:0.95rem;margin-top:8px;">Salud Mental</h4><p style="font-size:0.75rem;color:#636e72;margin-top:4px;">Ansiedad, autoestima, bienestar</p></a>
+    <a href="#sec-mens" style="padding:20px;background:#e3ecf5;border-radius:16px;text-align:center;transition:transform 0.2s;"><p style="font-size:2rem;">👔</p><h4 style="font-size:0.95rem;margin-top:8px;">Men's Health</h4><p style="font-size:0.75rem;color:#636e72;margin-top:4px;">Testosterona, IE, fitness masculino</p></a>
+  </div>
+</div>
+</div>
+
+<!-- QUICK FACTS -->
+<div class="container" style="margin-bottom:24px;">
+<div style="background:white;border-radius:16px;padding:24px;box-shadow:0 2px 12px rgba(0,0,0,0.04);">
+  <h3 style="font-size:1.2rem;font-weight:700;margin-bottom:16px;">💡 Datos Curiosos Rápidos</h3>
+  <div id="quick-facts-grid" style="display:grid;gap:10px;"></div>
+  <button onclick="loadMoreFacts()" id="more-facts-btn" style="display:block;margin:16px auto 0;padding:10px 20px;border:2px solid #ff6b9d;border-radius:50px;background:none;color:#ff6b9d;font-weight:600;cursor:pointer;font-family:inherit;">Ver más datos</button>
+</div>
+</div>
+<script>
+const allFacts=["El útero genera la misma presión que una serpiente constrictora 🐍","Las mujeres tienen 450 periodos en su vida (~3,500 días) 📊","Tu ciclo cambia tu voz, olfato y creatividad 🎨","Durante la ovulación las pupilas se dilatan al ver a la pareja 👁️","Chocolate oscuro = magnesio que relaja el útero 🍫","Parejas que sincronizan sueño: -25% conflictos 🌙","Abrazo 20seg = oxitocina para bajar presión arterial 🤗","Fase folicular: +30% creatividad según neurociencia 🧠","Olfato femenino 10,000x más sensible en ovulación 👃","Parejas que ríen 1x/día duran 40% más 😂","Cólicos activan mismas zonas cerebrales que infarto 💔","80% de mujeres tiene al menos 1 síntoma PMS 💪","Parejas que dicen 'nosotros': -33% conflictos 👫","El enamoramiento activa mismas zonas que la cocaína 🧪","Cortisol baja 50% tras 10min de caricias 💆","Parejas que prueban cosas nuevas: +67% satisfacción 🎢","Mirar 4min a los ojos reactiva el enamoramiento 👁️","Decir 'gracias' diario: +35% satisfacción relacional 🙏","90% de serotonina se produce en el intestino 🥗","Entrenar juntos = dopamina conjunta = más atracción 🏋️","Bailar 15min juntos reduce cortisol como meditar 30min 💃","Las parejas con rituales diarios duran más ☕","Los besos liberan dopamina, serotonina y oxitocina a la vez 💋","Dormir en cucharita sincroniza el ritmo cardíaco 💤","Cocinar juntos activa las mismas áreas que jugar en equipo 🧑‍🍳"];
+let factsShown=6;
+function renderFacts(){document.getElementById('quick-facts-grid').innerHTML=allFacts.slice(0,factsShown).map(f=>`<div style="padding:12px;background:#f8f9fa;border-radius:10px;font-size:0.85rem;line-height:1.4;">${f}</div>`).join('');}
+function loadMoreFacts(){factsShown=Math.min(factsShown+6,allFacts.length);renderFacts();if(factsShown>=allFacts.length)document.getElementById('more-facts-btn').style.display='none';}
+renderFacts();
+</script>
+
+<div class="container">
+<div class="categories" id="cats">
+  <span class="cat-pill active" onclick="filterCat('all')">🌟 Todo</span>
+  <span class="cat-pill" onclick="filterCat('ciclo')">🩸 Ciclo</span>
+  <span class="cat-pill" onclick="filterCat('sexo')">🔥 Sexo</span>
+  <span class="cat-pill" onclick="filterCat('pareja')">💑 Pareja</span>
+  <span class="cat-pill" onclick="filterCat('belleza')">✨ Belleza</span>
+  <span class="cat-pill" onclick="filterCat('deporte')">🏋️ Fitness</span>
+  <span class="cat-pill" onclick="filterCat('nutricion')">🥗 Nutrición</span>
+  <span class="cat-pill" onclick="filterCat('mental')">🧠 Mental</span>
+  <span class="cat-pill" onclick="filterCat('mens')">👔 Men's</span>
+</div>
+
+<!-- SECCIONES POR CATEGORÍA (estilo Flo con subcategorías) -->
+<div id="category-sections">
+
+<!-- TU CICLO -->
+<div class="cat-section" id="sec-ciclo" data-cat="ciclo">
+  <h2>🩸 Tu Ciclo</h2>
+  <p class="cat-desc">Todo sobre menstruación, fases, ovulación y salud hormonal</p>
+  <div class="sub-section">
+    <h4 style="font-size:0.85rem;color:#c44569;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;">Fases del ciclo</h4>
+    <div class="article-card" onclick="openArticle('ciclo-1')"><h3>Fases del ciclo menstrual: guía completa</h3><p>Las 4 fases, qué pasa en cada una y cómo afectan tu energía, humor y piel.</p><div class="tags"><span class="tag">fases</span><span class="tag">hormonas</span></div></div>
+    <div class="article-card" onclick="openArticle('ciclo-2')"><h3>Ovulación: señales para identificarla</h3><p>Moco cervical, temperatura basal, dolor mittelschmerz y más señales naturales.</p><div class="tags"><span class="tag">ovulación</span><span class="tag">fertilidad</span></div></div>
+    <div class="article-card" onclick="openArticle('ciclo-3')"><h3>¿Por qué se retrasa mi periodo? 10 causas</h3><p>Estrés, peso, ejercicio, SOP, tiroides y más razones de un periodo irregular.</p><div class="tags"><span class="tag">retraso</span><span class="tag">irregular</span></div></div>
+  </div>
+  <div class="sub-section" style="margin-top:24px;">
+    <h4 style="font-size:0.85rem;color:#c44569;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;">Síntomas y remedios</h4>
+    <div class="article-card" onclick="openArticle('ciclo-4')"><h3>Cólicos menstruales: 8 remedios naturales</h3><p>Calor, jengibre, magnesio, omega-3, ejercicio suave y más soluciones que funcionan.</p><div class="tags"><span class="tag">cólicos</span><span class="tag">dolor</span></div></div>
+    <div class="article-card" onclick="openArticle('ciclo-5')"><h3>PMS vs PMDD: diferencias importantes</h3><p>Cuándo es normal y cuándo deberías consultar. Señales de alerta.</p><div class="tags"><span class="tag">PMS</span><span class="tag">PMDD</span></div></div>
+    <div class="article-card" onclick="openArticle('ciclo-6')"><h3>Anticoncepción y ciclo: lo que debes saber</h3><p>Píldora, DIU, implante y cómo afectan (o no) tu ciclo natural.</p><div class="tags"><span class="tag">anticonceptivos</span><span class="tag">píldora</span></div></div>
+  </div>
+</div>
+
+<!-- SEXO & INTIMIDAD -->
+<div class="cat-section" id="sec-sexo" data-cat="sexo">
+  <h2>🔥 Sexo & Intimidad</h2>
+  <p class="cat-desc">Salud sexual, placer, libido y bienestar íntimo</p>
+  <div class="sub-section">
+    <h4 style="font-size:0.85rem;color:#c44569;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;">Salud sexual</h4>
+    <div class="article-card" onclick="openArticle('sexo-1')"><h3>Libido y ciclo: cuándo sube y baja tu deseo</h3><p>Tu deseo tiene un patrón hormonal. Aprende a entenderlo sin juzgarte.</p><div class="tags"><span class="tag">libido</span><span class="tag">deseo</span></div></div>
+    <div class="article-card" onclick="openArticle('sexo-2')"><h3>10 beneficios del sexo para tu salud</h3><p>Reduce estrés, mejora sueño, alivia cólicos, fortalece sistema inmune y más.</p><div class="tags"><span class="tag">beneficios</span><span class="tag">salud</span></div></div>
+    <div class="article-card" onclick="openArticle('sexo-3')"><h3>Ardor durante las relaciones: causas y soluciones</h3><p>Sequedad, infecciones, alergia al látex y otros motivos con sus remedios.</p><div class="tags"><span class="tag">dolor</span><span class="tag">dispareunia</span></div></div>
+  </div>
+  <div class="sub-section" style="margin-top:24px;">
+    <h4 style="font-size:0.85rem;color:#c44569;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;">Placer & conexión</h4>
+    <div class="article-card" onclick="openArticle('sexo-4')"><h3>Cómo mejorar la intimidad: 12 consejos</h3><p>Comunicación, exploración, tiempo de calidad y conexión emocional como base.</p><div class="tags"><span class="tag">intimidad</span><span class="tag">consejos</span></div></div>
+    <div class="article-card" onclick="openArticle('sexo-5')"><h3>Deseo sexual bajo: 5 razones y qué hacer</h3><p>Hormonas, estrés, medicación, rutina y falta de conexión emocional.</p><div class="tags"><span class="tag">bajo deseo</span><span class="tag">soluciones</span></div></div>
+    <div class="article-card" onclick="openArticle('sexo-6')"><h3>Sexo y ciclo: la mejor guía por fase</h3><p>Qué esperar de tu libido y cómo adaptar la intimidad a cada momento del mes.</p><div class="tags"><span class="tag">ciclo</span><span class="tag">fases</span></div></div>
+  </div>
+  <div class="sub-section" style="margin-top:24px;">
+    <h4 style="font-size:0.85rem;color:#c44569;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;">Anticonceptivos</h4>
+    <div class="article-card" onclick="openArticle('sexo-7')"><h3>Métodos anticonceptivos: guía completa</h3><p>Hormonales, de barrera, naturales. Pros, contras y eficacia de cada uno.</p><div class="tags"><span class="tag">anticonceptivos</span><span class="tag">métodos</span></div></div>
+    <div class="article-card" onclick="openArticle('sexo-8')"><h3>Dejar la píldora: qué esperar</h3><p>Timeline de recuperación, efectos secundarios y cuándo se regula el ciclo.</p><div class="tags"><span class="tag">píldora</span><span class="tag">post-píldora</span></div></div>
+  </div>
+</div>
+
+<!-- PAREJA -->
+<div class="cat-section" id="sec-pareja" data-cat="pareja">
+  <h2>💑 Pareja & Relaciones</h2>
+  <p class="cat-desc">Comunicación, conflictos, lenguajes del amor y crecimiento juntos</p>
+  <div class="sub-section">
+    <h4 style="font-size:0.85rem;color:#c44569;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;">Comunicación</h4>
+    <div class="article-card" onclick="openArticle('pareja-1')"><h3>Los 5 Lenguajes del Amor</h3><p>No todos amamos igual. Descubre tu lenguaje y el de tu pareja.</p><div class="tags"><span class="tag">lenguajes</span><span class="tag">gary chapman</span></div></div>
+    <div class="article-card" onclick="openArticle('pareja-2')"><h3>Los 4 Jinetes del Apocalipsis de Gottman</h3><p>Los 4 patrones que destruyen relaciones y sus antídotos.</p><div class="tags"><span class="tag">gottman</span><span class="tag">conflictos</span></div></div>
+    <div class="article-card" onclick="openArticle('pareja-3')"><h3>Cómo resolver conflictos sin destruir la relación</h3><p>Reglas para pelear limpio. Los primeros 3 minutos predicen todo.</p><div class="tags"><span class="tag">peleas</span><span class="tag">soluciones</span></div></div>
+  </div>
+  <div class="sub-section" style="margin-top:24px;">
+    <h4 style="font-size:0.85rem;color:#c44569;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;">Psicología de pareja</h4>
+    <div class="article-card" onclick="openArticle('pareja-4')"><h3>Estilos de apego: cómo afectan tu relación</h3><p>Seguro, ansioso, evitante. La trampa ansioso-evitante y cómo salir.</p><div class="tags"><span class="tag">apego</span><span class="tag">psicología</span></div></div>
+    <div class="article-card" onclick="openArticle('pareja-5')"><h3>La regla 5:1 de las relaciones felices</h3><p>5 interacciones positivas por cada negativa. Así se mantiene el amor.</p><div class="tags"><span class="tag">gottman</span><span class="tag">positivo</span></div></div>
+    <div class="article-card" onclick="openArticle('pareja-6')"><h3>Dependencia emocional: señales y cómo superarla</h3><p>Cuando la relación se vuelve ansiedad. Identifica y trabájalo.</p><div class="tags"><span class="tag">dependencia</span><span class="tag">autoestima</span></div></div>
+  </div>
+</div>
+
+<!-- BELLEZA -->
+<div class="cat-section" id="sec-belleza" data-cat="belleza">
+  <h2>✨ Belleza & Piel</h2>
+  <p class="cat-desc">Skincare hormonal, cabello, acné y cuidado según tu ciclo</p>
+  <div class="article-card" onclick="openArticle('belleza-1')"><h3>Skincare según tu ciclo menstrual</h3><p>Tu piel cambia cada semana. Adapta tu rutina a cada fase.</p><div class="tags"><span class="tag">skincare</span><span class="tag">hormonal</span></div></div>
+  <div class="article-card" onclick="openArticle('belleza-2')"><h3>Acné hormonal: por qué aparece y cómo tratarlo</h3><p>Mandíbula y mentón = hormonal. Niacinamida, zinc y más.</p><div class="tags"><span class="tag">acné</span><span class="tag">tratamiento</span></div></div>
+  <div class="article-card" onclick="openArticle('belleza-3')"><h3>Retención de líquidos: reducirla naturalmente</h3><p>Por qué te hinchás antes del periodo y qué hacer.</p><div class="tags"><span class="tag">retención</span><span class="tag">hinchazón</span></div></div>
+</div>
+
+<!-- FITNESS -->
+<div class="cat-section" id="sec-fitness" data-cat="deporte">
+  <h2>🏋️ Fitness & Deporte</h2>
+  <p class="cat-desc">Cycle syncing, entrenamiento inteligente y deporte en pareja</p>
+  <div class="article-card" onclick="openArticle('deporte-1')"><h3>Cycle Syncing: entrena según tu fase</h3><p>No todos los días son iguales. Entrena inteligente, no más duro.</p><div class="tags"><span class="tag">cycle syncing</span><span class="tag">fases</span></div></div>
+  <div class="article-card" onclick="openArticle('deporte-2')"><h3>Deporte en pareja: beneficios y actividades</h3><p>Entrenar juntos = dopamina conjunta = más atracción. +67% satisfacción.</p><div class="tags"><span class="tag">pareja</span><span class="tag">actividades</span></div></div>
+  <div class="article-card" onclick="openArticle('deporte-3')"><h3>Yoga para cólicos y estrés menstrual</h3><p>5 posturas que alivian el dolor y reducen ansiedad en minutos.</p><div class="tags"><span class="tag">yoga</span><span class="tag">cólicos</span></div></div>
+</div>
+
+<!-- NUTRICIÓN -->
+<div class="cat-section" id="sec-nutricion" data-cat="nutricion">
+  <h2>🥗 Nutrición</h2>
+  <p class="cat-desc">Alimentos por fase, suplementos y gut health</p>
+  <div class="article-card" onclick="openArticle('nutri-1')"><h3>Qué comer en cada fase del ciclo</h3><p>Hierro en menstrual, proteína en folicular, fibra en ovulación, carbos en lútea.</p><div class="tags"><span class="tag">fases</span><span class="tag">alimentos</span></div></div>
+  <div class="article-card" onclick="openArticle('nutri-2')"><h3>Suplementos esenciales para mujeres</h3><p>Magnesio, hierro, vitamina D, omega-3, zinc. Cuándo y cuánto.</p><div class="tags"><span class="tag">suplementos</span><span class="tag">vitaminas</span></div></div>
+  <div class="article-card" onclick="openArticle('nutri-3')"><h3>Antojos premenstruales: tu cuerpo habla</h3><p>Chocolate = magnesio. Sal = minerales. Entiende qué necesitas.</p><div class="tags"><span class="tag">antojos</span><span class="tag">PMS</span></div></div>
+</div>
+
+<!-- SALUD MENTAL -->
+<div class="cat-section" id="sec-mental" data-cat="mental">
+  <h2>🧠 Salud Mental</h2>
+  <p class="cat-desc">Ansiedad, autoestima, bienestar emocional y herramientas</p>
+  <div class="article-card" onclick="openArticle('mental-1')"><h3>Ansiedad premenstrual: por qué pasa</h3><p>No es imaginación. La progesterona y serotonina bajan. Qué hacer.</p><div class="tags"><span class="tag">ansiedad</span><span class="tag">PMS</span></div></div>
+  <div class="article-card" onclick="openArticle('mental-2')"><h3>Autoestima y ciclo: cómo se conectan</h3><p>Tu confianza fluctúa con las hormonas. No eres inconsistente, eres cíclica.</p><div class="tags"><span class="tag">autoestima</span><span class="tag">hormonas</span></div></div>
+  <div class="article-card" onclick="openArticle('mental-3')"><h3>Journaling para parejas: cómo empezar</h3><p>Escribir juntos fortalece la conexión y reduce malentendidos.</p><div class="tags"><span class="tag">journaling</span><span class="tag">herramientas</span></div></div>
+</div>
+
+<!-- MEN'S HEALTH -->
+<div class="cat-section" id="sec-mens" data-cat="mens">
+  <h2>👔 Men's Health</h2>
+  <p class="cat-desc">Testosterona, inteligencia emocional, fitness masculino</p>
+  <div class="article-card" onclick="openArticle('mens-1')"><h3>Testosterona: optimización natural</h3><p>Pesas, sueño, vitamina D, zinc. Lo que funciona y lo que no.</p><div class="tags"><span class="tag">testosterona</span><span class="tag">natural</span></div></div>
+  <div class="article-card" onclick="openArticle('mens-2')"><h3>Inteligencia emocional masculina</h3><p>No es debilidad. Es la habilidad que te hace mejor pareja, padre y líder.</p><div class="tags"><span class="tag">emocional</span><span class="tag">pareja</span></div></div>
+  <div class="article-card" onclick="openArticle('mens-3')"><h3>Entender su ciclo: guía para él</h3><p>Qué pasa en cada fase de ella, qué hacer y qué NO hacer.</p><div class="tags"><span class="tag">ciclo</span><span class="tag">para él</span></div></div>
+</div>
+
+</div><!-- end category-sections -->
+</div><!-- end container -->
+
+<div class="article-full" id="article-full"><div class="article-content" id="article-content"></div></div>
+
+<!-- PODCASTS -->
+<div class="container" style="padding:48px 0;" id="podcasts-section">
+<div style="background:white;border-radius:20px;padding:32px;box-shadow:0 4px 20px rgba(0,0,0,0.06);">
+  <h2 style="font-size:1.8rem;font-weight:800;margin-bottom:8px;">🎙️ Podcasts Recomendados</h2>
+  <p style="color:#636e72;margin-bottom:24px;">Los mejores podcasts sobre relaciones, salud femenina y bienestar</p>
+  
+  <h3 style="font-size:1.1rem;margin-bottom:16px;color:#c44569;">💑 Relaciones & Pareja</h3>
+  <div style="display:grid;gap:12px;margin-bottom:32px;">
+    <a href="https://open.spotify.com/show/4PzSMdHFLGhMsQziKBbBT3" target="_blank" style="display:flex;align-items:center;gap:14px;padding:14px;background:#f8f9fa;border-radius:12px;border-left:4px solid #1DB954;"><div><p style="font-weight:600;font-size:0.9rem;">Where Should We Begin? — Esther Perel</p><p style="font-size:0.78rem;color:#636e72;">Sesiones reales de terapia de pareja. Raw, íntimo, transformador.</p></div></a>
+    <a href="https://open.spotify.com/show/5VnCnMKOEkhRSmyxgn9nRH" target="_blank" style="display:flex;align-items:center;gap:14px;padding:14px;background:#f8f9fa;border-radius:12px;border-left:4px solid #1DB954;"><div><p style="font-weight:600;font-size:0.9rem;">The Gottman Relationship Coach</p><p style="font-size:0.78rem;color:#636e72;">40 años de investigación sobre qué hace funcionar las relaciones.</p></div></a>
+    <a href="https://open.spotify.com/show/6PUoMpHclbKjgIRayqXkNb" target="_blank" style="display:flex;align-items:center;gap:14px;padding:14px;background:#f8f9fa;border-radius:12px;border-left:4px solid #1DB954;"><div><p style="font-weight:600;font-size:0.9rem;">The Love Chat — Silvia Congost</p><p style="font-size:0.78rem;color:#636e72;">En español. Autoestima, dependencia emocional, relaciones sanas.</p></div></a>
+    <a href="https://open.spotify.com/show/7gozmLqbcbr6PScMjc0Zl4" target="_blank" style="display:flex;align-items:center;gap:14px;padding:14px;background:#f8f9fa;border-radius:12px;border-left:4px solid #1DB954;"><div><p style="font-weight:600;font-size:0.9rem;">We Can Do Hard Things — Glennon Doyle</p><p style="font-size:0.78rem;color:#636e72;">Vulnerabilidad, amor, familia, coraje.</p></div></a>
+  </div>
+  
+  <h3 style="font-size:1.1rem;margin-bottom:16px;color:#c44569;">🩸 Salud Femenina & Ciclo</h3>
+  <div style="display:grid;gap:12px;margin-bottom:32px;">
+    <a href="https://open.spotify.com/show/0ofXAdFIQQRsCYj9754UFx" target="_blank" style="display:flex;align-items:center;gap:14px;padding:14px;background:#f8f9fa;border-radius:12px;border-left:4px solid #ff6b9d;"><div><p style="font-weight:600;font-size:0.9rem;">Period Party — Nicole Jardim</p><p style="font-size:0.78rem;color:#636e72;">Hormonas femeninas, ciclo, y cómo optimizar tu salud por fase.</p></div></a>
+    <a href="https://open.spotify.com/show/5a4xPgCPuOcfCbsmKr60d6" target="_blank" style="display:flex;align-items:center;gap:14px;padding:14px;background:#f8f9fa;border-radius:12px;border-left:4px solid #ff6b9d;"><div><p style="font-weight:600;font-size:0.9rem;">Salud Hormonal — Laia Sánchez</p><p style="font-size:0.78rem;color:#636e72;">En español. Ciclo, tiroides, SOP, fertilidad explicado accesible.</p></div></a>
+    <a href="https://open.spotify.com/show/5PmbMM66RNfdVqPqHd7Nzz" target="_blank" style="display:flex;align-items:center;gap:14px;padding:14px;background:#f8f9fa;border-radius:12px;border-left:4px solid #ff6b9d;"><div><p style="font-weight:600;font-size:0.9rem;">The Period Podcast — Kate Clancy</p><p style="font-size:0.78rem;color:#636e72;">Ciencia del ciclo menstrual. Riguroso y accesible.</p></div></a>
+  </div>
+  
+  <h3 style="font-size:1.1rem;margin-bottom:16px;color:#c44569;">👔 Salud Masculina & Bienestar</h3>
+  <div style="display:grid;gap:12px;">
+    <a href="https://open.spotify.com/show/79CkJF3UJTHFV8Dse3Oy0P" target="_blank" style="display:flex;align-items:center;gap:14px;padding:14px;background:#f8f9fa;border-radius:12px;border-left:4px solid #4a90d9;"><div><p style="font-weight:600;font-size:0.9rem;">Huberman Lab — Andrew Huberman</p><p style="font-size:0.78rem;color:#636e72;">Neurociencia: sueño, testosterona, estrés, relaciones, fitness.</p></div></a>
+    <a href="https://open.spotify.com/show/0TJB1CF3kB5NnhsIbZjCJR" target="_blank" style="display:flex;align-items:center;gap:14px;padding:14px;background:#f8f9fa;border-radius:12px;border-left:4px solid #4a90d9;"><div><p style="font-weight:600;font-size:0.9rem;">Entiende Tu Mente</p><p style="font-size:0.78rem;color:#636e72;">En español. Psicología aplicada, emociones, relaciones.</p></div></a>
+    <a href="https://open.spotify.com/show/5EqqB52m2bsr4k1Ii7sStc" target="_blank" style="display:flex;align-items:center;gap:14px;padding:14px;background:#f8f9fa;border-radius:12px;border-left:4px solid #9b59b6;"><div><p style="font-weight:600;font-size:0.9rem;">The Happiness Lab — Laurie Santos</p><p style="font-size:0.78rem;color:#636e72;">Basada en el curso más popular de Yale sobre felicidad.</p></div></a>
+  </div>
+</div>
+</div>
+
+<footer><p>© 2026 WELO — Barcelona</p><div class="foot-links"><a href="landing.html">Inicio</a><a href="index.html">Probar App</a><a href="https://instagram.com/weloapp" target="_blank">Instagram</a><a href="https://tiktok.com/@weloapp" target="_blank">TikTok</a></div></footer>
+
+<script src="js/articles.js"></script>
+<script>
+function filterCat(c){document.querySelectorAll('.cat-pill').forEach(p=>p.classList.remove('active'));event.target.classList.add('active');document.querySelectorAll('.cat-section').forEach(s=>{s.style.display=(c==='all'||s.dataset.cat===c)?'block':'none';});}
+function openArticle(id){const a=A[id];if(!a)return;document.getElementById('article-content').innerHTML=`<div class="back-btn" onclick="closeArticle()">← Volver</div><h1>${a.t}</h1><div class="meta">WELO Biblioteca</div><div class="body">${a.b}</div><div class="cta-box"><h3>Trackea todo en WELO</h3><p>Ciclo, mood, retos de pareja.</p><a href="index.html">Probar WELO →</a></div>`;document.getElementById('article-full').classList.add('open');window.scrollTo(0,0);}
+function closeArticle(){document.getElementById('article-full').classList.remove('open');}
+</script>
+</body>
+</html>

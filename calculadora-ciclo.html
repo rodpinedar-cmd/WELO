@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora de Ciclo Menstrual Gratis — WELO</title>
+<meta name="description" content="Calcula tu próximo periodo, ovulación y días fértiles gratis. Predicción de fases del ciclo menstrual personalizada. Sin registro.">
+<meta name="keywords" content="calculadora ciclo menstrual, calcular periodo, calculadora ovulacion, dias fertiles, prediccion periodo, calculadora menstruacion">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{--pink:#ff6b9d;--dark-pink:#c44569;--light:#fef0f5;--text:#2d3436;--text-light:#636e72;}
+body{font-family:'Inter',sans-serif;color:var(--text);background:var(--light);min-height:100vh;}
+.container{max-width:700px;margin:0 auto;padding:24px;}
+nav{background:white;padding:16px 24px;border-bottom:1px solid #f0f0f0;display:flex;justify-content:space-between;align-items:center;}
+.nav-logo{font-size:1.2rem;font-weight:900;background:linear-gradient(135deg,var(--pink),var(--dark-pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.nav-cta{padding:8px 20px;background:linear-gradient(135deg,var(--pink),var(--dark-pink));color:white;border-radius:50px;font-size:0.85rem;font-weight:600;text-decoration:none;}
+h1{font-size:2rem;font-weight:800;text-align:center;margin:32px 0 8px;}
+.subtitle{text-align:center;color:var(--text-light);margin-bottom:32px;}
+.card{background:white;border-radius:16px;padding:24px;margin-bottom:16px;box-shadow:0 2px 12px rgba(0,0,0,0.04);}
+label{display:block;font-size:0.85rem;font-weight:600;margin-bottom:6px;color:var(--text-light);}
+input{width:100%;padding:14px;border:2px solid #eee;border-radius:12px;font-size:1rem;font-family:inherit;margin-bottom:16px;}
+input:focus{border-color:var(--pink);outline:none;}
+.btn{width:100%;padding:16px;border:none;border-radius:50px;background:linear-gradient(135deg,var(--pink),var(--dark-pink));color:white;font-size:1.1rem;font-weight:700;cursor:pointer;font-family:inherit;}
+.btn:active{transform:scale(0.97);}
+#results{display:none;}
+.result-item{padding:14px;border-radius:12px;margin-bottom:10px;display:flex;align-items:center;gap:12px;}
+.result-item .icon{font-size:1.5rem;}
+.result-item .info h4{font-size:0.9rem;margin-bottom:2px;}
+.result-item .info p{font-size:0.8rem;color:var(--text-light);}
+.phase-bar{display:flex;border-radius:8px;overflow:hidden;height:12px;margin:16px 0;}
+.cta-box{margin-top:24px;padding:24px;background:linear-gradient(135deg,var(--pink),var(--dark-pink));border-radius:16px;color:white;text-align:center;}
+.cta-box h3{margin-bottom:6px;}
+.cta-box p{font-size:0.85rem;opacity:0.9;margin-bottom:14px;}
+.cta-box a{display:inline-block;padding:12px 28px;background:white;color:var(--dark-pink);border-radius:50px;font-weight:700;text-decoration:none;}
+.share-btn{margin-top:12px;padding:10px 20px;border:2px solid var(--pink);border-radius:50px;background:none;color:var(--dark-pink);font-weight:600;cursor:pointer;font-family:inherit;font-size:0.85rem;}
+footer{text-align:center;padding:32px;color:var(--text-light);font-size:0.8rem;}
+footer a{color:var(--pink);}
+</style>
+</head>
+<body>
+<nav>
+  <a href="landing.html" class="nav-logo">✨ WELO</a>
+  <a href="index.html" class="nav-cta">Probar App</a>
+</nav>
+
+<div class="container">
+  <h1>📅 Calculadora de Ciclo Menstrual</h1>
+  <p class="subtitle">Calcula tu próximo periodo, ovulación y días fértiles</p>
+  
+  <div class="card" id="form-card">
+    <label>Primer día de tu último periodo</label>
+    <input type="date" id="calc-lastperiod">
+    <label>Duración de tu ciclo (días)</label>
+    <input type="number" id="calc-cyclelength" value="28" min="21" max="40">
+    <label>Duración de tu periodo (días)</label>
+    <input type="number" id="calc-periodduration" value="5" min="2" max="8">
+    <button class="btn" onclick="calculateCycle()">Calcular mi ciclo →</button>
+  </div>
+
+  <div id="results">
+    <div class="card">
+      <h3 style="font-size:1rem;margin-bottom:16px;">Tu predicción</h3>
+      <div id="results-list"></div>
+      <div class="phase-bar" id="phase-bar"></div>
+      <div id="phase-legend" style="display:flex;gap:12px;flex-wrap:wrap;margin-top:8px;"></div>
+    </div>
+    
+    <div class="card" id="today-info"></div>
+    
+    <div class="card">
+      <h3 style="font-size:1rem;margin-bottom:12px;">📖 ¿Qué significa cada fase?</h3>
+      <div style="padding:10px;background:#ffebee;border-radius:10px;margin-bottom:8px;"><p style="font-size:0.85rem;"><strong>🩸 Menstrual:</strong> Hormonas bajas. Descanso, calor, magnesio. Tu invierno.</p></div>
+      <div style="padding:10px;background:#e8f5e9;border-radius:10px;margin-bottom:8px;"><p style="font-size:0.85rem;"><strong>🌱 Folicular:</strong> Energía sube. Deporte, proyectos, socializar. Tu primavera.</p></div>
+      <div style="padding:10px;background:#fff3e0;border-radius:10px;margin-bottom:8px;"><p style="font-size:0.85rem;"><strong>☀️ Ovulación:</strong> Pico. Confianza, libido, fertilidad alta. Tu verano.</p></div>
+      <div style="padding:10px;background:#e3f2fd;border-radius:10px;"><p style="font-size:0.85rem;"><strong>🌙 Lútea:</strong> Progesterona sube. Autocuidado, paciencia, carbos. Tu otoño.</p></div>
+    </div>
+
+    <button class="share-btn" onclick="shareCalcResult()">📲 Compartir resultado</button>
+    <button class="share-btn" onclick="recalculate()" style="margin-top:8px;">🔄 Recalcular con otras fechas</button>
+
+    <div class="cta-box">
+      <h3>¿Quieres tracking diario?</h3>
+      <p>En WELO trackeas tu ciclo, registras síntomas, y recibes tips personalizados cada día según tu fase.</p>
+      <a href="index.html">Probar WELO gratis →</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 WELO — Barcelona • <a href="landing.html">Inicio</a> • <a href="biblioteca.html">Biblioteca</a></p>
+  <p style="margin-top:8px;">Esta calculadora es informativa. No reemplaza consejo médico.</p>
+</footer>
+
+<script>
+function calculateCycle() {
+  const lp = document.getElementById('calc-lastperiod').value;
+  const cl = parseInt(document.getElementById('calc-cyclelength').value) || 28;
+  const pd = parseInt(document.getElementById('calc-periodduration').value) || 5;
+  
+  if(!lp) { alert('Selecciona la fecha de tu último periodo'); return; }
+  
+  const lastPeriod = new Date(lp);
+  const nextPeriod = new Date(lastPeriod); nextPeriod.setDate(nextPeriod.getDate() + cl);
+  const ovulation = new Date(nextPeriod); ovulation.setDate(ovulation.getDate() - 14);
+  const fertileStart = new Date(ovulation); fertileStart.setDate(fertileStart.getDate() - 5);
+  const fertileEnd = new Date(ovulation); fertileEnd.setDate(fertileEnd.getDate() + 1);
+  const today = new Date(); today.setHours(0,0,0,0);
+  
+  const diffDays = Math.floor((today - lastPeriod) / 86400000);
+  const cycleDay = ((diffDays % cl) + cl) % cl + 1;
+  
+  let currentPhase, phaseColor;
+  if(cycleDay <= pd) { currentPhase = 'Menstrual'; phaseColor = '#ef5350'; }
+  else if(cycleDay < cl-14-1) { currentPhase = 'Folicular'; phaseColor = '#4caf50'; }
+  else if(cycleDay >= cl-14-1 && cycleDay <= cl-14+1) { currentPhase = 'Ovulación'; phaseColor = '#ff9800'; }
+  else { currentPhase = 'Lútea'; phaseColor = '#2196f3'; }
+
+  const fmt = d => d.toLocaleDateString('es-ES',{day:'numeric',month:'short'});
+  const daysUntilPeriod = Math.ceil((nextPeriod - today) / 86400000);
+  const daysUntilOv = Math.ceil((ovulation - today) / 86400000);
+
+  document.getElementById('results-list').innerHTML = `
+    <div class="result-item" style="background:#ffebee;"><div class="icon">🩸</div><div class="info"><h4>Próximo periodo</h4><p>${fmt(nextPeriod)} (en ${daysUntilPeriod} días)</p></div></div>
+    <div class="result-item" style="background:#fff3e0;"><div class="icon">☀️</div><div class="info"><h4>Ovulación estimada</h4><p>${fmt(ovulation)} ${daysUntilOv>0?'(en '+daysUntilOv+' días)':'(ya pasó este ciclo)'}</p></div></div>
+    <div class="result-item" style="background:#e8f5e9;"><div class="icon">🌱</div><div class="info"><h4>Ventana fértil</h4><p>${fmt(fertileStart)} — ${fmt(fertileEnd)}</p></div></div>
+    <div class="result-item" style="background:#f3e5f5;"><div class="icon">📍</div><div class="info"><h4>Hoy: Día ${cycleDay} — Fase ${currentPhase}</h4><p>Ciclo de ${cl} días</p></div></div>
+  `;
+
+  // Phase bar
+  const menPct = Math.round((pd/cl)*100);
+  const folPct = Math.round(((cl-14-1-pd)/cl)*100);
+  const ovPct = Math.round((3/cl)*100);
+  const lutPct = 100 - menPct - folPct - ovPct;
+  document.getElementById('phase-bar').innerHTML = `
+    <div style="width:${menPct}%;background:#ef5350;"></div>
+    <div style="width:${folPct}%;background:#4caf50;"></div>
+    <div style="width:${ovPct}%;background:#ff9800;"></div>
+    <div style="width:${lutPct}%;background:#2196f3;"></div>
+  `;
+
+  document.getElementById('today-info').innerHTML = `
+    <div style="text-align:center;">
+      <p style="font-size:0.8rem;color:var(--text-light);">Estás en</p>
+      <p style="font-size:2rem;font-weight:800;color:${phaseColor};">Día ${cycleDay}</p>
+      <p style="font-size:1.1rem;font-weight:600;">Fase ${currentPhase}</p>
+    </div>
+  `;
+
+  document.getElementById('results').style.display = 'block';
+  document.getElementById('form-card').style.display = 'none';
+}
+
+function recalculate() {
+  document.getElementById('results').style.display = 'none';
+  document.getElementById('form-card').style.display = 'block';
+}
+
+function shareCalcResult() {
+  const text = `📅 Mi ciclo según WELO:\nCalculé mi próximo periodo y ovulación gratis 🩸\n👉 weloapp.com/calculadora-ciclo\n#WELO #CicloMenstrual`;
+  if(navigator.share) navigator.share({title:'Mi ciclo',text}).catch(()=>{});
+  else { navigator.clipboard.writeText(text); alert('Copiado!'); }
+}
+
+// Set default date to 14 days ago
+const d=new Date();d.setDate(d.getDate()-14);
+document.getElementById('calc-lastperiod').value=d.toISOString().split('T')[0];
+</script>
+</body>
+</html>
