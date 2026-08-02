@@ -91,7 +91,18 @@ const wouldYouRather = [
   ['Relación pública (todo en redes)','Relación 100% privada'],
   ['Revivir su primer beso cada día','Revivir su mejor cita cada año'],
   ['Conocer el futuro de su relación','No saber nada pero elegir libremente'],
-  ['Siempre tener la última palabra','Que siempre te dé la razón']
+  ['Siempre tener la última palabra','Que siempre te dé la razón'],
+  ['Poder cocinar cualquier plato perfectamente','Que tu pareja cocine siempre para ti'],
+  ['Viajar solos sin plan','Viaje planificado con guía'],
+  ['Ser famosos como pareja','Ser completamente anónimos'],
+  ['Tener gemelos','Tener 4 hijos separados'],
+  ['Vivir 200 años juntos','Vivir 80 pero revivir los mejores momentos'],
+  ['Que tu ex te vea feliz','Nunca volver a saber de tu ex'],
+  ['Leer los pensamientos de tu pareja 1 día','Que lea los tuyos 1 día'],
+  ['Perder todas las fotos juntos','Perder todos los regalos que se han dado'],
+  ['Pareja que ronca pero es cariñosa','Pareja silenciosa pero distante en la noche'],
+  ['Siempre elegir el restaurante','Que siempre elija tu pareja'],
+  ['Una carta de amor cada mes','Un viaje sorpresa cada año']
 ];
 
 function gameWouldYouRather() {

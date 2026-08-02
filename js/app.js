@@ -363,7 +363,27 @@ const datosCuriosos = [
   "Las parejas que se tocan casualmente (manos, hombros) reportan más confianza. 🤝",
   "Reírse juntos durante un conflicto reduce la tensión en 40%. 😄",
   "El contacto piel con piel reduce la percepción del dolor. 🩹",
-  "Las parejas con rituales (café juntos, paseo nocturno) duran más. ☕"
+  "Las parejas con rituales (café juntos, paseo nocturno) duran más. ☕",
+  "Las mujeres producen ~450 periodos en su vida (3,500 días). 📊",
+  "Tu ciclo cambia tu voz, olfato y hasta creatividad. 🎨",
+  "Durante la ovulación las pupilas se dilatan al ver a la pareja. 👁️",
+  "El olfato femenino es 10,000x más sensible en ovulación. 👃",
+  "El cortisol baja 50% tras 10 min de caricias. 💆",
+  "70% de los conflictos de pareja son perpetuos (y está bien). 🔄",
+  "El enamoramiento dura ~18 meses. El amor real empieza después. 💕",
+  "Las parejas que duermen tocándose reportan más felicidad. 🛏️",
+  "El humor compartido es el predictor #1 de relaciones largas. 😂",
+  "Un 'te quiero' genuino activa el sistema de recompensa cerebral como la comida. 🧠",
+  "Las parejas que meditan juntas sincronizan sus ondas cerebrales. 🧘",
+  "El olor de tu pareja reduce el estrés más que cualquier perfume. 👃",
+  "Las parejas que tienen mascota reportan 22% menos estrés. 🐶",
+  "Tomarse de la mano sincroniza la respiración y el ritmo cardíaco. ❤️",
+  "Las primeras 4 horas después de un conflicto son las más importantes para reparar. ⏰",
+  "El 80% de las parejas felices tienen al menos 1 ritual diario compartido. 🌅",
+  "Tu cerebro no distingue entre dolor emocional y físico. El rechazo DUELE. 💔",
+  "Las parejas que expresan gratitud tienen 50% menos probabilidad de separarse. 🙏",
+  "Cenar sin celular mejora la percepción de la calidad de la conversación en 65%. 📵",
+  "Un conflicto resuelto fortalece más la relación que no haber peleado nunca. 💪"
 ];
 
 const mensajesElla = [
@@ -373,7 +393,15 @@ const mensajesElla = [
   "Tu ciclo es un superpoder. 💪",
   "Hoy mereces descanso sin culpa. ☁️",
   "No necesitas ser productiva para tener valor. 🌺",
-  "Lo que sientes es válido, siempre. 💗"
+  "Lo que sientes es válido, siempre. 💗",
+  "Pedir ayuda no es debilidad, es inteligencia. 🧠",
+  "Tu energía fluctúa y eso es perfecto. 🌊",
+  "Hoy eres exactamente quien necesitas ser. ✨",
+  "No tienes que tener todo resuelto hoy. 🌙",
+  "Tu intuición sabe más de lo que crees. 🔮",
+  "Está bien no estar bien. Mañana será diferente. 🌅",
+  "Mereces amor sin condiciones. Empezando por el tuyo. 💕",
+  "Tu valor no depende de cuánto haces por otros. 🌟"
 ];
 
 const insightsEl = [
@@ -383,7 +411,15 @@ const insightsEl = [
   "Un 'lo siento' sin excusas vale más que mil justificaciones.",
   "Tu presencia tranquila vale más que intentar 'arreglar' todo.",
   "No intentes 'ganar'. Intenten ganar JUNTOS contra el problema.",
-  "Ella no quiere que la salves. Quiere que la acompañes."
+  "Ella no quiere que la salves. Quiere que la acompañes.",
+  "Preguntar '¿cómo te puedo ayudar?' es más poderoso que adivinar.",
+  "El silencio cómodo es intimidad. No todo necesita palabras.",
+  "Admitir 'no sé qué hacer' es más valiente que fingir que sí.",
+  "Lo que ella siente HOY no es lo que sentirá MAÑANA. Ten paciencia.",
+  "Un abrazo de 20 segundos arregla más que un discurso de 20 minutos.",
+  "Cuando dice 'estoy bien' pero no parece: pregunta UNA vez más. Con cariño.",
+  "Tu atención sin celular vale más que cualquier regalo.",
+  "Recordar detalles pequeños que ella dijo = te escucho = te amo."
 ];
 
 const preguntasDelDia = [
@@ -411,7 +447,22 @@ const preguntasDelDia = [
   "¿Qué plan te gustaría hacer este fin de semana? 🗓️",
   "¿Hay algún tema que deberíamos hablar y no lo hacemos? 💬",
   "¿Qué es lo más valiente que has hecho por nosotros? 💪",
-  "Si tuviéramos un día sin responsabilidades, ¿qué haríamos? 🌈"
+  "Si tuviéramos un día sin responsabilidades, ¿qué haríamos? 🌈",
+  "¿Qué película describe nuestra relación? 🎬",
+  "¿Cuál es tu lugar favorito para estar conmigo? 📍",
+  "¿Qué es lo más gracioso que me has visto hacer? 🤣",
+  "¿Hay algo que siempre quisiste decirme y no te atreviste? 🫣",
+  "¿Cuál crees que es nuestro superpoder como pareja? ⚡",
+  "¿Qué harías si te dijera que nos vamos de viaje mañana? ✈️",
+  "¿Qué momento juntos te gustaría fotografiar y nunca olvidar? 📷",
+  "¿Cuándo te sentiste más orgullos@ de nosotros? 🏆",
+  "¿Qué es lo primero que piensas al despertar? ☀️",
+  "¿Hay algo de ti que crees que no conozco? 🔮",
+  "¿Cuál es el mejor consejo de pareja que te han dado? 💡",
+  "¿Qué tradición te gustaría que tuviéramos? 🎄",
+  "¿Qué nota del 1 al 10 le pondrías a esta semana juntos? 📊",
+  "¿Cuál es tu love language y sientes que te lo doy? 💝",
+  "¿Qué quieres que sigamos haciendo SIEMPRE? ♾️"
 ];
 
 const retos = [
@@ -444,7 +495,27 @@ const retos = [
   "Míralo/a a los ojos 60 segundos sin hablar 👁️",
   "Cuéntale algo de tu infancia que no sepa 🧒",
   "Proponle que elija la película de hoy (sin opinar) 🎬",
-  "Dile en voz alta por qué estás orgullos@ de la relación 🏆"
+  "Dile en voz alta por qué estás orgullos@ de la relación 🏆",
+  "Despierta 10 min antes y prepárale el desayuno 🥞",
+  "Mándale un audio de 1 min diciendo lo que sientes 🎤",
+  "Hoy haz TODO lo que te pida sin quejarte 😇",
+  "Escríbele 5 cosas que amas de su personalidad ✍️",
+  "Sorpréndele con su snack favorito cuando no lo espere 🍫",
+  "Proponle una actividad que NUNCA hayan hecho juntos 🆕",
+  "Dile cuál fue el momento exacto en que supiste que la/lo amabas 💘",
+  "Haz contacto físico casual 5 veces hoy (mano, hombro, beso) 🤝",
+  "Pregúntale: ¿qué puedo hacer mejor como pareja? 🌱",
+  "Organiza una noche de juegos de mesa o cartas 🃏",
+  "Dile 'te quiero' de 3 formas diferentes hoy 💕",
+  "Proponle un paseo sin destino y sin celular 🚶",
+  "Háblale de un miedo que no le hayas contado 🫣",
+  "Dedícale 5 min de atención TOTAL sin distracciones 🧘",
+  "Recuérdale algo bonito que dijo y que tú no olvidaste 💎",
+  "Cocinen juntos algo nuevo (pueden seguir un video) 👨‍🍳",
+  "Mándale una foto random de algo que te recordó a ella/él 📱",
+  "Pregúntale: si pudiéramos viajar mañana, ¿a dónde? ✈️",
+  "Dale un beso en la frente antes de dormir 😘",
+  "Dile: hoy quiero que sepas que no te doy por sentad@ 🌟"
 ];
 
 // Refresh functions
