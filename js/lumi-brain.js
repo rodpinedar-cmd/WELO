@@ -90,6 +90,32 @@ function getLumiResponse(question) {
     return "¡Es finde! 🎉 Ideas: escapada a Costa Brava (1h), atardecer en Bunkers, brunch largo, o maratón de pelis con fort de cobijas. ¿Activos o relax?";
   }
 
+  // ANNIVERSARY / DATES
+  if(q.includes('aniversario') || q.includes('cumpleaños') || q.includes('especial') || q.includes('sorpresa')) {
+    return "Ideas para sorprender: carta escrita a mano (gratis y poderosa), album de fotos de ustedes, cena casera con velas, playlist con las canciones de su historia, o un día entero planeado por ti sin que sepa qué viene. Lo especial es el DETALLE, no el precio. 🎁💕";
+  }
+
+  // DISTANCE / LONG DISTANCE
+  if(q.includes('distancia') || q.includes('lejos') || q.includes('extrañ')) {
+    return "Para parejas a distancia: videollamada con juego (Verdad o Reto funciona bien), ver la misma peli a la vez, mandarse un voice note de 1 min diciendo lo que admiran, o planear el próximo encuentro (tener algo que esperar es clave). 📱💕";
+  }
+
+  // BOREDOM / NOTHING TO DO
+  if(q.includes('aburrid') || q.includes('nada que hacer') || q.includes('qué hacemos')) {
+    const options = ['Jueguen ¿Quién es más probable?','Hagan el Match Diario','Cocinen algo nuevo juntos','Paseo sin celular por 20 min','Fort de cobijas + peli','Completen un reto juntos','Hagan bucket list de sueños'];
+    return options[Math.floor(Math.random()*options.length)] + " 🎯";
+  }
+
+  // GRATITUDE
+  if(q.includes('gracias') || q.includes('agradec') || q.includes('positiv')) {
+    return "La gratitud es el superpoder de las relaciones. Práctica diaria: antes de dormir, dile 1 cosa específica que agradeces de hoy. 'Gracias por cocinar' vale más que 'gracias por todo'. Lo específico = lo sincero. 🙏✨";
+  }
+
+  // SELF CARE
+  if(q.includes('autocuidado') || q.includes('cuidar') || q.includes('yo') || q.includes('solo')) {
+    return "Cuidarte a ti mism@ no es egoísmo — es necesario para dar lo mejor en la relación. Ideas: baño largo, caminar sola/o, journaling, llamar a un amigo, leer sin culpa, o simplemente NO hacer nada por 30 min. 🧘";
+  }
+
   // DEFAULT (catch-all based on context)
   if(streak >= 14) return `¡${streak} días de racha! Están increíbles. 🔥 ¿En qué puedo ayudarles hoy? Puedo recomendar planes, juegos, o tips de relación.`;
   if(done.length >= 5) return `¡Ya completaron ${done.length} planes juntos! Eso es genial. ¿Quieren uno nuevo para esta semana? Díganme qué mood tienen. ✨`;

@@ -30,7 +30,12 @@ const thisOrThat = [
   ['🚗 Road trip','✈️ Volar'],['🎮 Videojuegos','🎲 Board games'],['💐 Flores','🍫 Chocolate'],
   ['👫 Doble cita','👩‍❤️‍👨 Solo nosotros'],['🎪 Feria','🎨 Museo'],
   ['🍷 Vino','🍺 Cerveza'],['📸 Fotos','🎥 Videos'],['🌊 Piscina','🏊 Mar'],
-  ['🎄 Navidad','🎆 Año nuevo'],['🛋️ Netflix','🎬 Cine']
+  ['🎄 Navidad','🎆 Año nuevo'],['🛋️ Netflix','🎬 Cine'],
+  ['🎬 Netflix','📖 Leer'],['🍝 Cocinar en casa','🍽️ Pedir a domicilio'],['🌄 Amanecer en la montaña','🌊 Atardecer en la playa'],
+  ['💌 Carta escrita','💬 Mensaje largo'],['🎁 Dar regalos','🤗 Recibir regalos'],['🏠 Vivir en el campo','🏙️ Vivir en ciudad'],
+  ['👨‍👩‍👧 Familia grande','👫 Solo nosotros dos'],['🚀 Viajar al espacio','🏝️ Isla privada'],['🎤 Ser cantante','🎬 Ser actor'],
+  ['📱 Sin redes 1 semana','📵 Sin móvil 1 día'],['🧁 Postre primero','🥗 Ensalada primero'],['🐈 3 gatos','🐕 3 perros'],
+  ['🎪 Circo','🎡 Parque de atracciones'],['🏋️ Gym juntos','🧘 Yoga juntos'],['🎂 Fiesta grande','🕯️ Cena íntima']
 ];
 let totIdx=0, totMatches=0;
 

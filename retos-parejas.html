@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>50+ Retos para Parejas — Generador Gratis | WELO</title>
+<meta name="description" content="Generador de retos para parejas: comunicación, románticos, atrevidos, activos y bienestar. Nuevo reto al instante. Gratis y sin registro.">
+<meta name="keywords" content="retos para parejas, retos pareja, retos románticos, retos divertidos pareja, retos comunicación pareja, retos en pareja, desafíos para parejas">
+<meta property="og:title" content="50+ Retos para Parejas — Generador Gratis | WELO">
+<meta property="og:description" content="Generador de retos para parejas: comunicación, románticos, atrevidos, activos y bienestar. Nuevo reto al instante.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://rodpinedar-cmd.github.io/WELO/retos-parejas.html">
+<link rel="canonical" href="https://rodpinedar-cmd.github.io/WELO/retos-parejas.html">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Generador de Retos para Parejas — WELO",
+  "description": "Generador gratuito de retos para parejas: comunicación, románticos, atrevidos, activos y bienestar. Nuevo reto al instante.",
+  "url": "https://rodpinedar-cmd.github.io/WELO/retos-parejas.html",
+  "applicationCategory": "LifestyleApplication",
+  "operatingSystem": "Web",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" }
+}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{--pink:#ff6b9d;--dark-pink:#c44569;--light:#fef0f5;--text:#2d3436;--text-light:#636e72;}
+body{font-family:'Inter',sans-serif;color:var(--text);background:var(--light);min-height:100vh;}
+.container{max-width:650px;margin:0 auto;padding:24px;}
+nav{background:white;padding:16px 24px;border-bottom:1px solid #f0f0f0;display:flex;justify-content:space-between;align-items:center;}
+.nav-logo{font-size:1.2rem;font-weight:900;background:linear-gradient(135deg,var(--pink),var(--dark-pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.nav-cta{padding:8px 20px;background:linear-gradient(135deg,var(--pink),var(--dark-pink));color:white;border-radius:50px;font-size:0.85rem;font-weight:600;text-decoration:none;}
+h1{font-size:1.8rem;font-weight:800;text-align:center;margin:32px 0 8px;}
+.subtitle{text-align:center;color:var(--text-light);margin-bottom:24px;}
+.card{background:white;border-radius:16px;padding:24px;margin-bottom:16px;box-shadow:0 2px 12px rgba(0,0,0,0.04);}
+.cat-pills{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:24px;}
+.pill{padding:10px 18px;border-radius:50px;border:2px solid #eee;background:white;font-size:0.85rem;font-weight:600;cursor:pointer;font-family:inherit;transition:all 0.2s;}
+.pill.active,.pill:hover{border-color:var(--pink);color:var(--pink);background:rgba(255,107,157,0.05);}
+.reto-display{min-height:180px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20px;}
+.reto-text{font-size:1.3rem;font-weight:700;line-height:1.5;margin-bottom:20px;}
+.reto-cat{font-size:0.75rem;color:var(--text-light);text-transform:uppercase;letter-spacing:1px;}
+.btn{display:block;width:100%;padding:16px;border:none;border-radius:50px;background:linear-gradient(135deg,var(--pink),var(--dark-pink));color:white;font-size:1.1rem;font-weight:700;cursor:pointer;font-family:inherit;margin-top:12px;}
+.btn:active{transform:scale(0.97);}
+.btn-outline{background:none;border:2px solid var(--pink);color:var(--dark-pink);}
+.counter{text-align:center;font-size:0.8rem;color:var(--text-light);margin-top:12px;}
+.cta-box{margin-top:24px;padding:24px;background:linear-gradient(135deg,var(--pink),var(--dark-pink));border-radius:16px;color:white;text-align:center;}
+.cta-box p{font-size:0.85rem;opacity:0.9;margin:8px 0 14px;}
+.cta-box a{display:inline-block;padding:12px 28px;background:white;color:var(--dark-pink);border-radius:50px;font-weight:700;text-decoration:none;}
+footer{text-align:center;padding:32px;color:var(--text-light);font-size:0.8rem;}
+footer a{color:var(--pink);}
+</style>
+</head>
+<body>
+<nav><a href="landing.html" class="nav-logo">✨ WELO</a><a href="index.html" class="nav-cta">Probar App</a></nav>
+<div class="container">
+  <h1>🎯 Retos para Parejas — Generador Gratis</h1>
+  <p class="subtitle">50+ retos diarios para fortalecer tu relación. Nuevo reto al instante.</p>
+  <div class="cat-pills">
+    <button class="pill active" onclick="setCat('all')">🌟 Todos</button>
+    <button class="pill" onclick="setCat('comunicacion')">💬 Comunicación</button>
+    <button class="pill" onclick="setCat('romantico')">🥰 Romántico</button>
+    <button class="pill" onclick="setCat('atrevido')">🔥 Atrevido</button>
+    <button class="pill" onclick="setCat('activo')">🏃 Activo</button>
+    <button class="pill" onclick="setCat('bienestar')">🧘 Bienestar</button>
+  </div>
+  <div class="card reto-display" id="r-display">
+    <p class="reto-text" id="r-text">Cargando...</p>
+    <p class="reto-cat" id="r-cat"></p>
+  </div>
+  <button class="btn" onclick="nextReto()">🔄 Otro reto</button>
+  <button class="btn btn-outline" onclick="shareReto()">📲 Compartir</button>
+  <p class="counter" id="counter"></p>
+  <div class="cta-box">
+    <h3>¿Quieres retos nuevos cada día?</h3>
+    <p>En WELO recibes retos diarios, preguntas, juegos y mucho más para tu relación.</p>
+    <a href="index.html">Probar WELO gratis →</a>
+  </div>
+</div>
+<footer><p>© 2026 WELO — <a href="landing.html">Inicio</a> • <a href="biblioteca.html">Biblioteca</a> • <a href="test-apego.html">Test Apego</a> • <a href="calculadora-ciclo.html">Calculadora</a></p>
+<div style="margin-top:16px;"><p style="font-size:0.75rem;color:#aaa;">Más herramientas:</p><p style="font-size:0.75rem;"><a href="calculadora-ciclo.html" style="color:#ff6b9d;margin-right:12px;">Calculadora Ciclo</a><a href="test-apego.html" style="color:#ff6b9d;margin-right:12px;">Test Apego</a><a href="preguntas-parejas.html" style="color:#ff6b9d;margin-right:12px;">Preguntas Parejas</a><a href="retos-parejas.html" style="color:#ff6b9d;margin-right:12px;">Retos Parejas</a><a href="planes-barcelona.html" style="color:#ff6b9d;margin-right:12px;">Planes BCN</a><a href="biblioteca.html" style="color:#ff6b9d;margin-right:12px;">Biblioteca</a><a href="landing.html" style="color:#ff6b9d;">Inicio</a></p></div>
+</footer>
+<script>
+const retos=[
+// COMUNICACIÓN (13)
+{t:'Dile 3 cosas que admiras sin que pregunte',c:'comunicacion'},
+{t:'Escucha 5 min sin interrumpir mientras te cuenta su día',c:'comunicacion'},
+{t:'Envíale un audio de 1 min diciendo lo que sientes por ella/él',c:'comunicacion'},
+{t:'Pregúntale "¿cómo te sientes DE VERDAD hoy?" y escucha sin juzgar',c:'comunicacion'},
+{t:'Dile una cosa que nunca le hayas dicho en voz alta',c:'comunicacion'},
+{t:'Cuéntale un miedo que tengas sobre la relación — con honestidad',c:'comunicacion'},
+{t:'Pídele feedback: "¿Qué puedo mejorar como pareja?"',c:'comunicacion'},
+{t:'Míralo/a a los ojos 2 min en silencio, sin reír',c:'comunicacion'},
+{t:'Dile cuál fue el momento del día en que más pensaste en ella/él',c:'comunicacion'},
+{t:'Escríbele 5 razones por las que te quedas, y léelas en voz alta',c:'comunicacion'},
+{t:'Cuéntale tu recuerdo favorito juntos con todo detalle',c:'comunicacion'},
+{t:'Dile algo que agradeces de esta semana — algo específico',c:'comunicacion'},
+{t:'Pregúntale qué necesita de ti ahora mismo y hazlo',c:'comunicacion'},
+// ROMÁNTICO (13)
+{t:'Prepárale el desayuno en la cama',c:'romantico'},
+{t:'Escríbele una carta a mano y déjala donde la encuentre',c:'romantico'},
+{t:'Ponle su canción favorita y sácala/o a bailar',c:'romantico'},
+{t:'Dale un abrazo de 30 segundos sin soltarte',c:'romantico'},
+{t:'Hazle un cumplido que no le hayas hecho antes',c:'romantico'},
+{t:'Planea una mini cita sorpresa para hoy (no importa si es simple)',c:'romantico'},
+{t:'Déjale una nota de amor escondida en su bolsillo o bolsa',c:'romantico'},
+{t:'Recrea su primera cita juntos lo más parecido posible',c:'romantico'},
+{t:'Dile "te amo" de 5 formas diferentes sin repetir palabras',c:'romantico'},
+{t:'Hazle un playlist con canciones que te recuerdan a ella/él',c:'romantico'},
+{t:'Cocínale su plato favorito esta noche',c:'romantico'},
+{t:'Tómale una foto cuando no esté mirando y mándala con un "así de guap@ te vi hoy"',c:'romantico'},
+{t:'Dedícale un poema o verso — inventado o de alguien más',c:'romantico'},
+// ATREVIDO (12)
+{t:'Beso de 30 segundos ahora mismo — sin pensar',c:'atrevido'},
+{t:'Masaje de 5 min donde ella/él quiera',c:'atrevido'},
+{t:'Dile al oído qué es lo que más te atrae de su cuerpo',c:'atrevido'},
+{t:'Mándale un mensaje subido de tono ahora (aunque estén juntos)',c:'atrevido'},
+{t:'Beso en el cuello lento y prolongado',c:'atrevido'},
+{t:'Describe tu fantasía favorita en voz alta — con detalles',c:'atrevido'},
+{t:'Quítale una prenda sin usar las manos',c:'atrevido'},
+{t:'Dile exactamente qué harías si tuvieran la casa sola ahora',c:'atrevido'},
+{t:'Pon una canción sensual y baila despacio con ella/él',c:'atrevido'},
+{t:'Mordisco suave en la oreja o el labio — tú eliges',c:'atrevido'},
+{t:'Míralo/a con deseo durante 10 segundos sin hablar',c:'atrevido'},
+{t:'Juego: cada uno dice un lugar donde le gustaría que le besaran',c:'atrevido'},
+// ACTIVO (12)
+{t:'Hagan 10 sentadillas juntos agarrados de las manos',c:'activo'},
+{t:'Bailen una canción completa sin parar',c:'activo'},
+{t:'Carrera de 50 metros — el que pierde paga un café',c:'activo'},
+{t:'Hagan un reto de flexiones: ¿quién hace más?',c:'activo'},
+{t:'Paseo de 20 min sin celular — solo ustedes y la calle',c:'activo'},
+{t:'Yoga en pareja: intenten 3 posturas juntos',c:'activo'},
+{t:'Guerra de cosquillas por 30 segundos — vale todo',c:'activo'},
+{t:'Aprendan un paso de baile nuevo de TikTok juntos',c:'activo'},
+{t:'Reto: mantengan el equilibrio sobre un pie mientras se besan',c:'activo'},
+{t:'Estiramiento en pareja: espalda con espalda, 2 min',c:'activo'},
+{t:'Plancha juntos: el que dure menos cocina la cena',c:'activo'},
+{t:'Hagan un circuito: 10 burpees, 20 jumping jacks, 15 abdominales — juntos',c:'activo'},
+// BIENESTAR (12)
+{t:'Mediten 5 min juntos — respiración sincronizada',c:'bienestar'},
+{t:'Journaling: escriban 3 cosas que agradecen del otro',c:'bienestar'},
+{t:'Desconecten los celulares por 1 hora juntos',c:'bienestar'},
+{t:'Tomen un baño o ducha relajante juntos',c:'bienestar'},
+{t:'Hagan respiración 4-7-8 juntos: inhala 4, retén 7, exhala 8',c:'bienestar'},
+{t:'Escriban cada uno 3 metas personales y compártanlas',c:'bienestar'},
+{t:'Preparen un té y charlen sin pantallas por 15 min',c:'bienestar'},
+{t:'Den un paseo por naturaleza sin hablar de trabajo',c:'bienestar'},
+{t:'Hagan body scan juntos: relajen cada parte del cuerpo empezando por los pies',c:'bienestar'},
+{t:'Lean un artículo juntos y comenten qué opinan',c:'bienestar'},
+{t:'Escuchen un podcast juntos y debatan después',c:'bienestar'},
+{t:'Escriban cada uno una carta de gratitud al otro — léanla en voz alta',c:'bienestar'}
+];
+let cat='all',shown=0;
+const catNames={all:'Todos',comunicacion:'Comunicación',romantico:'Romántico',atrevido:'Atrevido',activo:'Activo',bienestar:'Bienestar'};
+function getFiltered(){return cat==='all'?retos:retos.filter(r=>r.c===cat);}
+function nextReto(){
+  const f=getFiltered();
+  const r=f[Math.floor(Math.random()*f.length)];
+  document.getElementById('r-text').textContent=r.t;
+  document.getElementById('r-cat').textContent=catNames[r.c];
+  shown++;
+  document.getElementById('counter').textContent=`Retos vistos: ${shown} • Total disponibles: ${f.length}`;
+}
+function setCat(c){
+  cat=c;
+  document.querySelectorAll('.pill').forEach(p=>p.classList.remove('active'));
+  event.target.classList.add('active');
+  nextReto();
+}
+function shareReto(){
+  const text=document.getElementById('r-text').textContent+'\n\n— Reto generado con WELO 💕\n👉 weloapp.com/retos-parejas';
+  if(navigator.share)navigator.share({title:'Reto para parejas',text}).catch(()=>{});
+  else{navigator.clipboard.writeText(text);alert('¡Copiado!');}
+}
+nextReto();
+</script>
+</body>
+</html>
