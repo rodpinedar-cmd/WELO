@@ -166,7 +166,7 @@ const A={
 'sexo-4':{t:'Cómo mejorar la intimidad: 12 consejos de expertos',b:`
 <h2>La conexión emocional es la base del buen sexo</h2>
 <p>Las parejas con mejor vida sexual no son las que usan más "técnicas" — son las que tienen mejor comunicación emocional. La intimidad se construye fuera del dormitorio.</p>
-<img src="https://images.unsplash.com/photo-1522849696084-818b29dfe210?w=700&h=350&fit=crop" alt="mejorar intimidad pareja conexión emocional" style="width:100%;border-radius:12px;margin:20px 0;">
+<img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=700&h=350&fit=crop" alt="mejorar intimidad pareja conexión emocional" style="width:100%;border-radius:12px;margin:20px 0;">
 <h2>12 consejos que funcionan</h2>
 <p><strong>1. Comunicar deseos sin vergüenza:</strong> "Me gusta cuando..." es más poderoso que cualquier técnica. La vulnerabilidad es sexy.</p>
 <p><strong>2. Más preliminares:</strong> Mínimo 15-20 minutos. La excitación femenina necesita tiempo. No es un "paso previo" — ES parte del sexo.</p>
