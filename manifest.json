@@ -1,0 +1,23 @@
+{
+  "name": "WELO — We flow. We glow. We love.",
+  "short_name": "WELO",
+  "description": "La app que conecta tu ciclo con tu relación. Juegos, planes, bienestar.",
+  "start_url": "/WELO/index.html",
+  "scope": "/WELO/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#fef0f5",
+  "theme_color": "#ff6b9d",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
