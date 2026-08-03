@@ -1,10 +1,11 @@
 // WELO Service Worker — PWA offline + cache
-const CACHE_NAME = 'welo-v1';
+const CACHE_NAME = 'welo-v2';
 const ASSETS = [
   '/WELO/index.html',
   '/WELO/landing.html',
   '/WELO/css/app.css',
   '/WELO/css/mascot.css',
+  '/WELO/css/onboarding.css',
   '/WELO/js/data.js',
   '/WELO/js/app.js',
   '/WELO/js/games.js',
@@ -16,11 +17,24 @@ const ASSETS = [
   '/WELO/js/preferences.js',
   '/WELO/js/dailymatch.js',
   '/WELO/js/articles.js',
-  '/WELO/js/supabase.js'
+  '/WELO/js/supabase.js',
+  '/WELO/js/lumi-brain.js',
+  '/WELO/js/games-extra.js'
 ];
 
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(ASSETS)));
+  self.skipWaiting(); // Activate new SW immediately
+});
+
+// Clean old caches on activation
+self.addEventListener('activate', e => {
+  e.waitUntil(
+    caches.keys().then(keys =>
+      Promise.all(keys.filter(k => k !== CACHE_NAME).map(k => caches.delete(k)))
+    )
+  );
+  self.clients.claim(); // Take control of all open tabs
 });
 
 self.addEventListener('fetch', e => {
