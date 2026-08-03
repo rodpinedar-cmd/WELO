@@ -633,10 +633,17 @@ function renderLeaderboard() {
 }
 
 // Auto-init if profile exists
-if(getProfile()) {
-  document.getElementById('onboarding').style.display = 'none';
-  document.getElementById('app').style.display = 'block';
-  initApp();
+try {
+  if(getProfile()) {
+    document.getElementById('onboarding').style.display = 'none';
+    document.getElementById('app').style.display = 'block';
+    initApp();
+  }
+} catch(e) {
+  console.error('Init error:', e);
+  // Show onboarding if anything fails
+  document.getElementById('onboarding').style.display = 'flex';
+  document.getElementById('app').style.display = 'none';
 }
 // Inject Lumi SVG in onboarding mascots
 document.querySelectorAll('#onboarding .welo-mascot').forEach(el => {
