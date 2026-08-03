@@ -4,6 +4,7 @@ const A={
 <h2>Tu ciclo no es solo "tener el periodo"</h2>
 <p>El ciclo menstrual es un proceso de 4 fases que dura entre 21 y 35 días (28 en promedio). Cada fase tiene un perfil hormonal diferente que afecta tu energía, humor, piel, libido, creatividad e incluso cómo te relacionas con tu pareja.</p>
 <p>Entender tu ciclo es un superpoder: te permite anticipar cómo te sentirás, adaptar tu entrenamiento, nutrición y hasta planear mejor tus semanas.</p>
+<img src="https://images.unsplash.com/photo-1586105251261-72a756497a11?w=700&h=350&fit=crop" alt="fases ciclo menstrual mujer bienestar" style="width:100%;border-radius:12px;margin:20px 0;">
 
 <h2>1. Fase Menstrual (días 1-5)</h2>
 <p>Empieza el primer día de sangrado. Los estrógenos y progesterona están en su punto más bajo. Tu cuerpo está renovando el endometrio.</p>
@@ -37,6 +38,7 @@ const A={
 <p>La ovulación ocurre una vez por ciclo, generalmente 12-16 días antes del siguiente periodo. El óvulo vive solo 12-24 horas, pero los espermatozoides sobreviven hasta 5 días — por eso la "ventana fértil" es de unos 6 días.</p>
 
 <h2>Las 6 señales naturales</h2>
+<img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?w=700&h=350&fit=crop" alt="ovulación fertilidad señales ciclo" style="width:100%;border-radius:12px;margin:20px 0;">
 <p><strong>1. Moco cervical:</strong> Se vuelve transparente, elástico y resbaladizo — como clara de huevo crudo. Es la señal MÁS fiable que puedes observar sin herramientas.</p>
 <p><strong>2. Temperatura basal:</strong> Sube 0.3-0.5°C DESPUÉS de ovular (por la progesterona). Necesitas medirla al despertar, antes de moverte, con termómetro de 2 decimales.</p>
 <p><strong>3. Dolor mittelschmerz:</strong> Un pinchazo o molestia en un lado del abdomen bajo. No todas lo sienten, pero si lo notas, es bastante preciso.</p>
@@ -58,6 +60,7 @@ const A={
 <p>Un retraso de 1-5 días es completamente normal y no indica ningún problema. Los ciclos NO son perfectos — variaciones de hasta 7 días entre ciclos son frecuentes. Si pasa de 7 días sin posibilidad de embarazo, estas pueden ser las causas:</p>
 
 <h2>Las 10 causas más comunes</h2>
+<img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=700&h=350&fit=crop" alt="retraso periodo causas estrés salud" style="width:100%;border-radius:12px;margin:20px 0;">
 <p><strong>1. Estrés:</strong> El cortisol (hormona del estrés) inhibe la GnRH, que es la hormona que activa la ovulación. Sin ovulación, no hay periodo. Puede retrasarlo hasta 2 semanas o más.</p>
 <p><strong>2. Cambios de peso rápidos:</strong> Perder o ganar más de 5kg en poco tiempo desregula las hormonas reproductivas. La grasa corporal es necesaria para producir estrógenos.</p>
 <p><strong>3. Ejercicio excesivo:</strong> Entrenar mucho sin comer suficiente puede causar amenorrea (ausencia de periodo). Tu cuerpo "apaga" la reproducción si detecta que no hay suficientes recursos.</p>
@@ -82,6 +85,7 @@ const A={
 <p>Los cólicos son causados por prostaglandinas — sustancias que hacen que el útero se contraiga para expulsar el endometrio. Cuantas más prostaglandinas produces, más fuertes son las contracciones y más dolor sientes. El útero puede generar la misma presión que una serpiente constrictora.</p>
 
 <h2>8 remedios con evidencia científica</h2>
+<img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=700&h=350&fit=crop" alt="remedios cólicos menstruales yoga calor" style="width:100%;border-radius:12px;margin:20px 0;">
 <p><strong>1. Calor local:</strong> Una bolsa de agua caliente en el vientre bajo relaja los músculos uterinos igual que el ibuprofeno. 40°C durante 20 min. Parches de calor portátiles son ideales si estás fuera.</p>
 <p><strong>2. Jengibre:</strong> 250mg de extracto, 3 veces al día. Estudios demuestran que es tan efectivo como el ibuprofeno para reducir dolor menstrual. En infusión también funciona (2-3 tazas/día).</p>
 <p><strong>3. Magnesio:</strong> 300-400mg diarios, empezando 1 semana antes del periodo. El glicinato es la forma mejor absorbida. Relaja la musculatura lisa (incluido el útero) y mejora el sueño.</p>
@@ -97,6 +101,7 @@ const A={
 'ciclo-5':{t:'PMS vs PMDD: cuándo es normal y cuándo no',b:`
 <h2>No todo PMS es igual</h2>
 <p>El 80% de mujeres experimenta algún síntoma premenstrual. Para la mayoría es molesto pero manejable. Sin embargo, un 3-8% sufre PMDD (Trastorno Disfórico Premenstrual), que es mucho más severo y requiere atención médica.</p>
+<img src="https://images.unsplash.com/photo-1499209974431-9dddcece7f88?w=700&h=350&fit=crop" alt="PMS PMDD salud mental premenstrual" style="width:100%;border-radius:12px;margin:20px 0;">
 <h2>PMS (Síndrome Premenstrual)</h2>
 <p>Síntomas leves a moderados que aparecen 1-2 semanas antes del periodo: irritabilidad, hinchazón, antojos, sensibilidad en pechos, fatiga. Molestos pero no incapacitantes. Mejoran con ejercicio, nutrición y descanso.</p>
 <h2>PMDD (Trastorno Disfórico)</h2>
@@ -109,6 +114,7 @@ const A={
 <h2>¿Cómo afectan los anticonceptivos a tu ciclo natural?</h2>
 <p>Los anticonceptivos hormonales suprimen tu ciclo natural. El "periodo" con la píldora NO es un periodo real — es sangrado por deprivación de hormonas sintéticas. No ovulas, no tienes fases reales.</p>
 <h2>Métodos y sus efectos</h2>
+<img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=700&h=350&fit=crop" alt="anticonceptivos métodos salud reproductiva" style="width:100%;border-radius:12px;margin:20px 0;">
 <p><strong>Píldora combinada:</strong> Suprime ovulación completamente. Puede reducir cólicos, acné y sangrado. Al dejarla: 1-3 meses para regular (hasta 6 en algunos casos).</p>
 <p><strong>DIU hormonal (Mirena):</strong> Adelgaza el endometrio localmente. Muchas mujeres dejan de menstruar. No siempre suprime ovulación — puedes tener ciclo hormonal sin sangrado.</p>
 <p><strong>DIU de cobre:</strong> NO es hormonal. Tu ciclo sigue natural. Pero los periodos suelen ser más abundantes y con más cólicos, especialmente los primeros 3-6 meses.</p>
@@ -120,6 +126,7 @@ const A={
 <h2>Tu deseo sexual no es constante — y eso es normal</h2>
 <p>La libido femenina fluctúa con las hormonas a lo largo del ciclo. Entender este patrón te quita la culpa y mejora la comunicación con tu pareja.</p>
 <h2>Mapa de deseo por fase</h2>
+<img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=700&h=350&fit=crop" alt="libido deseo sexual pareja ciclo" style="width:100%;border-radius:12px;margin:20px 0;">
 <p><strong>Menstrual (días 1-5):</strong> Variable. Algunas mujeres sienten más deseo porque la oxitocina del orgasmo alivia cólicos. Otras están demasiado cansadas. Ambas opciones son normales.</p>
 <p><strong>Folicular (días 6-13):</strong> Sube progresivamente con los estrógenos. Más lubricación natural, mayor sensibilidad al tacto, fantasías más frecuentes.</p>
 <p><strong>Ovulación (días 14-16):</strong> PICO. Testosterona + estrógenos al máximo. Tu cuerpo quiere reproducirse biológicamente. Orgasmos más intensos, mayor atracción hacia tu pareja.</p>
@@ -131,6 +138,7 @@ const A={
 'sexo-2':{t:'10 beneficios del sexo para tu salud',b:`
 <h2>Más que placer: ciencia real</h2>
 <p>El sexo regular (solo o en pareja) tiene beneficios medibles para la salud física y mental:</p>
+<img src="https://images.unsplash.com/photo-1474552226712-ac0f0961a954?w=700&h=350&fit=crop" alt="beneficios sexo salud pareja intimidad" style="width:100%;border-radius:12px;margin:20px 0;">
 <p><strong>1. Reduce estrés:</strong> Baja el cortisol hasta un 50% después del orgasmo. Es literalmente un ansiolítico natural.</p>
 <p><strong>2. Fortalece el vínculo:</strong> La oxitocina liberada durante el orgasmo es la "hormona del apego". Hace que te sientas más conectada a tu pareja.</p>
 <p><strong>3. Mejora el sueño:</strong> La prolactina liberada post-orgasmo induce relajación profunda y somnolencia. Mejor que melatonina.</p>
@@ -146,6 +154,7 @@ const A={
 <h2>No es normal que duela — hay solución</h2>
 <p>El dolor o ardor durante la penetración (dispareunia) afecta al 10-20% de mujeres. No deberías "aguantarlo" — siempre tiene causa y casi siempre tiene solución.</p>
 <h2>Causas más comunes</h2>
+<img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=700&h=350&fit=crop" alt="salud sexual mujer ginecología" style="width:100%;border-radius:12px;margin:20px 0;">
 <p><strong>Sequedad vaginal:</strong> La causa #1. Puede ser por falta de excitación suficiente (preliminares cortos), fase lútea (menos lubricación natural), estrés, o anticonceptivos. Solución: lubricante a base de agua + más tiempo de preliminares.</p>
 <p><strong>Infecciones:</strong> Candidiasis (flujo blanco espeso + picor) o vaginosis bacteriana (olor fuerte + flujo gris). Requieren tratamiento médico.</p>
 <p><strong>Alergia al látex:</strong> Enrojecimiento e irritación después del sexo con condón. Prueba preservativos de poliuretano o poliisopreno.</p>
@@ -157,6 +166,7 @@ const A={
 'sexo-4':{t:'Cómo mejorar la intimidad: 12 consejos de expertos',b:`
 <h2>La conexión emocional es la base del buen sexo</h2>
 <p>Las parejas con mejor vida sexual no son las que usan más "técnicas" — son las que tienen mejor comunicación emocional. La intimidad se construye fuera del dormitorio.</p>
+<img src="https://images.unsplash.com/photo-1522849696084-818b29dfe210?w=700&h=350&fit=crop" alt="mejorar intimidad pareja conexión emocional" style="width:100%;border-radius:12px;margin:20px 0;">
 <h2>12 consejos que funcionan</h2>
 <p><strong>1. Comunicar deseos sin vergüenza:</strong> "Me gusta cuando..." es más poderoso que cualquier técnica. La vulnerabilidad es sexy.</p>
 <p><strong>2. Más preliminares:</strong> Mínimo 15-20 minutos. La excitación femenina necesita tiempo. No es un "paso previo" — ES parte del sexo.</p>
@@ -175,6 +185,7 @@ const A={
 <h2>No estás "rota" — hay explicación</h2>
 <p>El bajo deseo sexual es el problema sexual más reportado en mujeres (y cada vez más en hombres). La buena noticia: casi siempre tiene causa identificable y solución.</p>
 <h2>Las 5 causas principales</h2>
+<img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?w=700&h=350&fit=crop" alt="deseo sexual bajo causas soluciones pareja" style="width:100%;border-radius:12px;margin:20px 0;">
 <p><strong>1. Hormonas:</strong> Anticonceptivos (especialmente la píldora) reducen testosterona libre hasta un 60%. Fase lútea tardía. Postparto (prolactina alta). Perimenopausia.</p>
 <p><strong>2. Estrés crónico:</strong> Cortisol alto = libido baja. Tu cuerpo prioriza "sobrevivir" sobre "reproducirse". Trabajo, dinero, hijos — todo suma.</p>
 <p><strong>3. Medicación:</strong> Los SSRI (antidepresivos como sertralina, fluoxetina) reducen deseo y capacidad de orgasmo en el 40-70% de usuarios. Habla con tu médico sobre alternativas.</p>
@@ -212,6 +223,7 @@ const A={
 <h2>¿Por qué no nos sentimos amados igual?</h2>
 <p>Gary Chapman descubrió que las personas expresan y reciben amor de 5 formas distintas. El problema en muchas parejas: amas a tu pareja en TU lenguaje en vez del SUYO. Es como hablarle en francés a alguien que solo entiende español — el amor está ahí, pero no se recibe.</p>
 <h2>Los 5 lenguajes</h2>
+<img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=700&h=350&fit=crop" alt="lenguajes del amor pareja comunicación" style="width:100%;border-radius:12px;margin:20px 0;">
 <p><strong>1. Palabras de Afirmación:</strong> "Te quiero", "Estoy orgullosa de ti", "Gracias por estar". Estas personas NECESITAN escuchar que son valoradas. El silencio las mata.</p>
 <p><strong>2. Actos de Servicio:</strong> Cocinar sin que lo pidan, hacer un recado, arreglar algo. Para ellos, las acciones pesan infinitamente más que las palabras.</p>
 <p><strong>3. Regalos:</strong> No es materialismo — es el DETALLE de haber pensado en el otro. Una flor del camino vale más que un regalo caro sin intención.</p>
@@ -224,6 +236,7 @@ const A={
 'pareja-2':{t:'Los 4 Jinetes del Apocalipsis de Gottman',b:`
 <h2>Los patrones que predicen el divorcio con 94% de precisión</h2>
 <p>El Dr. John Gottman, después de observar a miles de parejas durante 40 años, identificó 4 patrones de comunicación que destruyen relaciones. Los llama "Los 4 Jinetes":</p>
+<img src="https://images.unsplash.com/photo-1501901609772-df0848060b33?w=700&h=350&fit=crop" alt="comunicación pareja conflictos gottman" style="width:100%;border-radius:12px;margin:20px 0;">
 <h2>1. Crítica</h2>
 <p>Atacar el CARÁCTER en vez del COMPORTAMIENTO. "Eres tan egoísta" vs "Me gustaría que consideraras mis planes también". La diferencia es sutil pero devastadora. La crítica dice "TÚ estás mal". La queja dice "esta SITUACIÓN me afecta".</p>
 <h2>2. Desprecio</h2>
@@ -239,6 +252,7 @@ const A={
 <h2>El conflicto NO es el problema</h2>
 <p>Todas las parejas pelean — incluso las más felices. La diferencia entre parejas que duran y las que no es CÓMO manejan esos conflictos. Los primeros 3 minutos de una discusión predicen cómo terminará.</p>
 <h2>Reglas para pelear limpio</h2>
+<img src="https://images.unsplash.com/photo-1504439904031-93ded9f93e4e?w=700&h=350&fit=crop" alt="resolver conflictos pareja comunicación" style="width:100%;border-radius:12px;margin:20px 0;">
 <p><strong>1. Empezar suave:</strong> "Me siento frustrada cuando..." vs "¡Tú siempre...!". El inicio suave permite que el otro escuche sin ponerse a la defensiva.</p>
 <p><strong>2. Hacer reparaciones rápido:</strong> "Perdona, empecé mal. Déjame intentar de nuevo." Las reparaciones son el predictor #1 de relaciones exitosas — importa más que no pelear.</p>
 <p><strong>3. Aceptar influencia:</strong> Estar dispuesto a ceder en algo. No buscar "ganar". Buscar la solución que funcione para AMBOS.</p>
@@ -251,6 +265,7 @@ const A={
 <h2>Tu infancia programa cómo te relacionas</h2>
 <p>La teoría del apego explica por qué nos comportamos de cierta forma en relaciones. Nuestro estilo se formó en la infancia basado en cómo respondieron nuestros cuidadores a nuestras necesidades emocionales.</p>
 <h2>Los 3 estilos principales</h2>
+<img src="https://images.unsplash.com/photo-1516585427167-9f4af9627e6c?w=700&h=350&fit=crop" alt="estilos apego ansioso evitante seguro relación" style="width:100%;border-radius:12px;margin:20px 0;">
 <p><strong>Seguro (50-60%):</strong> Se sienten cómodos con intimidad E independencia. Comunican necesidades sin drama. Confían. No necesitan validación constante ni huyen de la cercanía.</p>
 <p><strong>Ansioso (20-25%):</strong> Necesitan validación frecuente. Temen el abandono. Interpretan distancia como rechazo. Pueden ser "intensos" o "pegajosos". Se activan cuando sienten que su pareja se aleja.</p>
 <p><strong>Evitante (20-25%):</strong> Valoran independencia excesiva. Les cuesta la vulnerabilidad. Se alejan cuando la relación se siente "demasiado cercana". Necesitan mucho espacio.</p>
@@ -263,6 +278,7 @@ const A={
 'pareja-5':{t:'La regla 5:1: el secreto de las parejas felices',b:`
 <h2>5 positivas por cada 1 negativa</h2>
 <p>Gottman descubrió que las parejas estables y felices tienen una ratio de mínimo 5 interacciones positivas por cada 1 negativa. Las parejas que se divorcian están en 0.8:1 o menos.</p>
+<img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?w=700&h=350&fit=crop" alt="parejas felices interacciones positivas" style="width:100%;border-radius:12px;margin:20px 0;">
 <h2>¿Qué cuenta como "interacción positiva"?</h2>
 <ul><li>Mostrar interés genuino en su día</li><li>Hacer reír</li><li>Contacto físico casual (mano en la espalda, beso al pasar)</li><li>Decir "te quiero" sin razón especial</li><li>Apoyar una meta o sueño</li><li>Expresar admiración ("me gusta cómo manejas...")</li><li>Recordar algo que te contó y preguntar después</li><li>Elegir estar presente en vez de con el celular</li></ul>
 <h2>No se trata de evitar conflictos</h2>
@@ -273,6 +289,7 @@ const A={
 <h2>¿Es amor o es necesidad?</h2>
 <p>La dependencia emocional no es "amar mucho" — es necesitar al otro para sentirte bien contigo misma/o. Es una trampa que se disfraza de amor intenso.</p>
 <h2>Señales de alerta</h2>
+<img src="https://images.unsplash.com/photo-1499209974431-9dddcece7f88?w=700&h=350&fit=crop" alt="dependencia emocional autoestima terapia" style="width:100%;border-radius:12px;margin:20px 0;">
 <ul><li>Ansiedad constante sobre el estado de la relación</li><li>Necesitar validación de tu pareja para sentirte bien</li><li>Miedo extremo al abandono (desproporcionado a la situación real)</li><li>Dejar de ver amigos, familia, hobbies por la relación</li><li>Sentir que sin la otra persona "no eres nada"</li><li>Tolerar comportamientos inaceptables por miedo a estar sola/o</li><li>Tu humor depende completamente de cómo está la relación ese día</li></ul>
 <h2>Cómo trabajarlo</h2>
 <p><strong>1. Terapia individual:</strong> Es el camino más efectivo. Un profesional te ayuda a identificar el origen (generalmente infancia).</p>
@@ -282,6 +299,7 @@ const A={
 `},
 'belleza-1':{t:'Skincare según tu ciclo: rutina adaptada',b:`
 <h2>Tu piel cambia cada semana — tu rutina debería también</h2>
+<img src="https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=700&h=350&fit=crop" alt="skincare ciclo menstrual rutina facial hormonal" style="width:100%;border-radius:12px;margin:20px 0;">
 <p><strong>Menstrual:</strong> Piel seca y sensible por hormonas bajas. Usa hidratantes ricos (ácido hialurónico, ceramidas). Evita ácidos fuertes y retinol. Mascarillas nutritivas. Es momento de mimar, no de tratar agresivamente.</p>
 <p><strong>Folicular:</strong> La piel se normaliza, brillo natural vuelve. Buen momento para exfoliar suavemente (AHA 5-10% o BHA 2%). Tu piel absorbe mejor los activos — aprovecha para serums de vitamina C.</p>
 <p><strong>Ovulación:</strong> Tu MEJOR momento. Piel luminosa, poros menos visibles, hidratación natural alta. Necesitas menos maquillaje. Ideal para fotos, eventos, citas.</p>
@@ -309,6 +327,7 @@ const A={
 `},
 'deporte-1':{t:'Cycle Syncing: entrena inteligente, no más duro',b:`
 <h2>Tu rendimiento varía con tu ciclo</h2>
+<img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?w=700&h=350&fit=crop" alt="cycle syncing ejercicio mujeres entrenamiento fase" style="width:100%;border-radius:12px;margin:20px 0;">
 <p>Entrenar igual todos los días ignora tu biología. Adaptar la intensidad a cada fase da mejores resultados, menos lesiones y más consistencia a largo plazo.</p>
 <p><strong>Menstrual (días 1-5):</strong> Recovery. Yoga restaurativo, caminatas, estiramientos. Tu cuerpo recupera. No es momento de PRs ni de forzar. Escúchalo.</p>
 <p><strong>Folicular (días 6-13):</strong> ¡Tu momento! Los estrógenos te dan fuerza y resistencia extra. HIIT, pesas pesadas, sprints. Ganancia muscular óptima. Aprovecha para probar nuevos ejercicios.</p>
@@ -317,6 +336,7 @@ const A={
 `},
 'deporte-2':{t:'Deporte en pareja: por qué funciona',b:`
 <h2>Entrenar juntos = más atracción</h2>
+<img src="https://images.unsplash.com/photo-1522163182402-834f871fd851?w=700&h=350&fit=crop" alt="deporte pareja escalada actividades juntos" style="width:100%;border-radius:12px;margin:20px 0;">
 <p>Las parejas que hacen ejercicio juntas reportan +67% de satisfacción relacional. ¿Por qué? La dopamina y endorfinas que liberas durante el ejercicio, tu cerebro las asocia con la persona que está contigo. Literalmente te hace MÁS atraída/o a tu pareja.</p>
 <h2>Ideas por nivel</h2>
 <p><strong>Principiantes:</strong> Caminatas sin celular, yoga en casa (YouTube), bici por la ciudad, nadar.</p>
@@ -327,6 +347,7 @@ const A={
 `},
 'deporte-3':{t:'Yoga para cólicos: 5 posturas que alivian',b:`
 <h2>10 minutos = diferencia notable</h2>
+<img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=700&h=350&fit=crop" alt="yoga cólicos posturas aliviar dolor menstrual" style="width:100%;border-radius:12px;margin:20px 0;">
 <p><strong>1. Balasana (Postura del niño):</strong> Rodillas separadas, frente al suelo, brazos extendidos. Comprime suavemente el abdomen. 1-3 min.</p>
 <p><strong>2. Supta Baddha Konasana (Mariposa reclinada):</strong> Acostada boca arriba, plantas de pies juntas, rodillas caen a los lados. Abre caderas y relaja pelvis. 2-3 min.</p>
 <p><strong>3. Cat-Cow (Gato-Vaca):</strong> En cuatro puntos, alterna arquear y redondear la espalda. Moviliza columna y alivia tensión lumbar. 10-15 repeticiones lentas.</p>
@@ -337,6 +358,7 @@ const A={
 'nutri-1':{t:'Qué comer en cada fase del ciclo',b:`
 <h2>Tu cuerpo pide cosas diferentes cada semana — escúchalo</h2>
 <p>Adaptar tu alimentación a cada fase puede reducir síntomas de PMS hasta un 50%.</p>
+<img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=700&h=350&fit=crop" alt="nutrición ciclo alimentos fase menstrual" style="width:100%;border-radius:12px;margin:20px 0;">
 <p><strong>Menstrual:</strong> Necesitas reponer lo perdido. Hierro (espinacas, lentejas, carne roja), magnesio (chocolate 70%, almendras, aguacate), omega-3 (salmón, nueces, chía). Infusiones calientes: jengibre para cólicos, manzanilla para relajar.</p>
 <p><strong>Folicular:</strong> Energía sube, apetito se normaliza. Proteína ligera (huevos, pollo, legumbres), fermentados para gut health (kimchi, yogur, kombucha), vegetales frescos y crujientes.</p>
 <p><strong>Ovulación:</strong> Fibra para metabolizar el exceso de estrógenos: brócoli, coliflor, kale. Antioxidantes: berries, granada, cúrcuma. Baja ligeramente los carbos refinados.</p>
@@ -344,6 +366,7 @@ const A={
 `},
 'nutri-2':{t:'Suplementos esenciales para mujeres',b:`
 <h2>Los que tienen evidencia real</h2>
+<img src="https://images.unsplash.com/photo-1505576399279-565b52d4ac71?w=700&h=350&fit=crop" alt="suplementos magnesio hierro vitamina D omega" style="width:100%;border-radius:12px;margin:20px 0;">
 <p><strong>Magnesio glicinato (300-400mg):</strong> Cólicos, sueño, ansiedad, músculos. La forma glicinato se absorbe mejor y no da diarrea. Tomar por la noche.</p>
 <p><strong>Hierro (si menstruación abundante):</strong> Muchas mujeres son deficientes sin saberlo. Siempre con vitamina C para absorción. No tomar con té/café (bloquea absorción).</p>
 <p><strong>Vitamina D (2000-4000 UI):</strong> Si no tomas sol diario. Deficiencia se asocia con PMS severo, fatiga y depresión. Analítica de sangre para confirmarlo.</p>
@@ -354,6 +377,7 @@ const A={
 'nutri-3':{t:'Antojos premenstruales: tu cuerpo habla',b:`
 <h2>No es falta de voluntad — es biología</h2>
 <p>En fase lútea tu metabolismo basal sube 100-300 calorías/día. Tu cuerpo necesita más energía. Los antojos son señales legítimas.</p>
+<img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=700&h=350&fit=crop" alt="antojos premenstruales chocolate magnesio PMS" style="width:100%;border-radius:12px;margin:20px 0;">
 <p><strong>Chocolate:</strong> Tu cuerpo pide MAGNESIO. Dale chocolate oscuro 70%+ (64mg de magnesio por 30g). Es autocuidado, no debilidad.</p>
 <p><strong>Sal/snacks crujientes:</strong> Necesitas minerales y la textura satisface estrés oral. Alternativas nutritivas: aceitunas, hummus con palitos, nueces con sal.</p>
 <p><strong>Carbohidratos:</strong> La serotonina está baja y los carbos ayudan a producirla. Elige complejos: avena, boniato, arroz integral, pan de masa madre.</p>
@@ -365,6 +389,7 @@ const A={
 <h2>No es imaginación: es neuroquímica</h2>
 <p>La progesterona sube en fase lútea. Su metabolito (alopregnanolona) interactúa con receptores GABA de forma que puede AUMENTAR la ansiedad en algunas mujeres. Además, la serotonina baja naturalmente. Menos serotonina = más rumiación, irritabilidad y preocupación.</p>
 <h2>6 herramientas que funcionan</h2>
+<img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=700&h=350&fit=crop" alt="ansiedad premenstrual meditación calma bienestar" style="width:100%;border-radius:12px;margin:20px 0;">
 <p><strong>1. Respiración 4-7-8:</strong> Inhala 4 seg, retén 7, exhala 8. Repite 4 veces. Activa el parasimpático en 2 minutos. Hazlo cuando sientas que la ansiedad sube.</p>
 <p><strong>2. Magnesio:</strong> 300-400mg glicinato diarios, empezando 1 semana antes del periodo. Calma el sistema nervioso.</p>
 <p><strong>3. Reducir cafeína:</strong> 7 días antes. La cafeína amplifica la respuesta de ansiedad. Cambia a descafeinado o matcha (tiene L-teanina que calma).</p>
@@ -376,6 +401,7 @@ const A={
 `},
 'mental-2':{t:'Autoestima y ciclo: no eres inconsistente, eres cíclica',b:`
 <h2>Tu confianza fluctúa con tus hormonas — y eso está bien</h2>
+<img src="https://images.unsplash.com/photo-1474418397713-7ede21d49118?w=700&h=350&fit=crop" alt="autoestima ciclo confianza hormonas mujer" style="width:100%;border-radius:12px;margin:20px 0;">
 <p><strong>Folicular:</strong> Estrógenos suben → te sientes capaz, creativa, segura. Es tu momento para presentaciones, decisiones, retos.</p>
 <p><strong>Ovulación:</strong> PICO de autoestima. Te ves genial, te sientes atractiva, confiada. Aprovecha para citas, fotos, networking.</p>
 <p><strong>Lútea:</strong> Autocrítica aumenta. Dudas de ti misma. Proyectos que ayer te emocionaban hoy parecen imposibles. Es la progesterona + serotonina baja, NO la realidad.</p>
@@ -388,6 +414,7 @@ const A={
 <h2>Escribir juntos fortalece lo que hablar a veces no alcanza</h2>
 <p>El journaling de pareja crea un espacio seguro para expresar lo que a veces es difícil decir en voz alta. No es terapia — es una práctica de conexión.</p>
 <h2>Cómo hacerlo</h2>
+<img src="https://images.unsplash.com/photo-1507120366498-bab3bf839dba?w=700&h=350&fit=crop" alt="journaling parejas escribir diario relación" style="width:100%;border-radius:12px;margin:20px 0;">
 <p><strong>1. Elijan un momento:</strong> 1 vez por semana, mismo día/hora. 10-15 min total. Después de cenar funciona bien.</p>
 <p><strong>2. Cada uno escribe 5 min:</strong> Sin hablar. Sin ver lo del otro. Simplemente escriban.</p>
 <p><strong>3. Prompts sugeridos:</strong></p>
@@ -401,6 +428,7 @@ const A={
 <h2>Lo que realmente funciona (con evidencia)</h2>
 <p>La testosterona afecta energía, masa muscular, libido, humor y motivación. Baja ~1% por año después de los 30. La buena noticia: los hábitos tienen más impacto que cualquier suplemento.</p>
 <h2>7 factores con evidencia</h2>
+<img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=700&h=350&fit=crop" alt="testosterona natural ejercicio pesas hombre" style="width:100%;border-radius:12px;margin:20px 0;">
 <p><strong>1. Entrenamiento de fuerza:</strong> Ejercicios compuestos (sentadilla, peso muerto, press banca, dominadas) elevan T significativamente. 3-4 sesiones/semana. Importante: intensidad alta, no volumen excesivo.</p>
 <p><strong>2. Dormir 7-9h:</strong> La mayoría de la T se produce durante sueño profundo. Dormir 5h vs 8h reduce T un 15%. No negociable.</p>
 <p><strong>3. Vitamina D:</strong> 15-20 min sol diario o suplemento 2000-4000 UI. Deficiencia = T baja confirmada en estudios.</p>
@@ -415,6 +443,7 @@ const A={
 <h2>No es debilidad. Es la habilidad más atractiva que puedes desarrollar.</h2>
 <p>La inteligencia emocional te hace mejor pareja, mejor padre, mejor líder y más atractivo. Los hombres con alta IE tienen relaciones más largas y satisfactorias.</p>
 <h2>Los 5 pilares prácticos</h2>
+<img src="https://images.unsplash.com/photo-1519505907962-0a6cb0167c73?w=700&h=350&fit=crop" alt="inteligencia emocional masculina pareja comunicación" style="width:100%;border-radius:12px;margin:20px 0;">
 <p><strong>1. Autoconciencia:</strong> IDENTIFICA qué sientes ANTES de reaccionar. "Estoy frustrado" vs gritar. Pausa entre estímulo y respuesta. Esa pausa es libertad.</p>
 <p><strong>2. Autoregulación:</strong> 10 segundos antes de responder en conflicto. Respira. Pregúntate: "¿Lo que voy a decir va a mejorar o empeorar esto?"</p>
 <p><strong>3. Empatía:</strong> "Entiendo que te sientas así" ANTES de dar soluciones. Ella no quiere que la arregles — quiere que la ACOMPAÑES. Primero empatía, después lógica.</p>
@@ -427,6 +456,7 @@ const A={
 <h2>Lo que ella necesita de ti cambia cada semana</h2>
 <p>No necesitas ser experto en endocrinología. Solo necesitas saber 4 cosas y adaptar tu comportamiento. Es la ventaja competitiva que el 95% de hombres no tiene.</p>
 <h2>Las 4 fases y tu rol</h2>
+<img src="https://images.unsplash.com/photo-1501901609772-df0848060b33?w=700&h=350&fit=crop" alt="entender ciclo pareja hombre empatía" style="width:100%;border-radius:12px;margin:20px 0;">
 <p><strong>Menstrual (días 1-5):</strong> Ella tiene dolor, fatiga, y cero ganas de explicar. TU ROL: paciencia sin preguntar "¿estás bien?" cada 5 min. Tráele algo caliente. Ofrece manta/chocolate. Acompáñala en silencio. NO intentes animarla forzadamente.</p>
 <p><strong>Folicular (días 6-13):</strong> Su energía SUBE. Está optimista y con ganas de hacer cosas. TU ROL: propón planes activos. Sugiere citas, deporte juntos, salir. Es tu mejor ventana para hacer cosas nuevas como pareja.</p>
 <p><strong>Ovulación (días 14-16):</strong> Ella se ve y siente INCREÍBLE. Confiada, sociable, atractiva. TU ROL: citas, atención, presencia. Dile que se ve guapa (lo notará especialmente ahora). Estate disponible.</p>
