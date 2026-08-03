@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://rodpinedar-cmd.github.io/WELO/sitemap.xml
