@@ -11,76 +11,360 @@
 <title>WELO — We flow. We glow. We love.</title>
 <link rel="stylesheet" href="css/app.css">
 <link rel="stylesheet" href="css/mascot.css">
+<link rel="stylesheet" href="css/onboarding.css">
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js" async></script>
 </head>
 <body>
 
-<!-- ONBOARDING -->
-<div id="onboarding">
-  <div class="onb-container">
-    <!-- Step 0: Signup -->
-    <div class="step active" id="step-signup">
-      <div class="welo-mascot lg" id="onb-mascot" style="margin:0 auto 16px;"></div>
-      <h1>WELO</h1>
-      <p class="tagline">We flow. We glow. We love. We are.</p>
-      <input type="email" id="inp-email" placeholder="Tu email" class="input">
-      <input type="password" id="inp-pass" placeholder="Contraseña" class="input">
-      <button class="btn-primary" data-action="signup">Crear cuenta</button>
-      <div class="alt-login">
-        <button class="btn-outline" data-action="signup">🍎 Apple</button>
-        <button class="btn-outline" data-action="signup">G Google</button>
-      </div>
-      <p class="hint">🔒 Tus datos son solo tuyos. Privacidad total.</p>
-    </div>
+<!-- ============================================================
+     ONBOARDING
+     - Cada <section> es un slide independiente.
+     - JS calcula el total de slides leyendo .onb-slides > .onb-slide
+     - Barra de progreso y footer se controlan desde onboarding.js
+     - Nada se persiste en Supabase antes del registro (pantalla 7).
+     - onboarding_draft se guarda en localStorage para resume.
+     ============================================================ -->
+<div id="onboarding" aria-live="polite">
+  <div id="onb-stage">
+    <div id="onb-slides">
 
-    <!-- Step 1: Role -->
-    <div class="step" id="step-role">
-      <div class="welo-mascot" style="margin:0 auto 16px;"></div>
-      <h2>¿Quién eres?</h2>
-      <p>Welo se adapta a ti</p>
-      <div class="role-grid">
-        <button class="role-card" data-role="ella"><span class="role-emoji">👩</span>Ella</button>
-        <button class="role-card" data-role="el"><span class="role-emoji">👨</span>Él</button>
-      </div>
-    </div>
+      <!-- ====== PANTALLA: HOOK ====== -->
+      <section
+        class="onb-slide active"
+        id="onb-hook"
+        data-screen="hook"
+        data-analytics="onboarding_hook"
+        data-track="true"
+        data-experiment="default"
+        aria-label="Bienvenida"
+      >
+        <div class="onb-slide-content">
+          <h1 class="onb-title" data-i18n="onboarding.hook.title">
+            ¿Cuánto conoces realmente a tu pareja?
+          </h1>
+          <p class="onb-subtitle" data-i18n="onboarding.hook.subtitle">
+            Descúbrelo en 30 segundos.
+          </p>
+        </div>
+      </section>
 
-    <!-- Step 2a: Cycle (Ella) -->
-    <div class="step" id="step-cycle">
-      <div class="welo-mascot sm" style="margin:0 auto 12px;"></div>
-      <h2>Tu ciclo</h2>
-      <p>Welo te acompaña en cada fase</p>
-      <label>Último periodo</label>
-      <input type="date" id="inp-lastperiod" class="input">
-      <label>Duración del ciclo (días)</label>
-      <input type="number" id="inp-cyclelength" value="28" min="21" max="40" class="input">
-      <label>Duración del periodo</label>
-      <input type="number" id="inp-periodduration" value="5" min="2" max="8" class="input">
-      <button class="btn-primary" data-action="savecycle">Continuar →</button>
-      <button class="btn-ghost" data-action="skipcycle">Configurar después →</button>
-    </div>
+      <!-- ====== PANTALLA: QUIZ ====== -->
+      <section
+        class="onb-slide"
+        id="onb-quiz"
+        data-screen="quiz"
+        data-analytics="onboarding_quiz"
+        data-requires="quiz"
+        data-track="true"
+        data-experiment="default"
+        aria-label="Mini quiz"
+      >
+        <div class="onb-slide-content">
+          <p class="onb-hint" data-i18n="onboarding.quiz.hint">Responde rápido, sin pensar demasiado.</p>
+          <!-- JS renderiza las 3 preguntas aquí dinámicamente -->
+          <div id="onb-quiz-container" role="group" aria-label="Preguntas del quiz"></div>
+        </div>
+      </section>
 
-    <!-- Step 2b: Connect (El) -->
-    <div class="step" id="step-connect">
-      <div class="welo-mascot sm" style="margin:0 auto 12px;"></div>
-      <h2>Conectar</h2>
-      <p>Ingresa el código que ella te compartió</p>
-      <input type="text" id="inp-code" placeholder="WLO-XXXX" maxlength="8" class="input input-code">
-      <button class="btn-primary" data-action="connect">Conectar →</button>
-    </div>
+      <!-- ====== PANTALLA: REVEAL ====== -->
+      <section
+        class="onb-slide"
+        id="onb-reveal"
+        data-screen="reveal"
+        data-analytics="onboarding_reveal"
+        data-track="true"
+        data-experiment="default"
+        aria-label="Resultado del quiz"
+      >
+        <div class="onb-slide-content">
+          <!-- JS inyecta resultado personalizado según respuestas del quiz -->
+          <div id="onb-reveal-content"></div>
+        </div>
+      </section>
 
-    <!-- Step 3: Code Display -->
-    <div class="step" id="step-code">
-      <div class="welo-mascot sm" style="margin:0 auto 12px;"></div>
-      <h2>Tu código de pareja</h2>
-      <p>Compártelo para que se conecte contigo</p>
-      <div class="code-box" id="display-code">WLO-XXXX</div>
-      <button class="btn-primary" data-action="done">¡Listo! Entrar →</button>
-      <button class="btn-outline" data-action="copycode">📋 Copiar código</button>
-    </div>
-  </div>
-</div>
+      <!-- ====== PANTALLA: VALUE PREVIEW ====== -->
+      <section
+        class="onb-slide"
+        id="onb-preview"
+        data-screen="preview"
+        data-analytics="onboarding_preview"
+        data-track="true"
+        data-experiment="default"
+        aria-label="Lo que obtendrás con WELO"
+      >
+        <div class="onb-slide-content">
+          <h2 class="onb-title" data-i18n="onboarding.preview.title">Esto te espera cada día</h2>
+          <div class="onb-preview-track" role="list" aria-label="Funciones principales">
+            <div class="onb-preview-card" role="listitem" data-i18n="onboarding.preview.card1">
+              <span class="onb-preview-icon">💕</span>
+              <h3>Match Diario</h3>
+              <p>5 preguntas → descubre en qué coinciden hoy</p>
+            </div>
+            <div class="onb-preview-card" role="listitem" data-i18n="onboarding.preview.card2">
+              <span class="onb-preview-icon">🎯</span>
+              <h3>Reto Diario</h3>
+              <p>Un micro-reto que mejora tu relación en 30 seg</p>
+            </div>
+            <div class="onb-preview-card" role="listitem" data-i18n="onboarding.preview.card3">
+              <span class="onb-preview-icon">🪲</span>
+              <h3>Lumi</h3>
+              <p>Tu compañera que crece con la relación</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-<!-- APP -->
+      <!-- ====== PANTALLA: ROLE ====== -->
+      <section
+        class="onb-slide"
+        id="onb-role"
+        data-screen="role"
+        data-analytics="onboarding_role"
+        data-requires="role"
+        data-track="true"
+        data-experiment="default"
+        aria-label="Selección de rol"
+      >
+        <div class="onb-slide-content">
+          <h2 class="onb-title" data-i18n="onboarding.role.title">¿Quién eres en la relación?</h2>
+          <p class="onb-hint" data-i18n="onboarding.role.hint">Esto adapta el contenido a ti</p>
+          <div class="onb-role-grid" role="radiogroup" aria-label="Selecciona tu rol">
+            <button
+              class="onb-role-card"
+              data-role="ella"
+              role="radio"
+              aria-checked="false"
+              data-i18n="onboarding.role.ella"
+            >
+              <span class="onb-role-emoji">👩</span>
+              <span class="onb-role-label">Ella</span>
+            </button>
+            <button
+              class="onb-role-card"
+              data-role="el"
+              role="radio"
+              aria-checked="false"
+              data-i18n="onboarding.role.el"
+            >
+              <span class="onb-role-emoji">👨</span>
+              <span class="onb-role-label">Él</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====== PANTALLA: SETUP (condicional ella/él) ====== -->
+      <section
+        class="onb-slide"
+        id="onb-setup"
+        data-screen="setup"
+        data-analytics="onboarding_setup"
+        data-requires="setup"
+        data-track="true"
+        data-experiment="default"
+        aria-label="Configuración inicial"
+      >
+        <div class="onb-slide-content">
+
+          <!-- GRUPO: ELLA — Ciclo -->
+          <div id="onb-setup-ella" class="onb-setup-group" aria-label="Configuración de ciclo" hidden>
+            <h2 class="onb-title" data-i18n="onboarding.setup.ella.title">Tu ciclo te da superpoderes</h2>
+            <p class="onb-hint" data-i18n="onboarding.setup.ella.hint">Opcional — puedes configurarlo después</p>
+
+            <div class="onb-field">
+              <label class="onb-label" for="onb-inp-lastperiod" data-i18n="onboarding.setup.ella.lastperiod">
+                ¿Cuándo fue tu último periodo?
+              </label>
+              <input
+                type="date"
+                id="onb-inp-lastperiod"
+                class="onb-input"
+                aria-describedby="onb-lastperiod-help"
+              >
+              <span id="onb-lastperiod-help" class="onb-field-help" data-i18n="onboarding.setup.ella.lastperiod_help">
+                Aproximado está bien
+              </span>
+            </div>
+
+            <div class="onb-field">
+              <label class="onb-label" for="onb-inp-cyclelength" data-i18n="onboarding.setup.ella.cyclelength">
+                Duración del ciclo (días)
+              </label>
+              <input
+                type="number"
+                id="onb-inp-cyclelength"
+                class="onb-input"
+                value="28"
+                min="21"
+                max="40"
+                aria-describedby="onb-cyclelength-help"
+              >
+              <span id="onb-cyclelength-help" class="onb-field-help" data-i18n="onboarding.setup.ella.cyclelength_help">
+                Promedio: 28 días
+              </span>
+            </div>
+
+            <div class="onb-field">
+              <label class="onb-label" for="onb-inp-periodduration" data-i18n="onboarding.setup.ella.periodduration">
+                Duración del periodo (días)
+              </label>
+              <input
+                type="number"
+                id="onb-inp-periodduration"
+                class="onb-input"
+                value="5"
+                min="2"
+                max="8"
+              >
+            </div>
+
+            <button class="onb-btn-ghost onb-skip" data-i18n="onboarding.setup.ella.skip">
+              Ahora no →
+            </button>
+          </div>
+
+          <!-- GRUPO: ÉL — Código pareja -->
+          <div id="onb-setup-el" class="onb-setup-group" aria-label="Conectar con pareja" hidden>
+            <h2 class="onb-title" data-i18n="onboarding.setup.el.title">Conecta con tu pareja</h2>
+            <p class="onb-hint" data-i18n="onboarding.setup.el.hint">Ella te dará un código de 4 letras</p>
+
+            <div class="onb-field">
+              <label class="onb-label" for="onb-inp-code" data-i18n="onboarding.setup.el.code">
+                Código de pareja
+              </label>
+              <input
+                type="text"
+                id="onb-inp-code"
+                class="onb-input onb-input-code"
+                placeholder="WLO-XXXX"
+                maxlength="8"
+                autocomplete="off"
+                aria-describedby="onb-code-help"
+              >
+              <span id="onb-code-help" class="onb-field-help" data-i18n="onboarding.setup.el.code_help">
+                Formato: WLO-XXXX
+              </span>
+            </div>
+
+            <button class="onb-btn-ghost onb-skip" data-i18n="onboarding.setup.el.skip">
+              Todavía no tengo →
+            </button>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ====== PANTALLA: REGISTER ====== -->
+      <section
+        class="onb-slide"
+        id="onb-register"
+        data-screen="register"
+        data-analytics="onboarding_register"
+        data-requires="email"
+        data-track="true"
+        data-experiment="default"
+        aria-label="Crear cuenta"
+      >
+        <div class="onb-slide-content">
+          <h2 class="onb-title" data-i18n="onboarding.register.title">Solo falta tu email</h2>
+          <p class="onb-hint" data-i18n="onboarding.register.hint">Para guardar tu progreso y conectar con tu pareja</p>
+
+          <div class="onb-field">
+            <label class="onb-label" for="onb-inp-email" data-i18n="onboarding.register.email">Email</label>
+            <input
+              type="email"
+              id="onb-inp-email"
+              class="onb-input"
+              placeholder="tu@email.com"
+              autocomplete="email"
+              required
+            >
+          </div>
+
+          <div class="onb-field">
+            <label class="onb-label" for="onb-inp-pass" data-i18n="onboarding.register.password">Contraseña</label>
+            <input
+              type="password"
+              id="onb-inp-pass"
+              class="onb-input"
+              placeholder="Mínimo 6 caracteres"
+              minlength="6"
+              autocomplete="new-password"
+              required
+            >
+          </div>
+
+          <div class="onb-social-login">
+            <button class="onb-btn-social" id="onb-btn-google" data-i18n="onboarding.register.google">
+              <span aria-hidden="true">G</span> Continuar con Google
+            </button>
+            <button class="onb-btn-social" id="onb-btn-apple" data-i18n="onboarding.register.apple">
+              <span aria-hidden="true">🍎</span> Continuar con Apple
+            </button>
+          </div>
+
+          <p class="onb-legal" data-i18n="onboarding.register.legal">
+            Gratis para siempre. Sin spam. Privado.
+          </p>
+        </div>
+      </section>
+
+      <!-- ====== PANTALLA: WELCOME ====== -->
+      <section
+        class="onb-slide"
+        id="onb-welcome"
+        data-screen="welcome"
+        data-analytics="onboarding_completed"
+        data-track="true"
+        data-experiment="default"
+        aria-label="Bienvenida final"
+      >
+        <div class="onb-slide-content">
+          <!-- JS inyecta lumiSVG() aquí -->
+          <div id="onb-welcome-lumi" aria-hidden="true"></div>
+
+          <h2 class="onb-title" data-i18n="onboarding.welcome.title">¡Hola! Soy Lumi 🪲</h2>
+          <p class="onb-subtitle" data-i18n="onboarding.welcome.subtitle">
+            Acabo de nacer con tu relación.
+          </p>
+          <p class="onb-hint" data-i18n="onboarding.welcome.cta_hint">
+            Tu primer reto te espera. Tu racha empieza HOY.
+          </p>
+        </div>
+      </section>
+
+    </div><!-- /#onb-slides -->
+  </div><!-- /#onb-stage -->
+
+  <!-- PROGRESO — JS genera los dots automáticamente -->
+  <div id="onb-progress" role="tablist" aria-label="Progreso del onboarding"></div>
+
+  <!-- FOOTER REUTILIZABLE — Botones comunes para todas las pantallas -->
+  <footer id="onb-footer">
+    <button
+      id="onb-footer-back"
+      class="onb-btn-ghost"
+      aria-label="Volver al paso anterior"
+      data-i18n="onboarding.footer.back"
+      hidden
+    >
+      ← Atrás
+    </button>
+    <button
+      id="onb-footer-next"
+      class="onb-btn-primary"
+      aria-label="Continuar al siguiente paso"
+      data-i18n="onboarding.footer.next"
+    >
+      Descubrir →
+    </button>
+  </footer>
+
+</div><!-- /#onboarding -->
+
+<!-- ============================================================
+     APP (NO MODIFICAR — Mismo contenido que antes)
+     ============================================================ -->
 <div id="app" style="display:none;">
   <div id="app-content">Cargando WELO...</div>
   <nav id="bottom-nav">
@@ -92,6 +376,9 @@
   </nav>
 </div>
 
+<!-- ============================================================
+     SCRIPTS (NO MODIFICAR orden ni archivos existentes)
+     ============================================================ -->
 <script src="js/supabase.js"></script>
 <script src="js/data.js"></script>
 <script src="js/preferences.js"></script>

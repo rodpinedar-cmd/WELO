@@ -1,0 +1,896 @@
+/* ============================================================
+   WELO — Onboarding Design System
+   Version: 1.0.0
+   
+   Architecture:
+   1. Design Tokens (CSS Variables)
+   2. Layout
+   3. Typography
+   4. Buttons
+   5. Inputs
+   6. Cards & Components
+   7. Progress
+   8. Footer
+   9. Quiz
+   10. Role Selection
+   11. Setup
+   12. Welcome
+   13. Animations (prepared, not active)
+   14. Responsive
+   15. Accessibility
+   16. Reduced Motion
+   17. Dark Mode (prepared)
+   ============================================================ */
+
+/* ============================================================
+   1. DESIGN TOKENS — CSS Variables
+   All visual values flow from here. No hardcoded values below.
+   ============================================================ */
+#onboarding {
+  /* --- Colors --- */
+  --onb-primary: #ff6b9d;
+  --onb-primary-hover: #e55a8a;
+  --onb-primary-active: #cc4f7a;
+  --onb-secondary: #c44569;
+  --onb-accent: #ffd32a;
+  --onb-success: #4caf50;
+  --onb-error: #ef5350;
+  --onb-warning: #ff9800;
+
+  /* --- Surfaces --- */
+  --onb-bg: #ffffff;
+  --onb-bg-subtle: #fafbfc;
+  --onb-bg-card: #ffffff;
+  --onb-bg-input: #f8f9fa;
+  --onb-border: #e9ecef;
+  --onb-border-focus: var(--onb-primary);
+
+  /* --- Text --- */
+  --onb-text: #2d3436;
+  --onb-text-light: #636e72;
+  --onb-text-muted: #b2bec3;
+  --onb-text-inverse: #ffffff;
+
+  /* --- Spacing (4px base grid) --- */
+  --onb-space-xs: 4px;
+  --onb-space-sm: 8px;
+  --onb-space-md: 16px;
+  --onb-space-lg: 24px;
+  --onb-space-xl: 32px;
+  --onb-space-2xl: 48px;
+  --onb-space-3xl: 64px;
+
+  /* --- Typography --- */
+  --onb-font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --onb-font-size-xs: 0.7rem;
+  --onb-font-size-sm: 0.8rem;
+  --onb-font-size-md: 0.9rem;
+  --onb-font-size-base: 1rem;
+  --onb-font-size-lg: 1.25rem;
+  --onb-font-size-xl: 1.5rem;
+  --onb-font-size-2xl: 2rem;
+  --onb-font-weight-normal: 400;
+  --onb-font-weight-medium: 500;
+  --onb-font-weight-semibold: 600;
+  --onb-font-weight-bold: 700;
+  --onb-font-weight-black: 900;
+  --onb-line-height: 1.5;
+
+  /* --- Border Radius --- */
+  --onb-radius-sm: 8px;
+  --onb-radius-md: 12px;
+  --onb-radius-lg: 16px;
+  --onb-radius-xl: 24px;
+  --onb-radius-full: 50%;
+  --onb-radius-pill: 9999px;
+
+  /* --- Shadows --- */
+  --onb-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
+  --onb-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --onb-shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+  --onb-shadow-focus: 0 0 0 3px rgba(255, 107, 157, 0.3);
+
+  /* --- Animation --- */
+  --onb-duration-fast: 150ms;
+  --onb-duration-normal: 300ms;
+  --onb-duration-slow: 500ms;
+  --onb-easing: cubic-bezier(0.4, 0, 0.2, 1);
+  --onb-easing-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+  /* --- Z-Index layers --- */
+  --onb-z-slides: 1;
+  --onb-z-progress: 10;
+  --onb-z-footer: 10;
+  --onb-z-overlay: 100;
+  --onb-z-confetti: 200;
+
+  /* --- Sizing --- */
+  --onb-touch-target: 44px;
+  --onb-max-width: 420px;
+  --onb-footer-height: 80px;
+  --onb-progress-height: 40px;
+}
+
+/* ============================================================
+   2. LAYOUT
+   Mobile-first. Flexbox vertical. Centered content.
+   ============================================================ */
+#onboarding {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+  min-height: 100vh; /* fallback */
+  background: var(--onb-bg);
+  font-family: var(--onb-font);
+  color: var(--onb-text);
+  overflow: hidden;
+  position: relative;
+}
+
+#onb-stage {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: var(--onb-z-slides);
+  padding: var(--onb-space-lg);
+  padding-bottom: calc(var(--onb-footer-height) + var(--onb-progress-height));
+}
+
+#onb-slides {
+  width: 100%;
+  max-width: var(--onb-max-width);
+  position: relative;
+}
+
+.onb-slide {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+.onb-slide.active {
+  display: flex;
+}
+
+.onb-slide-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--onb-space-lg);
+}
+
+/* ============================================================
+   3. TYPOGRAPHY
+   Consistent type scale. No inline font sizes.
+   ============================================================ */
+.onb-title {
+  font-size: var(--onb-font-size-2xl);
+  font-weight: var(--onb-font-weight-black);
+  line-height: 1.2;
+  color: var(--onb-text);
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.onb-subtitle {
+  font-size: var(--onb-font-size-base);
+  font-weight: var(--onb-font-weight-normal);
+  color: var(--onb-text-light);
+  line-height: var(--onb-line-height);
+  margin: 0;
+}
+
+.onb-hint {
+  font-size: var(--onb-font-size-sm);
+  color: var(--onb-text-muted);
+  line-height: var(--onb-line-height);
+  margin: 0;
+}
+
+.onb-legal {
+  font-size: var(--onb-font-size-xs);
+  color: var(--onb-text-muted);
+  margin-top: var(--onb-space-md);
+}
+
+/* ============================================================
+   4. BUTTONS
+   Reusable button system. All touch-target compliant (44px min).
+   ============================================================ */
+.onb-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--onb-touch-target);
+  padding: var(--onb-space-md) var(--onb-space-xl);
+  background: var(--onb-primary);
+  color: var(--onb-text-inverse);
+  font-size: var(--onb-font-size-base);
+  font-weight: var(--onb-font-weight-semibold);
+  font-family: var(--onb-font);
+  border: none;
+  border-radius: var(--onb-radius-pill);
+  cursor: pointer;
+  transition: background var(--onb-duration-fast) var(--onb-easing),
+              transform var(--onb-duration-fast) var(--onb-easing),
+              box-shadow var(--onb-duration-fast) var(--onb-easing);
+  box-shadow: var(--onb-shadow-sm);
+  width: 100%;
+  max-width: 300px;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.onb-btn-primary:hover {
+  background: var(--onb-primary-hover);
+  box-shadow: var(--onb-shadow-md);
+}
+
+.onb-btn-primary:active {
+  background: var(--onb-primary-active);
+  transform: scale(0.97);
+}
+
+.onb-btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.onb-btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--onb-touch-target);
+  padding: var(--onb-space-sm) var(--onb-space-md);
+  background: transparent;
+  color: var(--onb-text-light);
+  font-size: var(--onb-font-size-sm);
+  font-weight: var(--onb-font-weight-medium);
+  font-family: var(--onb-font);
+  border: none;
+  border-radius: var(--onb-radius-pill);
+  cursor: pointer;
+  transition: color var(--onb-duration-fast) var(--onb-easing),
+              background var(--onb-duration-fast) var(--onb-easing);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.onb-btn-ghost:hover {
+  color: var(--onb-text);
+  background: var(--onb-bg-subtle);
+}
+
+.onb-btn-ghost:active {
+  background: var(--onb-border);
+}
+
+.onb-btn-social {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--onb-space-sm);
+  min-height: var(--onb-touch-target);
+  padding: var(--onb-space-md) var(--onb-space-lg);
+  background: var(--onb-bg);
+  color: var(--onb-text);
+  font-size: var(--onb-font-size-md);
+  font-weight: var(--onb-font-weight-medium);
+  font-family: var(--onb-font);
+  border: 1px solid var(--onb-border);
+  border-radius: var(--onb-radius-pill);
+  cursor: pointer;
+  width: 100%;
+  transition: border-color var(--onb-duration-fast) var(--onb-easing),
+              box-shadow var(--onb-duration-fast) var(--onb-easing);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.onb-btn-social:hover {
+  border-color: var(--onb-primary);
+  box-shadow: var(--onb-shadow-sm);
+}
+
+.onb-btn-social:active {
+  background: var(--onb-bg-subtle);
+}
+
+.onb-social-login {
+  display: flex;
+  flex-direction: column;
+  gap: var(--onb-space-sm);
+  width: 100%;
+  max-width: 300px;
+  margin-top: var(--onb-space-md);
+}
+
+/* ============================================================
+   5. INPUTS
+   Consistent form controls. Touch-friendly.
+   ============================================================ */
+.onb-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--onb-space-xs);
+  width: 100%;
+  max-width: 300px;
+  text-align: left;
+}
+
+.onb-label {
+  font-size: var(--onb-font-size-sm);
+  font-weight: var(--onb-font-weight-semibold);
+  color: var(--onb-text);
+}
+
+.onb-input {
+  min-height: var(--onb-touch-target);
+  padding: var(--onb-space-md);
+  background: var(--onb-bg-input);
+  border: 1.5px solid var(--onb-border);
+  border-radius: var(--onb-radius-md);
+  font-size: var(--onb-font-size-base);
+  font-family: var(--onb-font);
+  color: var(--onb-text);
+  transition: border-color var(--onb-duration-fast) var(--onb-easing),
+              box-shadow var(--onb-duration-fast) var(--onb-easing);
+  width: 100%;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.onb-input:focus {
+  outline: none;
+  border-color: var(--onb-border-focus);
+  box-shadow: var(--onb-shadow-focus);
+  background: var(--onb-bg);
+}
+
+.onb-input::placeholder {
+  color: var(--onb-text-muted);
+}
+
+.onb-input:invalid:not(:placeholder-shown) {
+  border-color: var(--onb-error);
+}
+
+.onb-input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.onb-input-code {
+  text-align: center;
+  font-size: var(--onb-font-size-lg);
+  font-weight: var(--onb-font-weight-bold);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.onb-field-help {
+  font-size: var(--onb-font-size-xs);
+  color: var(--onb-text-muted);
+}
+
+/* Error state (applied by JS) */
+.onb-input.onb-input--error {
+  border-color: var(--onb-error);
+  box-shadow: 0 0 0 3px rgba(239, 83, 80, 0.2);
+}
+
+/* Loading state (applied by JS) */
+.onb-input.onb-input--loading {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+/* ============================================================
+   6. CARDS & COMPONENTS
+   Reusable visual blocks.
+   ============================================================ */
+.onb-preview-track {
+  display: flex;
+  gap: var(--onb-space-md);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding: var(--onb-space-sm) 0;
+  width: 100%;
+}
+
+.onb-preview-track::-webkit-scrollbar {
+  display: none;
+}
+
+.onb-preview-card {
+  flex: 0 0 80%;
+  scroll-snap-align: center;
+  background: var(--onb-bg-card);
+  border: 1px solid var(--onb-border);
+  border-radius: var(--onb-radius-lg);
+  padding: var(--onb-space-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--onb-space-sm);
+  box-shadow: var(--onb-shadow-sm);
+  transition: box-shadow var(--onb-duration-normal) var(--onb-easing);
+}
+
+.onb-preview-card:hover {
+  box-shadow: var(--onb-shadow-md);
+}
+
+.onb-preview-icon {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.onb-preview-card h3 {
+  font-size: var(--onb-font-size-md);
+  font-weight: var(--onb-font-weight-bold);
+  color: var(--onb-text);
+  margin: 0;
+}
+
+.onb-preview-card p {
+  font-size: var(--onb-font-size-sm);
+  color: var(--onb-text-light);
+  margin: 0;
+  line-height: var(--onb-line-height);
+}
+
+/* ============================================================
+   7. PROGRESS
+   Dots generated by JS. CSS handles styling and state.
+   ============================================================ */
+#onb-progress {
+  position: fixed;
+  bottom: var(--onb-footer-height);
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--onb-space-sm);
+  height: var(--onb-progress-height);
+  z-index: var(--onb-z-progress);
+  background: var(--onb-bg);
+}
+
+.onb-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--onb-radius-full);
+  background: var(--onb-border);
+  transition: background var(--onb-duration-normal) var(--onb-easing),
+              transform var(--onb-duration-normal) var(--onb-easing),
+              width var(--onb-duration-normal) var(--onb-easing);
+}
+
+.onb-dot.active {
+  background: var(--onb-primary);
+  width: 24px;
+  border-radius: var(--onb-radius-pill);
+  transform: scale(1.1);
+}
+
+.onb-dot.completed {
+  background: var(--onb-primary);
+}
+
+/* ============================================================
+   8. FOOTER
+   Fixed bottom. Reusable back/next pattern.
+   ============================================================ */
+#onb-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--onb-space-md);
+  height: var(--onb-footer-height);
+  padding: 0 var(--onb-space-lg);
+  background: var(--onb-bg);
+  border-top: 1px solid var(--onb-border);
+  z-index: var(--onb-z-footer);
+}
+
+#onb-footer-back {
+  position: absolute;
+  left: var(--onb-space-lg);
+}
+
+#onb-footer-back[hidden] {
+  display: none;
+}
+
+#onb-footer-next {
+  /* Centered by default via flex container */
+}
+
+/* When footer-back is visible, adjust next button max-width */
+#onb-footer:has(#onb-footer-back:not([hidden])) #onb-footer-next {
+  max-width: 240px;
+}
+
+/* ============================================================
+   9. QUIZ
+   Single component, questions rendered dynamically.
+   ============================================================ */
+#onb-quiz-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--onb-space-md);
+}
+
+.onb-quiz-question {
+  display: flex;
+  flex-direction: column;
+  gap: var(--onb-space-sm);
+  width: 100%;
+}
+
+.onb-quiz-question p {
+  font-size: var(--onb-font-size-md);
+  font-weight: var(--onb-font-weight-semibold);
+  color: var(--onb-text);
+  margin: 0;
+}
+
+.onb-quiz-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--onb-space-sm);
+}
+
+.onb-quiz-option {
+  min-height: var(--onb-touch-target);
+  padding: var(--onb-space-md);
+  background: var(--onb-bg-input);
+  border: 1.5px solid var(--onb-border);
+  border-radius: var(--onb-radius-md);
+  font-size: var(--onb-font-size-sm);
+  font-weight: var(--onb-font-weight-medium);
+  font-family: var(--onb-font);
+  color: var(--onb-text);
+  cursor: pointer;
+  transition: border-color var(--onb-duration-fast) var(--onb-easing),
+              background var(--onb-duration-fast) var(--onb-easing),
+              transform var(--onb-duration-fast) var(--onb-easing);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.onb-quiz-option:hover {
+  border-color: var(--onb-primary);
+  background: rgba(255, 107, 157, 0.04);
+}
+
+.onb-quiz-option:active {
+  transform: scale(0.96);
+}
+
+.onb-quiz-option.selected {
+  border-color: var(--onb-primary);
+  background: rgba(255, 107, 157, 0.08);
+  color: var(--onb-primary);
+  font-weight: var(--onb-font-weight-semibold);
+}
+
+/* ============================================================
+   10. ROLE SELECTION
+   Two large tappable cards.
+   ============================================================ */
+.onb-role-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--onb-space-md);
+  width: 100%;
+  max-width: 300px;
+}
+
+.onb-role-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--onb-space-sm);
+  padding: var(--onb-space-xl) var(--onb-space-md);
+  background: var(--onb-bg-card);
+  border: 2px solid var(--onb-border);
+  border-radius: var(--onb-radius-lg);
+  cursor: pointer;
+  transition: border-color var(--onb-duration-fast) var(--onb-easing),
+              background var(--onb-duration-fast) var(--onb-easing),
+              transform var(--onb-duration-fast) var(--onb-easing),
+              box-shadow var(--onb-duration-fast) var(--onb-easing);
+  font-family: var(--onb-font);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.onb-role-card:hover {
+  border-color: var(--onb-primary);
+  box-shadow: var(--onb-shadow-sm);
+}
+
+.onb-role-card:active {
+  transform: scale(0.96);
+}
+
+.onb-role-card[aria-checked="true"] {
+  border-color: var(--onb-primary);
+  background: rgba(255, 107, 157, 0.06);
+  box-shadow: var(--onb-shadow-focus);
+}
+
+.onb-role-emoji {
+  font-size: 2.5rem;
+  line-height: 1;
+}
+
+.onb-role-label {
+  font-size: var(--onb-font-size-md);
+  font-weight: var(--onb-font-weight-semibold);
+  color: var(--onb-text);
+}
+
+/* ============================================================
+   11. SETUP
+   Conditional groups. Only one visible at a time.
+   ============================================================ */
+.onb-setup-group {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--onb-space-lg);
+}
+
+.onb-setup-group[hidden] {
+  display: none;
+}
+
+.onb-skip {
+  margin-top: var(--onb-space-sm);
+}
+
+/* ============================================================
+   12. WELCOME
+   Final screen. Lumi birth + celebration.
+   ============================================================ */
+#onb-welcome .onb-slide-content {
+  gap: var(--onb-space-md);
+}
+
+#onb-welcome-lumi {
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+/* ============================================================
+   13. ANIMATIONS (Prepared — not active yet)
+   Classes that JS will add to trigger transitions.
+   Implementation comes in animations sprint.
+   ============================================================ */
+
+/* Fade */
+.onb-anim-fade-in {
+  opacity: 0;
+  /* animation: onb-fade-in var(--onb-duration-normal) var(--onb-easing) forwards; */
+}
+
+.onb-anim-fade-out {
+  opacity: 1;
+  /* animation: onb-fade-out var(--onb-duration-fast) var(--onb-easing) forwards; */
+}
+
+/* Slide */
+.onb-anim-slide-left {
+  /* transform: translateX(100%); */
+  /* animation: onb-slide-left var(--onb-duration-normal) var(--onb-easing) forwards; */
+}
+
+.onb-anim-slide-right {
+  /* transform: translateX(-100%); */
+  /* animation: onb-slide-right var(--onb-duration-normal) var(--onb-easing) forwards; */
+}
+
+/* Scale (for Lumi birth) */
+.onb-anim-scale-in {
+  /* transform: scale(0); */
+  /* animation: onb-scale-in var(--onb-duration-slow) var(--onb-easing-bounce) forwards; */
+}
+
+/* Success (check, completion) */
+.onb-anim-success {
+  /* animation: onb-success var(--onb-duration-normal) var(--onb-easing); */
+}
+
+/* Shake (error feedback) */
+.onb-anim-shake {
+  /* animation: onb-shake var(--onb-duration-fast) ease-in-out; */
+}
+
+/* Confetti container (positioned absolute over onboarding) */
+.onb-confetti-container {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: var(--onb-z-confetti);
+  overflow: hidden;
+}
+
+/* Typewriter (for hook title) */
+.onb-anim-typewriter {
+  /* overflow: hidden; */
+  /* white-space: nowrap; */
+  /* border-right: 2px solid var(--onb-primary); */
+  /* animation: onb-typewriter steps(40) var(--onb-duration-slow) forwards; */
+}
+
+/* Keyframes — uncomment when implementing animations */
+/*
+@keyframes onb-fade-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes onb-fade-out { from { opacity: 1; } to { opacity: 0; } }
+@keyframes onb-slide-left { from { transform: translateX(30px); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+@keyframes onb-slide-right { from { transform: translateX(-30px); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+@keyframes onb-scale-in { from { transform: scale(0); } to { transform: scale(1); } }
+@keyframes onb-success { 0%,100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+@keyframes onb-shake { 0%,100% { transform: translateX(0); } 25% { transform: translateX(-4px); } 75% { transform: translateX(4px); } }
+*/
+
+/* ============================================================
+   14. RESPONSIVE
+   Mobile-first. Breakpoints only when they add value.
+   320px → base | 375px → comfortable | 768px → tablet
+   ============================================================ */
+
+/* Small phones (320px - 374px) */
+@media (max-width: 374px) {
+  #onboarding {
+    --onb-font-size-2xl: 1.6rem;
+    --onb-space-lg: 20px;
+    --onb-space-xl: 28px;
+  }
+
+  .onb-preview-card {
+    flex: 0 0 85%;
+  }
+
+  .onb-role-grid {
+    gap: var(--onb-space-sm);
+  }
+
+  .onb-role-card {
+    padding: var(--onb-space-lg) var(--onb-space-sm);
+  }
+}
+
+/* Comfortable phones (375px+) — base styles apply */
+
+/* Tablets and larger (768px+) */
+@media (min-width: 768px) {
+  #onb-stage {
+    padding: var(--onb-space-3xl);
+  }
+
+  .onb-preview-track {
+    justify-content: center;
+    overflow-x: visible;
+  }
+
+  .onb-preview-card {
+    flex: 0 0 auto;
+    width: 180px;
+  }
+
+  .onb-quiz-options {
+    max-width: 360px;
+    margin: 0 auto;
+  }
+}
+
+/* ============================================================
+   15. ACCESSIBILITY
+   Focus visible, contrast, touch targets, keyboard nav.
+   ============================================================ */
+
+/* Focus visible — only show on keyboard navigation */
+#onboarding *:focus-visible {
+  outline: 2px solid var(--onb-primary);
+  outline-offset: 2px;
+  border-radius: var(--onb-radius-sm);
+}
+
+/* Remove default focus ring for mouse users */
+#onboarding *:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Ensure minimum touch targets */
+#onboarding button,
+#onboarding input,
+#onboarding [role="radio"] {
+  min-height: var(--onb-touch-target);
+  min-width: var(--onb-touch-target);
+}
+
+/* High contrast mode support */
+@media (forced-colors: active) {
+  .onb-btn-primary {
+    border: 2px solid ButtonText;
+  }
+
+  .onb-dot.active {
+    background: Highlight;
+  }
+
+  .onb-role-card[aria-checked="true"] {
+    border-color: Highlight;
+  }
+}
+
+/* ============================================================
+   16. REDUCED MOTION
+   Disable all transitions/animations for users who prefer it.
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  #onboarding,
+  #onboarding * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .onb-dot.active {
+    transform: none;
+  }
+
+  .onb-btn-primary:active,
+  .onb-role-card:active,
+  .onb-quiz-option:active {
+    transform: none;
+  }
+}
+
+/* ============================================================
+   17. DARK MODE (Prepared)
+   Override tokens when system prefers dark.
+   Uncomment when ready to implement.
+   ============================================================ */
+/*
+@media (prefers-color-scheme: dark) {
+  #onboarding {
+    --onb-bg: #1a1a2e;
+    --onb-bg-subtle: #16213e;
+    --onb-bg-card: #1f2940;
+    --onb-bg-input: #16213e;
+    --onb-border: #2d3a56;
+    --onb-text: #e8e8e8;
+    --onb-text-light: #a0a8b4;
+    --onb-text-muted: #6c7a8d;
+    --onb-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+    --onb-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+    --onb-shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.5);
+  }
+}
+*/
+
+/* ============================================================
+   END OF ONBOARDING DESIGN SYSTEM
+   ============================================================ */
