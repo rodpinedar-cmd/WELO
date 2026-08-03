@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Test de Compatibilidad de Pareja Gratis — ¿Son Almas Gemelas? | WELO</title>
+<meta name="description" content="Descubre tu nivel de compatibilidad como pareja con este test gratis de 12 preguntas. Resultado inmediato con porcentaje y consejos.">
+<meta name="keywords" content="test compatibilidad pareja, quiz compatibilidad, compatibilidad pareja test, test pareja gratis, almas gemelas test, compatibilidad amor, test relacion pareja">
+<meta property="og:title" content="Test de Compatibilidad de Pareja Gratis — ¿Son Almas Gemelas? | WELO">
+<meta property="og:description" content="Descubre tu nivel de compatibilidad como pareja con este test gratis de 12 preguntas. Resultado inmediato con porcentaje y consejos.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://rodpinedar-cmd.github.io/WELO/quiz-compatibilidad.html">
+<link rel="canonical" href="https://rodpinedar-cmd.github.io/WELO/quiz-compatibilidad.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Quiz",
+  "name": "Test de Compatibilidad de Pareja",
+  "description": "Descubre tu nivel de compatibilidad como pareja con este test gratis de 12 preguntas. Resultado inmediato con porcentaje y consejos personalizados.",
+  "educationalLevel": "beginner",
+  "about": {
+    "@type": "Thing",
+    "name": "Compatibilidad de pareja"
+  },
+  "provider": {
+    "@type": "Organization",
+    "name": "WELO",
+    "url": "https://rodpinedar-cmd.github.io/WELO/"
+  },
+  "numberOfQuestions": 12,
+  "hasPart": [
+    {"@type": "Question", "name": "¿Cómo resuelven conflictos?"},
+    {"@type": "Question", "name": "¿Cuál es su plan ideal de sábado?"},
+    {"@type": "Question", "name": "¿Cómo expresan amor?"},
+    {"@type": "Question", "name": "¿Qué valoran más en la relación?"},
+    {"@type": "Question", "name": "¿Cómo manejan el dinero?"},
+    {"@type": "Question", "name": "¿Planes de futuro?"},
+    {"@type": "Question", "name": "¿Cómo es su comunicación?"},
+    {"@type": "Question", "name": "¿Tiempo juntos vs separados?"},
+    {"@type": "Question", "name": "¿Aventura vs rutina?"},
+    {"@type": "Question", "name": "¿Cómo manejan el estrés?"},
+    {"@type": "Question", "name": "¿Intimidad física?"},
+    {"@type": "Question", "name": "¿Familia y amigos?"}
+  ]
+}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{--pink:#ff6b9d;--dark-pink:#c44569;--light:#fef0f5;--text:#2d3436;--text-light:#636e72;}
+body{font-family:'Inter',sans-serif;color:var(--text);background:var(--light);min-height:100vh;}
+.container{max-width:650px;margin:0 auto;padding:24px;}
+nav{background:white;padding:16px 24px;border-bottom:1px solid #f0f0f0;display:flex;justify-content:space-between;align-items:center;}
+.nav-logo{font-size:1.2rem;font-weight:900;background:linear-gradient(135deg,var(--pink),var(--dark-pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.nav-cta{padding:8px 20px;background:linear-gradient(135deg,var(--pink),var(--dark-pink));color:white;border-radius:50px;font-size:0.85rem;font-weight:600;text-decoration:none;}
+h1{font-size:1.8rem;font-weight:800;text-align:center;margin:32px 0 8px;line-height:1.3;}
+.subtitle{text-align:center;color:var(--text-light);margin-bottom:32px;font-size:0.95rem;}
+.card{background:white;border-radius:16px;padding:24px;margin-bottom:16px;box-shadow:0 2px 12px rgba(0,0,0,0.04);}
+.progress{height:6px;background:#eee;border-radius:3px;margin-bottom:24px;}
+.progress-bar{height:100%;background:linear-gradient(90deg,var(--pink),var(--dark-pink));border-radius:3px;transition:width 0.3s;}
+.question{font-size:1.05rem;font-weight:600;margin-bottom:16px;line-height:1.5;}
+.option{display:block;width:100%;padding:14px 18px;margin:8px 0;border:2px solid #eee;border-radius:12px;background:white;font-size:0.9rem;cursor:pointer;text-align:left;transition:all 0.2s;font-family:inherit;line-height:1.4;}
+.option:hover{border-color:var(--pink);background:rgba(255,107,157,0.03);}
+.result-card{text-align:center;padding:32px 24px;}
+.result-emoji{font-size:3rem;margin-bottom:12px;}
+.result-title{font-size:1.5rem;font-weight:800;margin-bottom:8px;}
+.result-pct{font-size:2.5rem;font-weight:900;background:linear-gradient(135deg,var(--pink),var(--dark-pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px;}
+.result-label{font-size:0.95rem;color:var(--text-light);margin-bottom:16px;font-weight:600;}
+.result-desc{font-size:0.95rem;color:var(--text-light);line-height:1.7;margin-bottom:20px;text-align:left;}
+.result-bar{height:12px;background:#eee;border-radius:6px;overflow:hidden;margin:16px 0;}
+.result-bar-fill{height:100%;background:linear-gradient(90deg,var(--pink),var(--dark-pink));border-radius:6px;transition:width 1s ease;}
+.btn{display:inline-block;padding:14px 32px;border-radius:50px;background:linear-gradient(135deg,var(--pink),var(--dark-pink));color:white;font-weight:700;font-size:1rem;text-decoration:none;border:none;cursor:pointer;font-family:inherit;}
+.btn-outline{background:none;border:2px solid var(--pink);color:var(--dark-pink);margin-left:8px;}
+.cta-box{margin-top:24px;padding:24px;background:linear-gradient(135deg,var(--pink),var(--dark-pink));border-radius:16px;color:white;text-align:center;}
+.cta-box p{font-size:0.85rem;opacity:0.9;margin:8px 0 14px;}
+.cta-box a{display:inline-block;padding:12px 28px;background:white;color:var(--dark-pink);border-radius:50px;font-weight:700;text-decoration:none;}
+.tips-list{text-align:left;margin:16px 0;}
+.tips-list li{font-size:0.9rem;margin-bottom:8px;line-height:1.5;color:var(--text-light);}
+footer{text-align:center;padding:32px;color:var(--text-light);font-size:0.8rem;}
+footer a{color:var(--pink);}
+</style>
+</head>
+<body>
+<nav>
+  <a href="landing.html" class="nav-logo">✨ WELO</a>
+  <a href="index.html" class="nav-cta">Probar App</a>
+</nav>
+
+<div class="container">
+  <h1>💕 Test de Compatibilidad de Pareja</h1>
+  <p class="subtitle">12 preguntas — resultado con porcentaje inmediato. ¿Son almas gemelas?</p>
+  <div id="quiz-container"></div>
+</div>
+
+<footer>
+  <p>© 2026 WELO — <a href="landing.html">Inicio</a> • <a href="biblioteca.html">Biblioteca</a> • <a href="test-apego.html">Test Apego</a></p>
+  <p style="margin-top:8px;">Test informativo sobre compatibilidad de pareja. No reemplaza terapia de pareja profesional.</p>
+<div style="margin-top:16px;"><p style="font-size:0.75rem;color:#aaa;">Más herramientas:</p><p style="font-size:0.75rem;"><a href="calculadora-ciclo.html" style="color:#ff6b9d;margin-right:12px;">Calculadora Ciclo</a><a href="test-apego.html" style="color:#ff6b9d;margin-right:12px;">Test Apego</a><a href="preguntas-parejas.html" style="color:#ff6b9d;margin-right:12px;">Preguntas Parejas</a><a href="retos-parejas.html" style="color:#ff6b9d;margin-right:12px;">Retos Parejas</a><a href="quiz-compatibilidad.html" style="color:#ff6b9d;margin-right:12px;">Quiz Compatibilidad</a><a href="dias-juntos.html" style="color:#ff6b9d;margin-right:12px;">Días Juntos</a><a href="planes-barcelona.html" style="color:#ff6b9d;margin-right:12px;">Planes BCN</a><a href="biblioteca.html" style="color:#ff6b9d;margin-right:12px;">Biblioteca</a><a href="landing.html" style="color:#ff6b9d;">Inicio</a></p></div>
+</footer>
+
+<script>
+const questions=[
+{q:'¿Cómo resuelven los conflictos?',opts:[
+{t:'Hablamos con calma hasta encontrar solución',p:3},
+{t:'Discutimos fuerte pero siempre hacemos las paces',p:2},
+{t:'Uno cede para evitar el conflicto',p:1},
+{t:'Nos distanciamos y a veces no resolvemos',p:0}
+]},
+{q:'¿Cuál es su plan ideal de sábado?',opts:[
+{t:'Nos encanta el mismo tipo de planes',p:3},
+{t:'Alternamos: un sábado su plan, otro el mío',p:2},
+{t:'Generalmente hace cada quien lo suyo',p:1},
+{t:'Casi siempre discutimos sobre qué hacer',p:0}
+]},
+{q:'¿Cómo expresan amor?',opts:[
+{t:'Conocemos el love language del otro y lo usamos',p:3},
+{t:'Nos expresamos amor frecuentemente a nuestra manera',p:2},
+{t:'A veces siento que no me demuestra suficiente amor',p:1},
+{t:'Rara vez hay expresiones de cariño entre nosotros',p:0}
+]},
+{q:'¿Qué valoran más en la relación?',opts:[
+{t:'Compartimos los mismos valores fundamentales',p:3},
+{t:'Coincidimos en lo importante aunque diferimos en detalles',p:2},
+{t:'Tenemos valores distintos pero lo respetamos',p:1},
+{t:'Nuestros valores chocan con frecuencia',p:0}
+]},
+{q:'¿Cómo manejan el dinero?',opts:[
+{t:'Tenemos metas financieras alineadas y comunicamos bien',p:3},
+{t:'Hemos acordado un sistema que funciona para ambos',p:2},
+{t:'A veces hay tensión por temas de dinero',p:1},
+{t:'El dinero es fuente constante de conflicto',p:0}
+]},
+{q:'¿Cómo ven su futuro juntos?',opts:[
+{t:'Tenemos planes claros y entusiastas juntos',p:3},
+{t:'Hemos hablado del futuro y coincidimos en lo general',p:2},
+{t:'No hemos hablado mucho del futuro',p:1},
+{t:'Tenemos visiones muy diferentes de futuro',p:0}
+]},
+{q:'¿Cómo es su comunicación diaria?',opts:[
+{t:'Fluida, honesta y frecuente — nos contamos todo',p:3},
+{t:'Buena en general, aunque a veces nos cuesta',p:2},
+{t:'Superficial — hablamos de logística más que emociones',p:1},
+{t:'Difícil — hay malentendidos frecuentes',p:0}
+]},
+{q:'¿Cómo manejan el tiempo juntos vs separados?',opts:[
+{t:'Equilibrio perfecto: disfrutamos juntos y solos',p:3},
+{t:'Casi siempre estamos bien, con ajustes menores',p:2},
+{t:'Uno quiere más tiempo juntos que el otro',p:1},
+{t:'Es fuente de tensión constante',p:0}
+]},
+{q:'¿Aventura o rutina?',opts:[
+{t:'Nos encanta lo mismo: equilibrio aventura/estabilidad',p:3},
+{t:'Nos adaptamos bien al estilo del otro',p:2},
+{t:'A veces siento que somos muy diferentes en esto',p:1},
+{t:'Chocamos: uno quiere novedad y el otro estabilidad',p:0}
+]},
+{q:'¿Cómo manejan el estrés?',opts:[
+{t:'Somos el apoyo del otro — nos ayudamos siempre',p:3},
+{t:'Nos apoyamos aunque a veces nos cuesta',p:2},
+{t:'Cada quien maneja su estrés por separado',p:1},
+{t:'El estrés de uno afecta negativamente al otro',p:0}
+]},
+{q:'¿Cómo es su intimidad física?',opts:[
+{t:'Satisfactoria para ambos — hay conexión y deseo',p:3},
+{t:'Buena en general con momentos de desconexión',p:2},
+{t:'Hay diferencias de deseo que nos cuestan',p:1},
+{t:'Es un tema pendiente que evitamos hablar',p:0}
+]},
+{q:'¿Cómo manejan familia y amigos?',opts:[
+{t:'Nos integramos bien en la vida social del otro',p:3},
+{t:'Convivimos bien aunque no somos fans de todos',p:2},
+{t:'A veces hay tensiones con familia o amigos',p:1},
+{t:'Es fuente frecuente de conflicto entre nosotros',p:0}
+]}
+];
+
+const resultados=[
+{min:90,emoji:'🔥',title:'Almas Gemelas',label:'Compatibilidad excepcional',color:'#e91e63',desc:'Su conexión es profunda y rara. Se entienden, se respetan y comparten una visión de vida. Esto no significa que sea perfecta — pero tienen los cimientos para una relación duradera y plena.',tips:['Sigan cultivando lo que funciona: no den la relación por sentada','Celebren sus logros juntos — la gratitud mantiene la chispa','Usen WELO para descubrir nuevas dimensiones de su conexión']},
+{min:70,emoji:'💕',title:'Gran Conexión',label:'Se complementan muy bien',color:'#9c27b0',desc:'Tienen una base sólida de compatibilidad. Se complementan en muchas áreas y las diferencias que tienen son manejables con buena comunicación. Su relación tiene gran potencial.',tips:['Trabajen las áreas donde difieren — la comunicación es clave','Exploren juntos: viajes, retos, preguntas profundas','El reconocimiento mutuo fortalecerá lo que ya funciona']},
+{min:50,emoji:'🌱',title:'En Crecimiento',label:'Hay trabajo pero hay amor',color:'#ff9800',desc:'Su relación tiene potencial pero requiere trabajo consciente. Las diferencias son reales y no se resolverán solas — pero el hecho de estar aquí haciendo este test muestra que les importa.',tips:['Identifiquen las 2-3 áreas de mayor fricción y háblenlas','Establezcan rituales de conexión diaria (15 min mínimo)','Consideren terapia de pareja como inversión, no último recurso','Los retos de comunicación de WELO pueden ayudar mucho']},
+{min:0,emoji:'💬',title:'Oportunidad de Crecer',label:'Diferencias = aprender juntos',color:'#2196f3',desc:'Hay diferencias significativas entre ustedes, pero eso no es sentencia. Las parejas más diferentes pueden ser las más complementarias si hay voluntad, respeto y herramientas. La clave es decidir juntos si quieren hacer el trabajo.',tips:['Tengan una conversación honesta sobre expectativas','Las diferencias pueden ser fortaleza si se respetan','Busquen ayuda profesional — no es debilidad, es madurez','WELO puede ser un primer paso: preguntas, retos, comunicación']}
+];
+
+let qi=0,score=0;
+
+function renderQ(){
+  if(qi>=questions.length){showResult();return;}
+  const q=questions[qi];
+  const pct=Math.round((qi/questions.length)*100);
+  document.getElementById('quiz-container').innerHTML=`
+    <div class="card">
+      <div class="progress"><div class="progress-bar" style="width:${pct}%"></div></div>
+      <p style="font-size:0.8rem;color:var(--text-light);margin-bottom:12px;">${qi+1} de ${questions.length}</p>
+      <p class="question">${q.q}</p>
+      ${q.opts.map(o=>`<button class="option" onclick="answer(${o.p})">${o.t}</button>`).join('')}
+    </div>`;
+}
+
+function answer(points){score+=points;qi++;renderQ();}
+
+function showResult(){
+  const maxScore=36;
+  const pct=Math.round((score/maxScore)*100);
+  const r=resultados.find(x=>pct>=x.min);
+  
+  document.getElementById('quiz-container').innerHTML=`
+    <div class="card result-card">
+      <p class="result-emoji">${r.emoji}</p>
+      <p class="result-pct">${pct}%</p>
+      <p class="result-title" style="color:${r.color}">${r.title}</p>
+      <p class="result-label">${r.label}</p>
+      <div class="result-bar"><div class="result-bar-fill" style="width:${pct}%"></div></div>
+      <div class="result-desc">
+        <p>${r.desc}</p>
+        <h4 style="margin-top:16px;margin-bottom:8px;font-size:0.95rem;color:var(--text);">💡 Consejos para ustedes:</h4>
+        <ul class="tips-list">${r.tips.map(t=>`<li>${t}</li>`).join('')}</ul>
+      </div>
+      <div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:16px;">
+        <button class="btn" onclick="shareResult(${pct},'${r.title}')">📲 Compartir</button>
+        <button class="btn btn-outline" onclick="qi=0;score=0;renderQ();">🔄 Repetir</button>
+      </div>
+    </div>
+    <div class="cta-box">
+      <h3>Fortalece tu compatibilidad con WELO</h3>
+      <p>Retos diarios de comunicación, preguntas profundas, juegos de conexión y reconocimiento mutuo — todo adaptado a su relación.</p>
+      <a href="index.html">Probar WELO gratis →</a>
+    </div>
+    <div class="card" style="margin-top:16px;">
+      <h4 style="font-size:0.95rem;margin-bottom:12px;">📖 Herramientas relacionadas</h4>
+      <a href="test-apego.html" style="display:block;padding:10px 0;border-bottom:1px solid #f0f0f0;color:var(--dark-pink);font-size:0.9rem;">Test de estilo de apego →</a>
+      <a href="preguntas-parejas.html" style="display:block;padding:10px 0;border-bottom:1px solid #f0f0f0;color:var(--dark-pink);font-size:0.9rem;">100+ preguntas para parejas →</a>
+      <a href="retos-parejas.html" style="display:block;padding:10px 0;border-bottom:1px solid #f0f0f0;color:var(--dark-pink);font-size:0.9rem;">Retos para parejas →</a>
+      <a href="dias-juntos.html" style="display:block;padding:10px 0;color:var(--dark-pink);font-size:0.9rem;">Calculadora de días juntos →</a>
+    </div>`;
+}
+
+function shareResult(pct,title){
+  const text=`💕 Nuestra compatibilidad: ${pct}% — ${title}\n\n¿Cuál es la tuya? → weloapp.com/quiz-compatibilidad\n#WELO #Compatibilidad #Pareja`;
+  if(navigator.share)navigator.share({title:'Compatibilidad de Pareja',text}).catch(()=>{});
+  else{navigator.clipboard.writeText(text);alert('¡Copiado!');}
+}
+
+renderQ();
+</script>
+</body>
+</html>
