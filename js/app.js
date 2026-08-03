@@ -42,13 +42,13 @@ function renderHome() {
   // Lumi mini + misiones (compacto arriba)
   const missions = generateDailyMissions();
   const completed = getMissionsCompleted();
-  html += `<div class="card" style="display:flex;gap:12px;align-items:center;cursor:pointer;" onclick="renderLumiProfile()">
-    <div class="welo-mascot sm">${lumiSVG(updateLumiDaily())}</div>
-    <div style="flex:1;">
+  html += `<div class="card" style="display:flex;gap:12px;align-items:center;">
+    <div class="welo-mascot sm" style="cursor:pointer;" onclick="renderLumiChat()">${lumiSVG(updateLumiDaily())}</div>
+    <div style="flex:1;" onclick="renderLumiProfile()" style="cursor:pointer;">
       <p style="font-size:0.8rem;font-weight:600;">Misiones: ${completed}/3 ${completed>=3?'🎁':''}</p>
       <div style="height:4px;background:#eee;border-radius:2px;margin-top:4px;"><div style="height:100%;width:${(completed/3)*100}%;background:var(--primary);border-radius:2px;"></div></div>
     </div>
-    ${completed>=3 && !missions.chestOpened ? `<button class="btn-primary" style="padding:8px 16px;font-size:0.75rem;width:auto;" onclick="event.stopPropagation();openChestUI()">🎁</button>` : ''}
+    ${completed>=3 && !missions.chestOpened ? `<button class="btn-primary" style="padding:8px 16px;font-size:0.75rem;width:auto;" onclick="event.stopPropagation();openChestUI()">🎁</button>` : `<button class="btn-outline" style="padding:6px 12px;font-size:0.7rem;width:auto;" onclick="renderLumiChat()">💬</button>`}
   </div>`;
   
   // Mensaje del día
