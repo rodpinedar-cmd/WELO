@@ -6,14 +6,17 @@ let supabase = null;
 
 // Initialize Supabase client (loaded via CDN)
 function initSupabase() {
-  if(window.supabase && window.supabase.createClient) {
-    supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
-    console.log('Supabase connected');
-    return true;
-  }
-  console.warn('Supabase SDK not loaded yet');
+  try {
+    if(window.supabase && window.supabase.createClient) {
+      supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+      console.log('Supabase connected');
+      return true;
+    }
+  } catch(e) { console.warn('Supabase init error:', e); }
   return false;
 }
+// Try to init after a delay (CDN async)
+setTimeout(initSupabase, 2000);
 
 // ========== AUTH ==========
 async function signUp(email, password, role) {
