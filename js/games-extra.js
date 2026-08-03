@@ -15,7 +15,22 @@ const completaFrases = [
   "Si fuéramos un animal juntos seríamos...",
   "Lo que nos hace únicos como pareja es...",
   "Mi momento favorito del día contigo es...",
-  "Si pudiéramos repetir un día juntos sería..."
+  "Si pudiéramos repetir un día juntos sería...",
+  "Cuando estoy contigo me siento...",
+  "Lo que nunca te he dicho es...",
+  "Nuestro momento más divertido fue cuando...",
+  "Si pudiera darte un superpoder sería...",
+  "Lo que más me sorprendió de ti fue...",
+  "En nuestra primera cita yo pensé...",
+  "Si fuéramos una serie de TV seríamos...",
+  "Lo que más me cuesta de la relación es...",
+  "Mi lugar seguro contigo es...",
+  "Lo próximo que quiero hacer juntos es...",
+  "Si nos conocimos de nuevo elegiría...",
+  "Contigo aprendí que...",
+  "Lo que me enamora cada día más es...",
+  "Si tuviera que elegir entre X e Y contigo...",
+  "Nuestra relación me enseñó que el amor es..."
 ];
 
 const quienEsMas = [
@@ -38,7 +53,27 @@ const quienEsMas = [
   "¿Quién es más probable que tenga razón en una discusión?",
   "¿Quién es más probable que sobreviva en una isla desierta?",
   "¿Quién es más probable que se coma el postre del otro?",
-  "¿Quién es más probable que llore en la boda?"
+  "¿Quién es más probable que llore en la boda?",
+  "¿Quién es más probable que ronque sin saberlo?",
+  "¿Quién es más probable que escriba una carta de amor?",
+  "¿Quién es más probable que aprenda a bailar salsa?",
+  "¿Quién es más probable que se quede sin batería del móvil?",
+  "¿Quién es más probable que organice una fiesta sorpresa?",
+  "¿Quién es más probable que adopte un perro sin avisar?",
+  "¿Quién es más probable que se duerma viendo una peli?",
+  "¿Quién es más probable que haga un viaje solo/a?",
+  "¿Quién es más probable que cocine a las 3am?",
+  "¿Quién es más probable que llore con un anuncio?",
+  "¿Quién es más probable que se tatúe algo del otro?",
+  "¿Quién es más probable que sea famoso/a algún día?",
+  "¿Quién es más probable que olvide dónde dejó las llaves?",
+  "¿Quién es más probable que se atreva con bungee jumping?",
+  "¿Quién es más probable que cante en la ducha?",
+  "¿Quién es más probable que se haga viral en TikTok?",
+  "¿Quién es más probable que gane un concurso de cocina?",
+  "¿Quién es más probable que diga algo vergonzoso en público?",
+  "¿Quién es más probable que escriba un libro?",
+  "¿Quién es más probable que se quede mirando el móvil del otro?"
 ];
 
 function gameCompletaFrase() {
