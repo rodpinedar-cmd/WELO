@@ -268,6 +268,15 @@ function renderCalendar() {
     </div>`;
   }
 
+  // Period start button (only for her)
+  if(profile.role === 'ella') {
+    html += `<div class="card" style="display:flex;align-items:center;gap:12px;">
+      <span style="font-size:1.5rem;">🩸</span>
+      <div style="flex:1;"><p style="font-size:0.85rem;font-weight:600;">¿Empezó tu periodo?</p><p style="font-size:0.7rem;color:var(--text-light);">Actualiza para predicción más precisa</p></div>
+      <button class="btn-outline" style="padding:8px 16px;font-size:0.75rem;" onclick="startPeriodToday()">Hoy empezó</button>
+    </div>`;
+  }
+
   // Quick mood log
   html += `<div class="card">
     <h4 style="font-size:0.9rem;margin-bottom:4px;">¿Cómo te sientes hoy?</h4>
@@ -688,6 +697,32 @@ function renderLeaderboard() {
   </div>`;
   html += `<button class="btn-ghost" onclick="renderHome();renderLumiCorner('home');">← Volver</button>`;
   document.getElementById('app-content').innerHTML = html;
+}
+
+// Dark Mode Toggle
+function toggleDarkMode() {
+  document.body.classList.toggle('dark');
+  localStorage.setItem('welo_dark', document.body.classList.contains('dark'));
+}
+// Load dark mode preference
+if(localStorage.getItem('welo_dark')==='true') document.body.classList.add('dark');
+
+// Weekly Summary
+function getWeeklySummary() {
+  const co = getCouple();
+  const done = JSON.parse(localStorage.getItem('welo_plans_done')||'[]');
+  const memories = typeof getMemories==='function'?getMemories():[];
+  const thisWeek = done.filter(d => {const diff=(new Date()-new Date(d.date))/(86400000);return diff<=7;});
+  return {xp:co.xp,streak:co.streak||0,plans:thisWeek.length,memories:memories.length,level:getLevel(co.xp)};
+}
+
+// Period start
+function startPeriodToday() {
+  const p = getProfile();
+  p.lastPeriodStart = today();
+  setProfile(p);
+  showToast('🩸 Periodo registrado. Predicción actualizada.');
+  renderCalendar();
 }
 
 // Auto-init if profile exists

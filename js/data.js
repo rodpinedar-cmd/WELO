@@ -251,3 +251,10 @@ function showToast(msg) {
   setTimeout(()=>{toast.style.opacity='0';}, 2500);
 }
 
+
+
+// Special Dates
+function getSpecialDates(){try{return JSON.parse(localStorage.getItem('welo_dates_special'))||[];}catch{return [];}}
+function setSpecialDates(d){localStorage.setItem('welo_dates_special',JSON.stringify(d));}
+function addSpecialDate(name,date){const d=getSpecialDates();d.push({name,date});setSpecialDates(d);}
+function checkUpcomingDates(){const dates=getSpecialDates();const today=new Date();const upcoming=[];dates.forEach(d=>{const dd=new Date(d.date);dd.setFullYear(today.getFullYear());const diff=Math.ceil((dd-today)/(86400000));if(diff>=0&&diff<=7)upcoming.push({...d,daysLeft:diff});});return upcoming;}

@@ -15,6 +15,8 @@ function renderGames() {
     <div class="card" onclick="gameMovieNight()"><b>🎬 Noche de Pelis</b><br><span style="font-size:0.8rem;color:var(--text-light);">Elige pelis + watchlist</span></div>
     <div class="card" onclick="game36Questions()"><b>💭 36 Preguntas</b><br><span style="font-size:0.8rem;color:var(--text-light);">Para enamorarse (de nuevo)</span></div>
     <div class="card" onclick="gameBucketList()"><b>✨ Bucket List</b><br><span style="font-size:0.8rem;color:var(--text-light);">Sueños y metas juntos</span></div>
+    <div class="card" onclick="gameCompletaFrase()"><b>✏️ Completa la Frase</b><br><span style="font-size:0.8rem;color:var(--text-light);">Completen juntos y comparen</span></div>
+    <div class="card" onclick="gameQuienEsMas()"><b>👆 ¿Quién es más probable?</b><br><span style="font-size:0.8rem;color:var(--text-light);">Señalen al mismo tiempo</span></div>
   `;
 }
 
