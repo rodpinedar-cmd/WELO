@@ -1,14 +1,16 @@
 // WELO Service Worker — PWA offline + cache
-const CACHE_NAME = 'welo-v2';
+const CACHE_NAME = 'welo-v3';
 const ASSETS = [
   '/WELO/index.html',
   '/WELO/landing.html',
   '/WELO/css/app.css',
   '/WELO/css/mascot.css',
   '/WELO/css/onboarding.css',
+  '/WELO/js/analytics.js',
   '/WELO/js/data.js',
   '/WELO/js/app.js',
   '/WELO/js/games.js',
+  '/WELO/js/games-extra.js',
   '/WELO/js/plans.js',
   '/WELO/js/blog.js',
   '/WELO/js/onboarding.js',
@@ -18,8 +20,7 @@ const ASSETS = [
   '/WELO/js/dailymatch.js',
   '/WELO/js/articles.js',
   '/WELO/js/supabase.js',
-  '/WELO/js/lumi-brain.js',
-  '/WELO/js/games-extra.js'
+  '/WELO/js/lumi-brain.js'
 ];
 
 self.addEventListener('install', e => {
