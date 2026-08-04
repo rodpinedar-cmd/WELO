@@ -10,10 +10,10 @@
    Replace PLACEHOLDER with real PostHog API key to activate.
    ============================================================ */
 const ANALYTICS_CONFIG = {
-  // TODO: Replace with real PostHog project API key (format: phc_xxxxx)
-  apiKey: 'phc_PLACEHOLDER_REPLACE_WITH_REAL_KEY',
-  // PostHog host — US: https://us.i.posthog.com | EU: https://eu.i.posthog.com
-  host: 'https://us.i.posthog.com',
+  // PostHog project API key
+  apiKey: 'phc_ye8Di2R9nhhkrpM5mS24mjE8UMCufnQJv2uzDoxbF',
+  // PostHog host — EU Cloud
+  host: 'https://eu.i.posthog.com',
   // Feature toggles
   enabled: true,
   debug: true,         // console.log all events (disable in production)
