@@ -697,17 +697,28 @@ const screens = {
       return true;
     },
     async exit() {
-      await RegistrationService.register();
+      // Loading state: disable button, show feedback
+      DOM.footerNext.disabled = true;
+      DOM.footerNext.textContent = 'Creando...';
+      DOM.footerNext.classList.add('onb-btn--loading');
+      try {
+        await RegistrationService.register();
+      } finally {
+        DOM.footerNext.disabled = false;
+        DOM.footerNext.classList.remove('onb-btn--loading');
+      }
     }
   },
 
   welcome: {
     enter() {
-      // Render Lumi
+      // Render Lumi with birth animation
       const lumiContainer = document.getElementById('onb-welcome-lumi');
       if (lumiContainer && typeof lumiSVG === 'function') {
         const lumiData = typeof updateLumiDaily === 'function' ? updateLumiDaily() : {};
         lumiContainer.innerHTML = lumiSVG(lumiData);
+        lumiContainer.classList.add('onb-anim-scale-in');
+        setTimeout(() => lumiContainer.classList.remove('onb-anim-scale-in'), 600);
       }
     },
     validate() { return true; },
@@ -785,6 +796,11 @@ const Navigation = {
     // Update DOM: deactivate prev, activate next
     DOM.allSlides[prevIndex].classList.remove('active');
     DOM.allSlides[index].classList.add('active');
+
+    // Apply entrance animation based on direction
+    const direction = index > prevIndex ? 'onb-anim-slide-left' : 'onb-anim-slide-right';
+    DOM.allSlides[index].classList.add(direction);
+    setTimeout(() => DOM.allSlides[index].classList.remove(direction), 350);
 
     // Update state
     updateState({ currentIndex: index });

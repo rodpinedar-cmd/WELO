@@ -120,6 +120,7 @@
   flex-direction: column;
   min-height: 100dvh;
   min-height: 100vh; /* fallback */
+  padding: 0; /* Override app.css #onboarding padding:24px */
   background: var(--onb-bg);
   font-family: var(--onb-font);
   color: var(--onb-text);
@@ -175,6 +176,7 @@
   color: var(--onb-text);
   margin: 0;
   letter-spacing: -0.02em;
+  -webkit-text-fill-color: var(--onb-text); /* Override app.css h1 transparent */
 }
 
 .onb-subtitle {
@@ -241,6 +243,11 @@
   cursor: not-allowed;
   transform: none;
   box-shadow: none;
+}
+
+.onb-btn-primary.onb-btn--loading {
+  opacity: 0.7;
+  pointer-events: none;
 }
 
 .onb-btn-ghost {
@@ -690,39 +697,41 @@
 /* Fade */
 .onb-anim-fade-in {
   opacity: 0;
-  /* animation: onb-fade-in var(--onb-duration-normal) var(--onb-easing) forwards; */
+  animation: onb-fade-in var(--onb-duration-normal) var(--onb-easing) forwards;
 }
 
 .onb-anim-fade-out {
   opacity: 1;
-  /* animation: onb-fade-out var(--onb-duration-fast) var(--onb-easing) forwards; */
+  animation: onb-fade-out var(--onb-duration-fast) var(--onb-easing) forwards;
 }
 
 /* Slide */
 .onb-anim-slide-left {
-  /* transform: translateX(100%); */
-  /* animation: onb-slide-left var(--onb-duration-normal) var(--onb-easing) forwards; */
+  transform: translateX(30px);
+  opacity: 0;
+  animation: onb-slide-left var(--onb-duration-normal) var(--onb-easing) forwards;
 }
 
 .onb-anim-slide-right {
-  /* transform: translateX(-100%); */
-  /* animation: onb-slide-right var(--onb-duration-normal) var(--onb-easing) forwards; */
+  transform: translateX(-30px);
+  opacity: 0;
+  animation: onb-slide-right var(--onb-duration-normal) var(--onb-easing) forwards;
 }
 
 /* Scale (for Lumi birth) */
 .onb-anim-scale-in {
-  /* transform: scale(0); */
-  /* animation: onb-scale-in var(--onb-duration-slow) var(--onb-easing-bounce) forwards; */
+  transform: scale(0);
+  animation: onb-scale-in var(--onb-duration-slow) var(--onb-easing-bounce) forwards;
 }
 
 /* Success (check, completion) */
 .onb-anim-success {
-  /* animation: onb-success var(--onb-duration-normal) var(--onb-easing); */
+  animation: onb-success var(--onb-duration-normal) var(--onb-easing);
 }
 
 /* Shake (error feedback) */
 .onb-anim-shake {
-  /* animation: onb-shake var(--onb-duration-fast) ease-in-out; */
+  animation: onb-shake var(--onb-duration-fast) ease-in-out;
 }
 
 /* Confetti container (positioned absolute over onboarding) */
@@ -742,8 +751,7 @@
   /* animation: onb-typewriter steps(40) var(--onb-duration-slow) forwards; */
 }
 
-/* Keyframes — uncomment when implementing animations */
-/*
+/* Keyframes */
 @keyframes onb-fade-in { from { opacity: 0; } to { opacity: 1; } }
 @keyframes onb-fade-out { from { opacity: 1; } to { opacity: 0; } }
 @keyframes onb-slide-left { from { transform: translateX(30px); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
@@ -751,7 +759,6 @@
 @keyframes onb-scale-in { from { transform: scale(0); } to { transform: scale(1); } }
 @keyframes onb-success { 0%,100% { transform: scale(1); } 50% { transform: scale(1.05); } }
 @keyframes onb-shake { 0%,100% { transform: translateX(0); } 25% { transform: translateX(-4px); } 75% { transform: translateX(4px); } }
-*/
 
 /* ============================================================
    14. RESPONSIVE
