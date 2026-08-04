@@ -304,5 +304,12 @@ function filterCat(c){document.querySelectorAll('.cat-pill').forEach(p=>p.classL
 function openArticle(id){const a=A[id];if(!a)return;document.getElementById('article-content').innerHTML=`<div class="back-btn" onclick="closeArticle()">← Volver</div><h1>${a.t}</h1><div class="meta">WELO Biblioteca</div><div class="body">${a.b}</div><div class="cta-box"><h3>Trackea todo en WELO</h3><p>Ciclo, mood, retos de pareja.</p><a href="index.html">Probar WELO →</a></div>`;document.getElementById('article-full').classList.add('open');window.scrollTo(0,0);}
 function closeArticle(){document.getElementById('article-full').classList.remove('open');}
 </script>
+<!-- WELO CTA -->
+<section style="max-width:700px;margin:40px auto;padding:32px 24px;text-align:center;background:linear-gradient(135deg,#fef0f5,#fce4ec);border-radius:20px;">
+  <h3 style="font-size:1.3rem;font-weight:800;margin-bottom:8px;">Todo el bienestar de pareja en una app</h3>
+  <p style="color:#636e72;font-size:0.95rem;margin-bottom:20px;">Artículos, retos, juegos y herramientas para crecer juntos. Gratis.</p>
+  <a href="index.html" onclick="if(window.posthog)posthog.capture('cta_clicked',{page:'biblioteca',position:'content-bottom',destination:'app'})" style="display:inline-block;padding:14px 32px;background:linear-gradient(135deg,#ff6b9d,#c44569);color:white;border-radius:50px;font-weight:700;font-size:1rem;text-decoration:none;">Probar WELO gratis →</a>
+  <div style="margin-top:20px;font-size:0.85rem;color:#636e72;">También te puede interesar: <a href="calculadora-ciclo.html" style="color:#ff6b9d;font-weight:600;">Calculadora de Ciclo</a> · <a href="test-lenguajes-amor.html" style="color:#ff6b9d;font-weight:600;">Test Lenguajes del Amor</a></div>
+</section>
 </body>
 </html>
