@@ -1,8 +1,29 @@
 // WELO — App Core
+
+// Global error boundary: capture unhandled errors and send to analytics
+window.addEventListener('error', function(e) {
+  if(window.welo && window.welo.track) window.welo.track('js_error', { message: e.message, source: e.filename, line: e.lineno });
+});
+window.addEventListener('unhandledrejection', function(e) {
+  if(window.welo && window.welo.track) window.welo.track('js_error', { message: String(e.reason), type: 'promise' });
+});
+
 function initApp() {
   const profile = getProfile();
   if(!profile) return;
   if(profile.role === 'el') document.body.classList.add('male');
+
+  // Sync retry: if registration was offline, attempt to sync now
+  if(profile.supabasePending && typeof supabase !== 'undefined' && supabase && typeof signUp === 'function') {
+    signUp(profile.email || '', '', profile.role || 'pending').then(function(res) {
+      if(!res.error || (res.error && res.error.includes('already'))) {
+        profile.supabasePending = false;
+        setProfile(profile);
+        if(window.welo && window.welo.track) window.welo.track('sync_retry_success');
+      }
+    }).catch(function() { /* silent — will retry next visit */ });
+  }
+
   // Analytics: app opened
   if(window.welo && window.welo.track) {
     const co = getCouple();
@@ -742,11 +763,6 @@ try {
   }
 } catch(e) {
   console.error('Init error:', e);
-  // Show onboarding if anything fails
   document.getElementById('onboarding').style.display = 'flex';
   document.getElementById('app').style.display = 'none';
 }
-// Inject Lumi SVG in onboarding mascots
-document.querySelectorAll('#onboarding .welo-mascot').forEach(el => {
-  el.innerHTML = lumiSVG();
-});

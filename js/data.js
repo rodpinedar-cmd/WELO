@@ -9,7 +9,16 @@ function getProfile() { try { return JSON.parse(localStorage.getItem('welo_profi
 function setProfile(p) { localStorage.setItem('welo_profile', JSON.stringify(p)); }
 function getLogs() { try { return JSON.parse(localStorage.getItem('welo_logs')) || {}; } catch { return {}; } }
 function setLogs(l) { localStorage.setItem('welo_logs', JSON.stringify(l)); }
-function getCouple() { try { return JSON.parse(localStorage.getItem('welo_couple')) || {xp:0,streak:0,challengesCompleted:[],questionsAnswered:{}}; } catch { return {xp:0,streak:0,challengesCompleted:[],questionsAnswered:{}}; } }
+function getCouple() {
+  try {
+    const raw = JSON.parse(localStorage.getItem('welo_couple'));
+    if (!raw || typeof raw !== 'object' || Array.isArray(raw)) return {xp:0,streak:0,challengesCompleted:[],questionsAnswered:{}};
+    // Ensure required fields exist with correct types
+    if (typeof raw.xp !== 'number') raw.xp = 0;
+    if (typeof raw.streak !== 'number') raw.streak = 0;
+    return raw;
+  } catch { return {xp:0,streak:0,challengesCompleted:[],questionsAnswered:{}}; }
+}
 function setCouple(c) { localStorage.setItem('welo_couple', JSON.stringify(c)); }
 function getGame() { try { return JSON.parse(localStorage.getItem('welo_game')) || {}; } catch { return {}; } }
 function setGame(g) { localStorage.setItem('welo_game', JSON.stringify(g)); }
