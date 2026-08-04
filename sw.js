@@ -1,5 +1,5 @@
 // WELO Service Worker — PWA offline + cache
-const CACHE_NAME = 'welo-v9';
+const CACHE_NAME = 'welo-v10';
 const ASSETS = [
   '/WELO/index.html',
   '/WELO/landing.html',
@@ -14,6 +14,7 @@ const ASSETS = [
   '/WELO/js/plans.js',
   '/WELO/js/blog.js',
   '/WELO/js/mood-sync.js',
+  '/WELO/js/couple-sync.js',
   '/WELO/js/onboarding.js',
   '/WELO/js/mascot.js',
   '/WELO/js/memories.js',

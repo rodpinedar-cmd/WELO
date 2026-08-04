@@ -29,6 +29,9 @@ function initApp() {
     const co = getCouple();
     window.welo.track('app_opened', { role: profile.role, streak: co.streak || 0, xp: co.xp || 0, level: getLevel(co.xp || 0) });
   }
+
+  // Couple Sync: fetch shared progress (async, non-blocking)
+  if(window.CoupleSync && window.CoupleSync.fetch) window.CoupleSync.fetch();
   renderHome();
   renderLumiCorner('home');
   
@@ -65,6 +68,7 @@ function renderHome() {
     <div class="gradient-header">
       <h2>✨ WELO <span id="partner-mood-dot"></span></h2>
       <p style="font-size:0.75rem;opacity:0.8;">🔥 ${streak} días • ${freshCouple.xp} XP • ${getLevel(freshCouple.xp)}</p>
+      ${window.CoupleSync && window.CoupleSync.isConnected() ? `<p style="font-size:0.65rem;opacity:0.6;">👫 Pareja: ${window.CoupleSync.getProgress().couple_xp || 0} XP • 🔥 ${window.CoupleSync.getProgress().couple_streak || 0}</p>` : ''}
     </div>`;
 
   // Mood Sync pill

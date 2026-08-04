@@ -124,6 +124,8 @@ function addXP(n) {
   co.xp = (co.xp||0) + earned;
   // Analytics: xp earned
   if(window.welo && window.welo.track) window.welo.track('xp_earned', { amount: n, earned_with_multiplier: earned, multiplier: multiplier });
+  // Couple Sync: add XP to shared progress
+  if(window.CoupleSync && window.CoupleSync.addXP) window.CoupleSync.addXP(earned, 'activity');
   // Check for new badges
   checkBadges(co);
   setCouple(co);
