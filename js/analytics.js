@@ -96,6 +96,22 @@ window.welo.reset = function() {
   }
 };
 
+window.welo.getFlag = function(flagName, fallback) {
+  if (!ANALYTICS_CONFIG.enabled) return fallback;
+  if (IS_PLACEHOLDER || !posthogReady || !window.posthog || !window.posthog.getFeatureFlag) {
+    return fallback;
+  }
+  try {
+    var value = window.posthog.getFeatureFlag(flagName);
+    if (ANALYTICS_CONFIG.debug) {
+      console.log('[WELO Flag]', flagName, '=', value || fallback);
+    }
+    return value || fallback;
+  } catch (e) {
+    return fallback;
+  }
+};
+
 /* ============================================================
    INITIALIZATION
    Load PostHog async on page load. Never blocks render.

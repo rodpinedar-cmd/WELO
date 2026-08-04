@@ -515,7 +515,20 @@ const FooterComponent = {
    ============================================================ */
 const screens = {
   hook: {
-    enter() { /* Static screen, no dynamic content */ },
+    enter() {
+      // A/B Test: onboarding-hook-copy
+      var variant = (window.welo && window.welo.getFlag) ? window.welo.getFlag('onboarding-hook-copy', 'control') : 'control';
+      if (variant === 'variant-b') {
+        var title = document.querySelector('#onb-hook .onb-title');
+        var subtitle = document.querySelector('#onb-hook .onb-subtitle');
+        if (title) title.textContent = 'Fortalece tu relación jugando juntos.';
+        if (subtitle) subtitle.textContent = 'Descubre cuánto os conocéis.';
+      }
+      // Track which variant was shown
+      if (window.welo && window.welo.track) {
+        window.welo.track('experiment_viewed', { experiment: 'onboarding-hook-copy', variant: variant });
+      }
+    },
     validate() { return true; },
     exit() { /* noop */ }
   },
