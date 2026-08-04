@@ -2,15 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://rodpinedar-cmd.github.io/WELO/landing.html</loc><priority>1.0</priority><changefreq>weekly</changefreq></url>
   <url><loc>https://rodpinedar-cmd.github.io/WELO/index.html</loc><priority>0.9</priority><changefreq>daily</changefreq></url>
-  <url><loc>https://rodpinedar-cmd.github.io/WELO/biblioteca.html</loc><priority>0.9</priority><changefreq>weekly</changefreq></url>
-  <url><loc>https://rodpinedar-cmd.github.io/WELO/planes-barcelona.html</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://rodpinedar-cmd.github.io/WELO/biblioteca.html</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
   <url><loc>https://rodpinedar-cmd.github.io/WELO/calculadora-ciclo.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://rodpinedar-cmd.github.io/WELO/test-apego.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://rodpinedar-cmd.github.io/WELO/preguntas-parejas.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://rodpinedar-cmd.github.io/WELO/retos-parejas.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://rodpinedar-cmd.github.io/WELO/quiz-compatibilidad.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://rodpinedar-cmd.github.io/WELO/dias-juntos.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://rodpinedar-cmd.github.io/WELO/test-lenguajes-amor.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://rodpinedar-cmd.github.io/WELO/planes-barcelona.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://rodpinedar-cmd.github.io/WELO/ideas-citas.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://rodpinedar-cmd.github.io/WELO/frases-amor.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://rodpinedar-cmd.github.io/WELO/preguntas-parejas.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://rodpinedar-cmd.github.io/WELO/retos-parejas.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://rodpinedar-cmd.github.io/WELO/dias-juntos.html</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://rodpinedar-cmd.github.io/WELO/quiz-compatibilidad.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://rodpinedar-cmd.github.io/WELO/test-apego.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://rodpinedar-cmd.github.io/WELO/test-lenguajes-amor.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
 </urlset>
