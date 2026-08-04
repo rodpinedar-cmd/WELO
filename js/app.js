@@ -63,9 +63,17 @@ function renderHome() {
   
   let html = `
     <div class="gradient-header">
-      <h2>✨ WELO</h2>
+      <h2>✨ WELO <span id="partner-mood-dot"></span></h2>
       <p style="font-size:0.75rem;opacity:0.8;">🔥 ${streak} días • ${freshCouple.xp} XP • ${getLevel(freshCouple.xp)}</p>
     </div>`;
+
+  // Mood Sync pill
+  if (typeof renderMoodPill === 'function') {
+    html += `<div class="card" style="text-align:center;padding:12px;">
+      ${renderMoodPill()}
+      <div id="mood-selector" style="display:none;"></div>
+    </div>`;
+  }
 
   // Lumi mini + misiones (compacto arriba)
   const missions = generateDailyMissions();
@@ -169,6 +177,9 @@ function renderHome() {
   </div>`;
   
   document.getElementById('app-content').innerHTML = html;
+
+  // Mood Sync: load partner dot (async)
+  if (typeof renderPartnerDot === 'function') renderPartnerDot();
 }
 
 function renderCalendar() {
