@@ -8,6 +8,8 @@
 <meta name="keywords" content="calculadora ciclo menstrual, calcular periodo, calculadora ovulacion, dias fertiles, prediccion periodo, calculadora menstruacion">
 <meta property="og:title" content="Calculadora de Ciclo Menstrual Gratis — WELO">
 <meta property="og:description" content="Calcula tu próximo periodo, ovulación y días fértiles gratis. Predicción personalizada sin registro.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=1200&h=630&fit=crop">
+<meta property="og:url" content="https://rodpinedar-cmd.github.io/WELO/calculadora-ciclo.html">
 <link rel="canonical" href="https://rodpinedar-cmd.github.io/WELO/calculadora-ciclo.html">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebApplication","name":"Calculadora de Ciclo Menstrual — WELO","description":"Calcula tu próximo periodo, ovulación y días fértiles gratis.","applicationCategory":"HealthApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"}}
@@ -67,7 +69,7 @@ footer a{color:var(--pink);}
 
   <div id="results">
     <div class="card">
-      <h3 style="font-size:1rem;margin-bottom:16px;">Tu predicción</h3>
+      <h2 style="font-size:1rem;margin-bottom:16px;">Tu predicción</h2>
       <div id="results-list"></div>
       <div class="phase-bar" id="phase-bar"></div>
       <div id="phase-legend" style="display:flex;gap:12px;flex-wrap:wrap;margin-top:8px;"></div>
@@ -76,7 +78,7 @@ footer a{color:var(--pink);}
     <div class="card" id="today-info"></div>
     
     <div class="card">
-      <h3 style="font-size:1rem;margin-bottom:12px;">📖 ¿Qué significa cada fase?</h3>
+      <h2 style="font-size:1rem;margin-bottom:12px;">📖 ¿Qué significa cada fase?</h2>
       <div style="padding:10px;background:#ffebee;border-radius:10px;margin-bottom:8px;"><p style="font-size:0.85rem;"><strong>🩸 Menstrual:</strong> Hormonas bajas. Descanso, calor, magnesio. Tu invierno.</p></div>
       <div style="padding:10px;background:#e8f5e9;border-radius:10px;margin-bottom:8px;"><p style="font-size:0.85rem;"><strong>🌱 Folicular:</strong> Energía sube. Deporte, proyectos, socializar. Tu primavera.</p></div>
       <div style="padding:10px;background:#fff3e0;border-radius:10px;margin-bottom:8px;"><p style="font-size:0.85rem;"><strong>☀️ Ovulación:</strong> Pico. Confianza, libido, fertilidad alta. Tu verano.</p></div>
@@ -176,7 +178,7 @@ document.getElementById('calc-lastperiod').value=d.toISOString().split('T')[0];
 </script>
 <!-- WELO CTA -->
 <section style="max-width:700px;margin:40px auto;padding:32px 24px;text-align:center;background:linear-gradient(135deg,#fef0f5,#fce4ec);border-radius:20px;">
-  <h3 style="font-size:1.3rem;font-weight:800;margin-bottom:8px;">Conecta tu ciclo con tu relación</h3>
+  <h2 style="font-size:1.3rem;font-weight:800;margin-bottom:8px;">Conecta tu ciclo con tu relación</h2>
   <p style="color:#636e72;font-size:0.95rem;margin-bottom:20px;">WELO predice tus fases y adapta consejos, retos y planes a cada momento. Gratis.</p>
   <a href="index.html" onclick="if(window.posthog)posthog.capture('cta_clicked',{page:'calculadora-ciclo',position:'content-bottom',destination:'app'})" style="display:inline-block;padding:14px 32px;background:linear-gradient(135deg,#ff6b9d,#c44569);color:white;border-radius:50px;font-weight:700;font-size:1rem;text-decoration:none;">Probar WELO gratis →</a>
   <div style="margin-top:20px;font-size:0.85rem;color:#636e72;">También te puede interesar: <a href="biblioteca.html" style="color:#ff6b9d;font-weight:600;">Biblioteca de Salud</a> · <a href="test-apego.html" style="color:#ff6b9d;font-weight:600;">Test de Apego</a></div>
