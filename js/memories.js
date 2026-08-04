@@ -131,6 +131,7 @@ function saveMemory(type, title) {
   setMemories(memories);
   addXP(5);
   addGlow(3);
+  if(window.welo&&window.welo.track)window.welo.track('memory_created',{type:type,total:memories.length});
   showToast('📸 Recuerdo guardado • +5 XP +3 GLOW');
   
   // Check memory badges

@@ -16,8 +16,8 @@ function updateLumiDaily(){
   l.level=Math.min(20,Math.floor(co.xp/100)+1);
   setLumi(l);return l;
 }
-function feedLumi(){const l=getLumi();l.hunger=Math.min(100,l.hunger+30);l.lastFed=new Date().toISOString().split('T')[0];l.mood='happy';setLumi(l);addXP(2);completeMission('lumi');}
-function playWithLumi(){const l=getLumi();l.energy=Math.min(100,l.energy+25);l.lastPlayed=new Date().toISOString().split('T')[0];l.mood='excited';setLumi(l);addXP(2);completeMission('lumi');}
+function feedLumi(){const l=getLumi();l.hunger=Math.min(100,l.hunger+30);l.lastFed=new Date().toISOString().split('T')[0];l.mood='happy';setLumi(l);addXP(2);completeMission('lumi');if(window.welo&&window.welo.track)window.welo.track('lumi_interaction',{action:'feed'});}
+function playWithLumi(){const l=getLumi();l.energy=Math.min(100,l.energy+25);l.lastPlayed=new Date().toISOString().split('T')[0];l.mood='excited';setLumi(l);addXP(2);completeMission('lumi');if(window.welo&&window.welo.track)window.welo.track('lumi_interaction',{action:'play'});}
 
 function getLumiColors(c){const m={'default':{body:'#2d3436',belly:'#ffd700',glow:'#ffd700',ant:'#ff6b9d'},'pink':{body:'#c44569',belly:'#ffb8d0',glow:'#ff6b9d',ant:'#ffd700'},'blue':{body:'#2c5f8a',belly:'#87ceeb',glow:'#4a90d9',ant:'#ffd700'},'gold':{body:'#b8860b',belly:'#ffd700',glow:'#fff44f',ant:'#ff6b9d'},'purple':{body:'#6b2fa0',belly:'#d8b4fe',glow:'#a855f7',ant:'#ffd700'},'rainbow':{body:'#2d3436',belly:'url(#rbw)',glow:'#ffd700',ant:'#ff6b9d'}};return m[c]||m['default'];}
 
@@ -63,6 +63,7 @@ function renderLumiCorner(ctx){
 }
 
 function renderLumiProfile(){
+  if(window.welo&&window.welo.track)window.welo.track('lumi_opened');
   const l=updateLumiDaily(),co=getCouple(),items={colors:[{id:'default',n:'Original',r:0},{id:'pink',n:'Rosa',r:100},{id:'blue',n:'Azul',r:200},{id:'gold',n:'Dorada',r:500},{id:'purple',n:'Violeta',r:800},{id:'rainbow',n:'Arcoíris',r:1500}],accessories:[{id:'none',n:'Ninguno',r:0},{id:'bow',n:'Moño',r:50},{id:'glasses',n:'Gafas',r:150},{id:'heart',n:'Corazón',r:300},{id:'crown',n:'Corona',r:600},{id:'star',n:'Estrella',r:1000}],wings:[{id:'default',n:'Normal',r:0},{id:'sparkle',n:'Brillantes',r:200},{id:'butterfly',n:'Mariposa',r:400},{id:'angel',n:'Ángel',r:700},{id:'fire',n:'Fuego',r:1200}]};
   let h=`<div class="gradient-header"><h2>🪲 Lumi</h2><p>Tu luciérnaga de pareja</p></div>`;
   // Lumi says something contextual

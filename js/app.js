@@ -151,6 +151,7 @@ function renderHome() {
 }
 
 function renderCalendar() {
+  if(window.welo && window.welo.track) window.welo.track('cycle_opened');
   const profile = getProfile();
   const info = getCycleInfo(today());
   const months = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];

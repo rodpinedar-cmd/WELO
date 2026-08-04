@@ -1,6 +1,7 @@
 // WELO — Games Module
 
 function renderGames() {
+  if(window.welo&&window.welo.track)window.welo.track('game_started',{source:'games_tab'});
   const game = getGame();
   const couple = getCouple();
   document.getElementById('app-content').innerHTML = `

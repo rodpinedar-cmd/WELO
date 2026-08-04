@@ -43,6 +43,7 @@ function getTodayMatchQuestions() {
 
 // Render daily match screen
 function renderDailyMatch() {
+  if(window.welo&&window.welo.track)window.welo.track('compatibility_started');
   const dm = getDailyMatch();
   const t = today();
   
@@ -227,6 +228,7 @@ function submitDailyMatch() {
   matchAnswers = {};
   addXP(10);
   completeMission('pregunta');
+  if(window.welo&&window.welo.track)window.welo.track('compatibility_completed');
   renderMatchResults();
 }
 

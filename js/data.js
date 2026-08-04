@@ -86,23 +86,23 @@ function openDailyChest() {
   if(!m || m.chestOpened || getMissionsCompleted() < 3) return null;
   m.chestOpened = true;
   setMissions(m);
-  // Random reward
   const roll = Math.random();
   let reward;
   if(roll < 0.70) {
-    const xp = 5 + Math.floor(Math.random()*11); // 5-15 XP
+    const xp = 5 + Math.floor(Math.random()*11);
     addXP(xp);
     reward = {type:'xp',amount:xp,text:`+${xp} XP bonus`};
   } else if(roll < 0.90) {
-    const glow = 3 + Math.floor(Math.random()*8); // 3-10 GLOW
+    const glow = 3 + Math.floor(Math.random()*8);
     addGlow(glow);
     reward = {type:'glow',amount:glow,text:`+${glow} GLOW ✨`};
   } else {
-    const xp = 25 + Math.floor(Math.random()*26); // 25-50 XP
+    const xp = 25 + Math.floor(Math.random()*26);
     addXP(xp);
     addGlow(5);
     reward = {type:'rare',amount:xp,text:`🎉 ¡Raro! +${xp} XP + 5 GLOW`};
   }
+  if(window.welo && window.welo.track) window.welo.track('glow_updated', { reward_type: reward.type, amount: reward.amount });
   return reward;
 }
 
@@ -158,19 +158,17 @@ function updateStreak() {
   const tdaStr = twoDaysAgo.toISOString().split('T')[0];
   
   if(co.lastActive === yStr) {
-    // Consecutive day — streak grows
     co.streak = (co.streak||0) + 1;
   } else if(co.lastActive === tdaStr) {
-    // Missed 1 day — grace period, streak stays but no growth
-    // Don't punish, just don't reward
+    // Grace period
   } else if(co.streak > 0) {
-    // Missed 2+ days — streak reduces by half (not reset to 0)
     co.streak = Math.max(1, Math.floor((co.streak||0) / 2));
     showToast(`Tu racha bajó a ${co.streak} 🔥 ¡Vuelve mañana para recuperarla!`);
   }
   co.lastActive = t;
   co.maxStreak = Math.max(co.maxStreak||0, co.streak);
   setCouple(co);
+  if(window.welo && window.welo.track) window.welo.track('streak_updated', { streak: co.streak, maxStreak: co.maxStreak });
 }
 
 // Badge System
@@ -194,6 +192,7 @@ function checkBadges(co) {
     if(!co.badges.includes(b.id) && b.check(co)) {
       co.badges.push(b.id);
       showToast(`🏅 Nuevo badge: ${b.emoji} ${b.name}!`);
+      if(window.welo && window.welo.track) window.welo.track('level_up', { badge_id: b.id, badge_name: b.name, total_badges: co.badges.length });
     }
   });
 }

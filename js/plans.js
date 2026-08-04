@@ -24,6 +24,7 @@ const plans = [
 ];
 
 function renderPlans() {
+  if(window.welo&&window.welo.track)window.welo.track('plan_viewed');
   let html = `<div class="gradient-header"><h2>✨ Planes</h2><p>Recomendados para ustedes</p></div>`;
   
   // Lumi recommendation
@@ -93,8 +94,8 @@ function markPlanDone(title) {
   done.push({title, date: today()});
   localStorage.setItem('welo_plans_done', JSON.stringify(done));
   addXP(15);
+  if(window.welo&&window.welo.track)window.welo.track('plan_completed',{title:title});
   showToast('🎉 ¡Plan completado! +15 XP');
-  // Prompt save memory
   setTimeout(() => promptSaveMemory('plan', title), 1000);
 }
 
