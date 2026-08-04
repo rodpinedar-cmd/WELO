@@ -11,7 +11,7 @@
    ============================================================ */
 const ANALYTICS_CONFIG = {
   // PostHog project API key
-  apiKey: 'phc_ye8Di2R9nhhkrpM5mS24mjE8UMCufnQJv2uzDoxbF',
+  apiKey: 'phc_ye8DtzRMohohkrpM5nS2AmjE8tMGCwfmQ7v3ZuzDbx8f',
   // PostHog host — EU Cloud
   host: 'https://eu.i.posthog.com',
   // Feature toggles
