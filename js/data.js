@@ -70,6 +70,8 @@ function completeMission(missionId) {
   if(mission && !mission.done) {
     mission.done = true;
     setMissions(m);
+    // Analytics: mission completed
+    if(window.welo && window.welo.track) window.welo.track('mission_completed', { mission_id: missionId });
   }
 }
 
@@ -111,6 +113,8 @@ function addXP(n) {
   const multiplier = streak >= 30 ? 3 : streak >= 14 ? 2.5 : streak >= 7 ? 2 : streak >= 3 ? 1.5 : 1;
   const earned = Math.round(n * multiplier);
   co.xp = (co.xp||0) + earned;
+  // Analytics: xp earned
+  if(window.welo && window.welo.track) window.welo.track('xp_earned', { amount: n, earned_with_multiplier: earned, multiplier: multiplier });
   // Check for new badges
   checkBadges(co);
   setCouple(co);

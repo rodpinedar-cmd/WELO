@@ -130,9 +130,9 @@ const EventBus = {
    ============================================================ */
 const TrackingService = {
   track(event, payload) {
-    // Future: Firebase, PostHog, Amplitude, etc.
-    if (typeof console !== 'undefined') {
-      console.log('[WELO Analytics]', event, payload || '');
+    // Delegate to unified analytics service (js/analytics.js)
+    if (window.welo && window.welo.track) {
+      window.welo.track(event, payload || {});
     }
     // Track per-screen time
     if (event === EVENTS.SCREEN_CHANGED && payload) {
@@ -274,6 +274,10 @@ const RegistrationService = {
     if (account.offline) {
       EventBus.emit(EVENTS.REGISTRATION_OFFLINE);
     } else {
+      // Identify user in analytics post-registration
+      if (window.welo && window.welo.identify && state.account.email) {
+        window.welo.identify(state.account.email, { role: state.role });
+      }
       EventBus.emit(EVENTS.REGISTRATION_COMPLETED);
     }
   },

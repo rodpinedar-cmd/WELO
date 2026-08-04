@@ -3,6 +3,11 @@ function initApp() {
   const profile = getProfile();
   if(!profile) return;
   if(profile.role === 'el') document.body.classList.add('male');
+  // Analytics: app opened
+  if(window.welo && window.welo.track) {
+    const co = getCouple();
+    window.welo.track('app_opened', { role: profile.role, streak: co.streak || 0, xp: co.xp || 0, level: getLevel(co.xp || 0) });
+  }
   renderHome();
   renderLumiCorner('home');
   
@@ -13,6 +18,8 @@ function initApp() {
     document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     const tab = btn.dataset.tab;
+    // Analytics: tab switch
+    if(window.welo && window.welo.track) window.welo.track('tab_switched', { tab: tab });
     if(tab === 'home') { renderHome(); renderLumiCorner('home'); }
     else if(tab === 'calendar') { renderCalendar(); renderLumiCorner('calendar'); }
     else if(tab === 'plans') { renderPlans(); renderLumiCorner('plans'); }
