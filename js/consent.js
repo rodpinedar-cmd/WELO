@@ -37,12 +37,17 @@ function accept() {
   setConsent('accepted');
   applyConsent('accepted');
   hideBanner();
+  // Send first consent event
+  if (window.posthog && window.posthog.capture) {
+    window.posthog.capture('consent_granted');
+  }
 }
 
 function reject() {
   setConsent('rejected');
   applyConsent('rejected');
   hideBanner();
+  // Even after rejection, we record the choice locally (no network)
 }
 
 function showBanner() {
