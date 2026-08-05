@@ -14,7 +14,11 @@
 }
 body { font-family:'Inter',-apple-system,sans-serif; background:var(--bg); color:var(--text); max-width:430px; margin:0 auto; min-height:100vh; overflow-x:hidden; }
 body.male { --primary:#4a90d9; --secondary:#2c5f8a; --bg:#f0f4f8; --gradient:linear-gradient(135deg,#4a90d9,#2c5f8a); }
-body.dark { --bg:#1a1a2e; --card:#16213e; --text:#f0f0f0; --text-light:#aab0b5; background:#1a1a2e; }
+body.dark { --bg:#1a1a2e; --card:#16213e; --text:#f0f0f0; --text-light:#aab0b5; --shadow:0 4px 20px rgba(0,0,0,0.3); background:#1a1a2e; }
+body.dark .btn-outline { background:#16213e; border-color:#2d3436; color:#f0f0f0; }
+body.dark #bottom-nav { background:#16213e; box-shadow:0 -2px 20px rgba(0,0,0,0.3); }
+body.dark .input { background:#1a1a2e; border-color:#2d3436; color:#f0f0f0; }
+@media (prefers-color-scheme: dark) { body:not(.light-forced) { --bg:#1a1a2e; --card:#16213e; --text:#f0f0f0; --text-light:#aab0b5; --shadow:0 4px 20px rgba(0,0,0,0.3); background:#1a1a2e; } }
 
 /* ONBOARDING — Styles managed by css/onboarding.css */
 
@@ -46,3 +50,8 @@ label { display:block; font-size:0.8rem; color:var(--text-light); text-align:lef
 
 @keyframes fadeIn { from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);} }
 @keyframes float { 0%,100%{transform:translateY(0);}50%{transform:translateY(-8px);} }
+@keyframes pulse { 0%,100%{transform:scale(1);}50%{transform:scale(1.05);} }
+@keyframes confetti-fall { 0%{transform:translateY(-100%) rotate(0deg);opacity:1;}100%{transform:translateY(100vh) rotate(720deg);opacity:0;} }
+@keyframes xp-pop { 0%{transform:scale(0) translateY(0);opacity:0;}50%{transform:scale(1.3) translateY(-20px);opacity:1;}100%{transform:scale(1) translateY(-40px);opacity:0;} }
+.card { animation:fadeIn 0.3s ease; }
+.xp-popup { position:fixed;top:50%;left:50%;font-size:1.5rem;font-weight:900;color:var(--primary);pointer-events:none;z-index:9999;animation:xp-pop 1s ease forwards; }

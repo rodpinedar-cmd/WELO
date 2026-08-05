@@ -175,7 +175,7 @@ function renderHome() {
     <div><span style="font-size:0.8rem;">🔥 ${streak} días</span> <span style="font-size:0.7rem;color:var(--text-light);">• 🏅 ${badges.length}/${allBadges.length}</span></div>
     <div style="display:flex;gap:6px;">
       <button class="btn-outline" style="padding:6px 12px;font-size:0.7rem;" onclick="renderAlbum()">📸 ${memCount}</button>
-      <button class="btn-outline" style="padding:6px 12px;font-size:0.7rem;" onclick="shareResults()">📲</button>
+      <button class="btn-outline" style="padding:6px 12px;font-size:0.7rem;" onclick="shareWeeklySummary()">📲 Compartir</button>
       <button class="btn-outline" style="padding:6px 12px;font-size:0.7rem;" onclick="renderLeaderboard()">🏆</button>
     </div>
   </div>`;

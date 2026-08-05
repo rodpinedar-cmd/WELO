@@ -126,6 +126,9 @@ function addXP(n) {
   if(window.welo && window.welo.track) window.welo.track('xp_earned', { amount: n, earned_with_multiplier: earned, multiplier: multiplier });
   // Couple Sync: add XP to shared progress
   if(window.CoupleSync && window.CoupleSync.addXP) window.CoupleSync.addXP(earned, 'activity');
+  // Visual + haptic feedback
+  if(typeof showXPPopup === 'function' && n >= 10) showXPPopup(earned);
+  if(typeof weloHaptic === 'function') weloHaptic(n >= 15 ? 'success' : 'light');
   // Check for new badges
   checkBadges(co);
   setCouple(co);
@@ -180,6 +183,8 @@ function updateStreak() {
   co.maxStreak = Math.max(co.maxStreak||0, co.streak);
   setCouple(co);
   if(window.welo && window.welo.track) window.welo.track('streak_updated', { streak: co.streak, maxStreak: co.maxStreak });
+  // Celebrate milestone streaks
+  if(typeof celebrateStreak === 'function') celebrateStreak(co.streak);
 }
 
 // Badge System
