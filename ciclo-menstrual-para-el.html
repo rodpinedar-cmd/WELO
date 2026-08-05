@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -82,10 +82,11 @@ footer a{color:var(--pink);text-decoration:none;}
 <script>!function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags getFeatureFlag getFeatureFlagPayload reloadFeatureFlags group updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures getActiveMatchingSurveys getSurveys onSessionId".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);posthog.init('phc_ye8DtzRMohohkrpM5nS2AmjE8tMGCwfmQ7v3ZuzDbx8f',{api_host:'https://eu.i.posthog.com',persistence:'localStorage',autocapture:false});</script>
 </head>
 <body>
-<nav><a href="landing.html" class="nav-logo">✨ WELO</a><a href="index.html" class="nav-cta">Probar App</a></nav>
+<nav><a href="landing.html" class="nav-logo">✨ WELO</a><a href="index.html" class="nav-cta" onclick="if(window.posthog)posthog.capture('cta_clicked',{page:document.title,position:'nav',destination:'app'})">Probar App</a></nav>
 <div class="container">
 <h1>Ciclo Menstrual Explicado para tu Pareja — Guía Práctica</h1>
 <p class="subtitle">Entender para acompañar mejor. Sin estereotipos, con respeto y evidencia.</p>
+<p style="text-align:center;font-size:0.75rem;color:#b2bec3;margin-bottom:16px;">Publicado: agosto 2026 · Última actualización: agosto 2026</p>
 <div class="disclaimer">💡 Esta guía es educativa. Cada persona vive su ciclo de forma diferente. Lo más importante es preguntar directamente a tu pareja qué necesita. Ninguna generalización sustituye la comunicación real.</div>
 
 <h2>¿Por qué entender el ciclo importa?</h2>
@@ -277,6 +278,12 @@ footer a{color:var(--pink);text-decoration:none;}
 <p class="phase-desc">Ginecólogo/a para temas de ciclo y dolor. Profesional de salud mental si el impacto emocional es significativo. Asociaciones de salud reproductiva locales para información actualizada.</p>
 </div>
 
+<div style="margin-top:32px;padding:16px 20px;background:white;border-radius:12px;border-left:3px solid #b2bec3;font-size:0.8rem;color:#636e72;line-height:1.6;">
+<h3 style="font-size:0.85rem;margin-bottom:8px;color:#2d3436;">📚 Fuentes y referencias</h3>
+<p>• Reed, B. G. & Carr, B. R. (2018). "The Normal Menstrual Cycle and the Control of Ovulation." <em>Endotext</em>. NCBI.</p>
+<p>• Sundström Poromaa, I. & Gingnell, M. (2014). "Menstrual cycle influence on cognitive function and emotion processing." <em>Molecular Psychiatry</em>, 19(2), 137-143.</p>
+</div>
+
 <!-- FAQ -->
 <div class="faq" id="faq">
 <h2>❓ Preguntas frecuentes</h2>
@@ -309,7 +316,7 @@ footer a{color:var(--pink);text-decoration:none;}
 </section>
 
 <footer>
-<p>© 2026 WELO — Barcelona • <a href="landing.html">Inicio</a> • <a href="biblioteca.html">Biblioteca</a></p>
+<p>© 2026 WELO — Barcelona • <a href="landing.html">Inicio</a> • <a href="biblioteca.html">Biblioteca</a><span style="margin-left:8px;">• welobcn@gmail.com</span></p>
 <div style="margin-top:16px;"><p style="font-size:0.75rem;color:#aaa;">Más herramientas:</p><p style="font-size:0.75rem;"><a href="calculadora-ciclo.html" style="color:#ff6b9d;margin-right:12px;">Calculadora Ciclo</a><a href="fases-ciclo-menstrual.html" style="color:#ff6b9d;margin-right:12px;">Fases Ciclo</a><a href="test-apego.html" style="color:#ff6b9d;margin-right:12px;">Test Apego</a><a href="test-lenguajes-amor.html" style="color:#ff6b9d;margin-right:12px;">Test Lenguajes</a><a href="comunicacion-pareja.html" style="color:#ff6b9d;margin-right:12px;">Comunicación</a><a href="preguntas-parejas.html" style="color:#ff6b9d;margin-right:12px;">Preguntas Parejas</a><a href="retos-parejas.html" style="color:#ff6b9d;margin-right:12px;">Retos Parejas</a><a href="quiz-compatibilidad.html" style="color:#ff6b9d;margin-right:12px;">Quiz Compatibilidad</a><a href="dias-juntos.html" style="color:#ff6b9d;margin-right:12px;">Días Juntos</a><a href="planes-barcelona.html" style="color:#ff6b9d;margin-right:12px;">Planes BCN</a><a href="planes-pareja-en-casa.html" style="color:#ff6b9d;margin-right:12px;">Planes Casa</a><a href="ideas-citas.html" style="color:#ff6b9d;margin-right:12px;">Ideas Citas</a><a href="frases-amor.html" style="color:#ff6b9d;margin-right:12px;">Frases Amor</a><a href="juegos-para-parejas.html" style="color:#ff6b9d;">Juegos Parejas</a></p></div>
 </footer>
 </body>

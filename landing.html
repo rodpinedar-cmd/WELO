@@ -164,7 +164,7 @@ footer{padding:48px 0;background:var(--dark);color:white;}
       <a href="#quiz">Quiz</a>
       <a href="#acerca">Acerca de</a>
       <a href="#testimonios">Opiniones</a>
-      <a href="index.html" class="nav-cta">Probar Gratis</a>
+      <a href="index.html" class="nav-cta" onclick="if(window.posthog)posthog.capture('cta_clicked',{page:document.title,position:'nav',destination:'app'})">Probar Gratis</a>
     </div>
   </div>
 </nav>
@@ -175,7 +175,7 @@ footer{padding:48px 0;background:var(--dark);color:white;}
     <h1>We flow. We glow.<br><span>We love. We are.</span></h1>
     <p>La app que conecta tu ciclo con tu relación. Entiende tu cuerpo, mejora tu comunicación, y descubre planes juntos.</p>
     <div class="hero-buttons">
-      <a href="index.html" class="btn-hero btn-hero-primary">Empezar gratis</a>
+      <a href="index.html" class="btn-hero btn-hero-primary" onclick="if(window.posthog)posthog.capture('cta_clicked',{page:'landing',position:'hero',destination:'app'})">Empezar gratis</a>
       <a href="#features" class="btn-hero btn-hero-secondary">Descubre más</a>
     </div>
     <div style="margin-top:32px;display:flex;flex-direction:column;align-items:center;gap:8px;">
@@ -183,9 +183,9 @@ footer{padding:48px 0;background:var(--dark);color:white;}
       <p style="font-size:0.8rem;color:var(--text-light);">Escanea con tu móvil para abrir la app</p>
     </div>
     <div class="hero-stats">
-      <div class="stat"><div class="stat-number">2.4K+</div><div class="stat-label">Parejas activas</div></div>
-      <div class="stat"><div class="stat-number">89%</div><div class="stat-label">Mejor comunicación</div></div>
-      <div class="stat"><div class="stat-number">4.8⭐</div><div class="stat-label">Rating</div></div>
+      <div class="stat"><div class="stat-number">Gratis</div><div class="stat-label">Para siempre</div></div>
+      <div class="stat"><div class="stat-number">Sin registro</div><div class="stat-label">Empieza al instante</div></div>
+      <div class="stat"><div class="stat-number">6+</div><div class="stat-label">Juegos de conexión</div></div>
       <div class="stat"><div class="stat-number">20+</div><div class="stat-label">Planes BCN</div></div>
     </div>
     <div class="phone-duo">
@@ -212,9 +212,8 @@ footer{padding:48px 0;background:var(--dark);color:white;}
 <section style="padding:40px 0;background:white;text-align:center;">
   <div class="container">
     <div style="display:flex;justify-content:center;gap:40px;flex-wrap:wrap;align-items:center;opacity:0.7;">
-      <div style="font-size:0.85rem;font-weight:600;">⭐⭐⭐⭐⭐ 4.8/5</div>
-      <div style="font-size:0.85rem;font-weight:600;">🎮 Divertida de verdad</div>
       <div style="font-size:0.85rem;font-weight:600;">🆓 Siempre gratis</div>
+      <div style="font-size:0.85rem;font-weight:600;">🎮 Divertida de verdad</div>
       <div style="font-size:0.85rem;font-weight:600;">🇪🇸 Hecha en Barcelona</div>
       <div style="font-size:0.85rem;font-weight:600;">🏆 Compite y presume tu relación</div>
     </div>
@@ -586,7 +585,7 @@ startWQ();
 </section>
 
 <!-- MOBILE CTA -->
-<div class="mobile-cta"><a href="index.html">Probar WELO Gratis</a></div>
+<div class="mobile-cta"><a href="index.html" onclick="if(window.posthog)posthog.capture('cta_clicked',{page:'landing',position:'mobile-sticky',destination:'app'})">Probar WELO Gratis</a></div>
 
 <!-- FOOTER -->
 <footer>
@@ -594,7 +593,7 @@ startWQ();
     <div class="footer-grid">
       <div class="footer-brand"><h3>✨ WELO</h3><p>We flow. We glow. We love. We are. Tu luciérnaga de pareja. Ayudamos a parejas a priorizar su conexión y bienestar con información de expertos y herramientas diseñadas con amor. Hecha en Barcelona.</p></div>
       <div class="footer-col"><h4>Producto</h4><a href="index.html">App</a><a href="biblioteca.html">Biblioteca de salud</a><a href="#features">Funciones</a><a href="quiz-compatibilidad.html">Quiz Compatibilidad</a><a href="dias-juntos.html">Días Juntos</a><a href="test-lenguajes-amor.html">Test Lenguajes del Amor</a><a href="ideas-citas.html">Ideas para Citas</a><a href="frases-amor.html">Frases de Amor</a></div>
-      <div class="footer-col"><h4>Empresa</h4><a href="#acerca">Quiénes somos</a><a href="#acerca">Nuestra misión</a><a href="https://instagram.com/weloapp" target="_blank">Contacto</a><a href="#">Novedades</a></div>
+      <div class="footer-col"><h4>Empresa</h4><a href="#acerca">Quiénes somos</a><a href="#acerca">Nuestra misión</a><a href="https://instagram.com/weloapp" target="_blank">Contacto</a><a href="mailto:welobcn@gmail.com">Contacto: welobcn@gmail.com</a><a href="#">Novedades</a></div>
       <div class="footer-col"><h4>Legal</h4><a href="#">Política de privacidad</a><a href="#">Condiciones de uso</a><a href="#">Política de cookies</a><a href="#">Seguridad</a></div>
     </div>
     <div class="footer-bottom">
