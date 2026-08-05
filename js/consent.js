@@ -78,7 +78,20 @@ function init() {
     applyConsent('rejected');
   } else {
     // No decision yet — show banner, remain opted out (default)
-    showBanner();
+    // In the app (index.html), defer banner until onboarding is done
+    var onboarding = document.getElementById('onboarding');
+    if (onboarding && onboarding.offsetParent !== null) {
+      // Onboarding visible — wait for it to finish
+      var observer = new MutationObserver(function(mutations) {
+        if (onboarding.style.display === 'none' || !onboarding.offsetParent) {
+          observer.disconnect();
+          showBanner();
+        }
+      });
+      observer.observe(onboarding, { attributes: true, attributeFilter: ['style'] });
+    } else {
+      showBanner();
+    }
   }
 }
 
