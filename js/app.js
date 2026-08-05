@@ -82,6 +82,21 @@ function renderHome() {
     </div>`;
   }
 
+  // Upcoming special dates alert
+  if (typeof checkUpcomingDates === 'function') {
+    const upcoming = checkUpcomingDates();
+    if (upcoming.length > 0) {
+      const next = upcoming[0];
+      html += `<div class="card" style="background:linear-gradient(135deg,rgba(255,215,0,0.08),rgba(255,215,0,0.02));border:1.5px solid rgba(255,215,0,0.3);padding:14px;display:flex;align-items:center;gap:12px;">
+        <span style="font-size:1.5rem;">🎉</span>
+        <div style="flex:1;">
+          <p style="font-size:0.85rem;font-weight:700;color:var(--text);margin:0;">${next.name}</p>
+          <p style="font-size:0.75rem;color:var(--text-light);margin:0;">${next.daysLeft === 0 ? '¡Es hoy!' : 'En ' + next.daysLeft + ' día' + (next.daysLeft > 1 ? 's' : '')}</p>
+        </div>
+      </div>`;
+    }
+  }
+
   // Lumi mini + misiones (compacto arriba)
   const missions = generateDailyMissions();
   const completed = getMissionsCompleted();
@@ -759,9 +774,65 @@ function renderLeaderboard() {
 function toggleDarkMode() {
   document.body.classList.toggle('dark');
   localStorage.setItem('welo_dark', document.body.classList.contains('dark'));
+  if(typeof weloHaptic === 'function') weloHaptic('light');
+  renderHome(); // Refresh to update toggle icon
 }
 // Load dark mode preference
 if(localStorage.getItem('welo_dark')==='true') document.body.classList.add('dark');
+
+// Sound effects (Web Audio API — no files needed)
+function playSound(type) {
+  try {
+    var ctx = new (window.AudioContext || window.webkitAudioContext)();
+    var osc = ctx.createOscillator();
+    var gain = ctx.createGain();
+    osc.connect(gain);
+    gain.connect(ctx.destination);
+    gain.gain.value = 0.1;
+    
+    if (type === 'xp') {
+      osc.frequency.value = 523; // C5
+      osc.type = 'sine';
+      gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.3);
+      osc.start(); osc.stop(ctx.currentTime + 0.3);
+    } else if (type === 'complete') {
+      osc.frequency.value = 659; // E5
+      osc.type = 'sine';
+      gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.2);
+      osc.start(); osc.stop(ctx.currentTime + 0.2);
+      // Second note
+      setTimeout(function() {
+        var osc2 = ctx.createOscillator();
+        var g2 = ctx.createGain();
+        osc2.connect(g2); g2.connect(ctx.destination);
+        g2.gain.value = 0.1;
+        osc2.frequency.value = 784; // G5
+        osc2.type = 'sine';
+        g2.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.3);
+        osc2.start(); osc2.stop(ctx.currentTime + 0.3);
+      }, 150);
+    } else if (type === 'levelup') {
+      osc.frequency.value = 523;
+      osc.type = 'triangle';
+      gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.5);
+      osc.start(); osc.stop(ctx.currentTime + 0.5);
+      setTimeout(function() {
+        var o2 = ctx.createOscillator(); var g2 = ctx.createGain();
+        o2.connect(g2); g2.connect(ctx.destination); g2.gain.value = 0.1;
+        o2.frequency.value = 659; o2.type = 'triangle';
+        g2.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.3);
+        o2.start(); o2.stop(ctx.currentTime + 0.3);
+      }, 200);
+      setTimeout(function() {
+        var o3 = ctx.createOscillator(); var g3 = ctx.createGain();
+        o3.connect(g3); g3.connect(ctx.destination); g3.gain.value = 0.12;
+        o3.frequency.value = 784; o3.type = 'triangle';
+        g3.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.4);
+        o3.start(); o3.stop(ctx.currentTime + 0.4);
+      }, 400);
+    }
+  } catch(e) { /* silent — audio not critical */ }
+}
 
 // Weekly Summary
 function getWeeklySummary() {

@@ -129,6 +129,7 @@ function addXP(n) {
   // Visual + haptic feedback
   if(typeof showXPPopup === 'function' && n >= 10) showXPPopup(earned);
   if(typeof weloHaptic === 'function') weloHaptic(n >= 15 ? 'success' : 'light');
+  if(typeof playSound === 'function' && n >= 10) playSound('xp');
   // Check for new badges
   checkBadges(co);
   setCouple(co);
