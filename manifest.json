@@ -1,13 +1,16 @@
 {
-  "name": "WELO — We flow. We glow. We love.",
+  "name": "WELO — La app para parejas",
   "short_name": "WELO",
-  "description": "La app que conecta tu ciclo con tu relación. Juegos, planes, bienestar.",
+  "description": "Retos diarios, juegos y preguntas para conectar con tu pareja en 2 minutos al día.",
   "start_url": "/WELO/index.html",
   "scope": "/WELO/",
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "#fef0f5",
   "theme_color": "#ff6b9d",
+  "lang": "es",
+  "dir": "ltr",
+  "categories": ["lifestyle", "health"],
   "icons": [
     {
       "src": "icons/icon-192.svg",
