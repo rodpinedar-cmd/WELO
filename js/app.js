@@ -195,6 +195,22 @@ function renderHome() {
     </div>`;
   }
 
+  // Time Capsule teaser
+  var readyCapsules = typeof checkCapsules === 'function' ? checkCapsules() : [];
+  if (readyCapsules.length > 0) {
+    html += `<div class="card" style="border:2px solid var(--glow);cursor:pointer;text-align:center;" onclick="renderTimeCapsule()">
+      <p style="font-size:1.5rem;margin-bottom:4px;">💌</p>
+      <p style="font-size:0.9rem;font-weight:700;">¡Tenéis ${readyCapsules.length} cápsula${readyCapsules.length>1?'s':''} del tiempo lista${readyCapsules.length>1?'s':''}!</p>
+      <p style="font-size:0.75rem;color:var(--text-light);">Toca para abrir juntos →</p>
+    </div>`;
+  } else {
+    html += `<div class="card" style="padding:14px;display:flex;align-items:center;gap:12px;cursor:pointer;" onclick="renderTimeCapsule()">
+      <span style="font-size:1.3rem;">💌</span>
+      <div style="flex:1;"><p style="font-size:0.82rem;font-weight:600;margin:0;">Cápsulas del Tiempo</p><p style="font-size:0.7rem;color:var(--text-light);margin:0;">Escribe un mensaje para vuestro yo futuro</p></div>
+      <span style="color:var(--text-light);">→</span>
+    </div>`;
+  }
+
   // Streak + Badges + Album compact
   const badges = freshCouple.badges || [];
   const memCount = getMemories().length;
