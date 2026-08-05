@@ -1,5 +1,5 @@
 // WELO Service Worker — PWA offline + cache
-const CACHE_NAME = 'welo-v13';
+const CACHE_NAME = 'welo-v14';
 const ASSETS = [
   '/WELO/index.html',
   '/WELO/landing.html',
@@ -9,6 +9,7 @@ const ASSETS = [
   '/WELO/js/analytics.js',
   '/WELO/js/consent.js',
   '/WELO/js/install-prompt.js',
+  '/WELO/js/push-notifications.js',
   '/WELO/js/data.js',
   '/WELO/js/app.js',
   '/WELO/js/games.js',
@@ -45,5 +46,57 @@ self.addEventListener('activate', e => {
 self.addEventListener('fetch', e => {
   e.respondWith(
     caches.match(e.request).then(cached => cached || fetch(e.request))
+  );
+});
+
+// Push notification received from server
+self.addEventListener('push', e => {
+  let data = { title: 'WELO', body: '¡Tu reto diario te espera! 🎯', icon: '/WELO/icons/icon-192.svg' };
+  
+  try {
+    if (e.data) {
+      const payload = e.data.json();
+      data = { ...data, ...payload };
+    }
+  } catch (err) {
+    // Use defaults if parse fails
+  }
+
+  const options = {
+    body: data.body,
+    icon: data.icon || '/WELO/icons/icon-192.svg',
+    badge: '/WELO/icons/icon-192.svg',
+    vibrate: [100, 50, 100],
+    tag: data.tag || 'welo-notification',
+    renotify: true,
+    data: {
+      url: data.url || '/WELO/index.html'
+    }
+  };
+
+  e.waitUntil(
+    self.registration.showNotification(data.title, options)
+  );
+});
+
+// User clicked on notification
+self.addEventListener('notificationclick', e => {
+  e.notification.close();
+  
+  const url = e.notification.data && e.notification.data.url 
+    ? e.notification.data.url 
+    : '/WELO/index.html';
+
+  e.waitUntil(
+    clients.matchAll({ type: 'window', includeUncontrolled: true }).then(clientList => {
+      // If app is already open, focus it
+      for (let client of clientList) {
+        if (client.url.includes('/WELO/') && 'focus' in client) {
+          return client.focus();
+        }
+      }
+      // Otherwise open new window
+      return clients.openWindow(url);
+    })
   );
 });
