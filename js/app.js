@@ -66,7 +66,10 @@ function renderHome() {
   
   let html = `
     <div class="gradient-header">
-      <h2>✨ WELO <span id="partner-mood-dot"></span></h2>
+      <div style="display:flex;justify-content:space-between;align-items:center;">
+        <h2>✨ WELO <span id="partner-mood-dot"></span></h2>
+        <button onclick="toggleDarkMode()" style="background:none;border:none;font-size:1.2rem;cursor:pointer;opacity:0.8;" aria-label="Modo oscuro">${document.body.classList.contains('dark')?'☀️':'🌙'}</button>
+      </div>
       <p style="font-size:0.75rem;opacity:0.8;">🔥 ${streak} días • ${freshCouple.xp} XP • ${getLevel(freshCouple.xp)}</p>
       ${window.CoupleSync && window.CoupleSync.isConnected() ? `<p style="font-size:0.65rem;opacity:0.6;">👫 Pareja: ${window.CoupleSync.getProgress().couple_xp || 0} XP • 🔥 ${window.CoupleSync.getProgress().couple_streak || 0}</p>` : ''}
     </div>`;
@@ -167,6 +170,15 @@ function renderHome() {
     <p style="font-size:0.8rem;color:var(--text-light);flex:1;">💡 ${dato}</p>
     <button class="btn-outline" style="padding:6px 12px;font-size:0.7rem;flex-shrink:0;margin-left:8px;" onclick="renderBlog()">📖 Blog</button>
   </div>`;
+
+  // Invite partner card (show if no partner connected)
+  if(!window.CoupleSync || !window.CoupleSync.isConnected()) {
+    html += `<div class="card" style="background:linear-gradient(135deg,rgba(255,107,157,0.06),rgba(196,69,105,0.06));border:1.5px dashed rgba(255,107,157,0.3);text-align:center;padding:18px;">
+      <p style="font-size:0.9rem;font-weight:700;margin-bottom:6px;color:var(--text);">📲 Invita a tu pareja</p>
+      <p style="font-size:0.75rem;color:var(--text-light);margin-bottom:12px;">WELO es mejor de a dos. Envíale un link para conectarse.</p>
+      <button class="btn-primary" style="width:auto;padding:10px 24px;font-size:0.85rem;" onclick="generateInviteLink()">Enviar invitación 💕</button>
+    </div>`;
+  }
 
   // Streak + Badges + Album compact
   const badges = freshCouple.badges || [];
