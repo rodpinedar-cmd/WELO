@@ -63,6 +63,12 @@ function renderPreferences() {
     }
   }
   
+  html += `<div class="card" style="background:linear-gradient(135deg,rgba(255,107,157,0.05),rgba(196,69,105,0.05));border:1.5px solid rgba(255,107,157,0.2);">
+    <h4 style="font-size:0.9rem;margin-bottom:8px;">📲 Invitar a mi pareja</h4>
+    <p style="font-size:0.8rem;color:var(--text-light);margin-bottom:12px;">Compartí este link para que tu pareja se una:</p>
+    <button onclick="shareWELO()" style="padding:10px 20px;border-radius:50px;background:linear-gradient(135deg,#ff6b9d,#c44569);color:white;border:none;font-weight:600;font-size:0.85rem;cursor:pointer;font-family:inherit;">Compartir WELO 💕</button>
+  </div>`;
+  
   html += `<button class="btn-ghost" onclick="renderHome();renderLumiCorner('home');">← Volver</button>`;
   document.getElementById('app-content').innerHTML = html;
 }
@@ -162,4 +168,21 @@ function getLumiRecommendation() {
     `Coinciden en "${pick}" — eso lo hace más fácil para mí.`
   ];
   return phrases[Math.floor(Math.random() * phrases.length)];
+}
+
+// Share WELO with partner
+function shareWELO() {
+  const url = 'https://rodpinedar-cmd.github.io/WELO/';
+  const text = '💕 Descarga WELO — retos, juegos y preguntas para conectar como pareja. 2 min al día, gratis.\n\n' + url;
+  
+  if (navigator.share) {
+    navigator.share({ title: 'WELO — App para Parejas', text: text, url: url }).catch(function() {});
+  } else {
+    navigator.clipboard.writeText(text).then(function() {
+      if (typeof showToast === 'function') showToast('¡Link copiado!');
+      else alert('¡Link copiado al portapapeles!');
+    });
+  }
+  
+  if (window.welo && window.welo.track) window.welo.track('share_clicked', { from: 'preferences' });
 }
