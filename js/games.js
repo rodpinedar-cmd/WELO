@@ -13,6 +13,7 @@ function renderGames() {
     <div class="card" onclick="gameTruthDare()"><b>🎲 Verdad o Reto</b><br><span style="font-size:0.8rem;color:var(--text-light);">30 verdades + 28 retos</span></div>
     
     <p style="font-size:0.7rem;color:var(--text-light);text-transform:uppercase;letter-spacing:1px;margin:16px 0 8px;padding:0 4px;">🧠 Conócete</p>
+    <div class="card" onclick="gamePredictPartner()"><b>🎯 Predice a tu Pareja</b><br><span style="font-size:0.8rem;color:var(--text-light);">¿Sabes qué responderá? Averígualo</span></div>
     <div class="card" onclick="gameMovieNight()"><b>🎬 Noche de Pelis</b><br><span style="font-size:0.8rem;color:var(--text-light);">Elige pelis + watchlist</span></div>
     <div class="card" onclick="game36Questions()"><b>💭 36 Preguntas</b><br><span style="font-size:0.8rem;color:var(--text-light);">Para enamorarse (de nuevo)</span></div>
     <div class="card" onclick="gameBucketList()"><b>✨ Bucket List</b><br><span style="font-size:0.8rem;color:var(--text-light);">Sueños y metas juntos</span></div>

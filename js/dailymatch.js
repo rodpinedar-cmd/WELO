@@ -294,6 +294,7 @@ function renderMatchResults() {
       <p style="font-size:2.5rem;font-weight:900;color:${pct>=60?'#4caf50':pct>=40?'var(--primary)':'var(--text-light)'};">${pct}%</p>
       <p style="font-size:0.9rem;font-weight:600;">${matches}/5 coincidencias</p>
       <p style="font-size:0.8rem;color:var(--text-light);margin-top:8px;">${pct>=80?'¡Increíble! Piensan igual hoy 🔥':pct>=60?'¡Buena conexión! Muchas coincidencias 💕':pct>=40?'Algunos matches — la variedad es buena 🌱':'¡Opuestos hoy! Descubran algo nuevo juntos ✨'}</p>
+      <button class="btn-outline" style="margin-top:14px;font-size:0.8rem;padding:10px 20px;" onclick="shareMatchResult(${pct},5)">📲 Compartir resultado</button>
     </div>`;
     
     // Weekly summary (if 7 days)

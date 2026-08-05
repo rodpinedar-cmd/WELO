@@ -103,3 +103,137 @@ function gameQuienEsMas() {
       <button class="btn-ghost" onclick="completeMission('juego');renderGames();">← Volver</button>
     </div>`;
 }
+
+
+// =================== PREDICT YOUR PARTNER ===================
+const predictQuestions = [
+  {q:"¿Cuál es tu comida favorita?", opts:["Pizza","Sushi","Pasta","Tacos","Otro"]},
+  {q:"¿Qué harías con un día libre?", opts:["Dormir","Naturaleza","Netflix","Salir de fiesta","Cocinar"]},
+  {q:"¿Cuál es tu mayor miedo?", opts:["Soledad","Fracaso","Insectos","Alturas","Perder a alguien"]},
+  {q:"¿Playa o montaña?", opts:["Playa siempre","Montaña siempre","Depende del mood","Las dos","Ninguna"]},
+  {q:"¿Qué valoras más en la pareja?", opts:["Humor","Honestidad","Pasión","Paciencia","Aventura"]},
+  {q:"¿Tu hora favorita del día?", opts:["Mañana temprano","Media mañana","Mediodía","Tarde","Noche"]},
+  {q:"¿Cómo recargas energía?", opts:["Solo/a","Con gente","Naturaleza","Deporte","Durmiendo"]},
+  {q:"¿Tu superpoder ideal?", opts:["Volar","Leer mentes","Invisibilidad","Teletransporte","Parar el tiempo"]},
+  {q:"¿Qué te pone de buen humor?", opts:["Música","Comida","Ejercicio","Hablar","Naturaleza"]},
+  {q:"¿Tu forma de decir 'te quiero'?", opts:["Palabras","Abrazos","Regalos","Tiempo juntos","Favores"]},
+  {q:"¿Qué te estresa más?", opts:["Trabajo","Dinero","Salud","Relaciones","Incertidumbre"]},
+  {q:"¿Vacaciones ideales?", opts:["Ciudad nueva","Resort relax","Aventura/nature","Road trip","Quedarse en casa"]},
+];
+let predictIdx = 0, predictScore = 0, predictPhase = 'self'; // 'self' or 'predict'
+
+function gamePredictPartner() {
+  predictIdx = 0;
+  predictScore = 0;
+  predictPhase = 'self';
+  localStorage.removeItem('welo_predict_self');
+  renderPredictQ();
+}
+
+function renderPredictQ() {
+  const total = Math.min(5, predictQuestions.length);
+  
+  if (predictPhase === 'self' && predictIdx >= total) {
+    // Phase 1 done — switch to prediction phase
+    predictPhase = 'predict';
+    predictIdx = 0;
+    document.getElementById('app-content').innerHTML = `
+      <div class="card" style="text-align:center;padding:32px;">
+        <p style="font-size:2rem;margin-bottom:12px;">🔄</p>
+        <h3 style="font-size:1.1rem;margin-bottom:8px;">Ahora pasa el móvil a tu pareja</h3>
+        <p style="font-size:0.85rem;color:var(--text-light);margin-bottom:20px;">Tu pareja responderá las mismas preguntas. Después veremos quién se conoce mejor.</p>
+        <button class="btn-primary" onclick="renderPredictQ()">Mi pareja está lista →</button>
+      </div>`;
+    return;
+  }
+  
+  if (predictPhase === 'predict' && predictIdx >= total) {
+    // Done! Show results
+    showPredictResults();
+    return;
+  }
+  
+  const q = predictQuestions[predictIdx % predictQuestions.length];
+  const phaseLabel = predictPhase === 'self' ? '👤 Responde tú' : '👫 Responde tu pareja';
+  const pct = Math.round((predictIdx / total) * 100);
+  
+  document.getElementById('app-content').innerHTML = `
+    <div class="card">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+        <span style="font-size:0.75rem;color:var(--text-light);">${predictIdx + 1}/${total}</span>
+        <span style="font-size:0.75rem;font-weight:600;color:var(--primary);">${phaseLabel}</span>
+      </div>
+      <div style="height:4px;background:#eee;border-radius:2px;margin-bottom:20px;"><div style="height:100%;width:${pct}%;background:var(--primary);border-radius:2px;transition:width 0.3s;"></div></div>
+      <p style="font-size:1.05rem;font-weight:700;line-height:1.4;margin-bottom:20px;">${q.q}</p>
+      <div style="display:flex;flex-direction:column;gap:8px;">
+        ${q.opts.map(opt => `<button class="btn-outline" style="text-align:left;padding:14px 18px;font-size:0.9rem;" onclick="answerPredict('${opt.replace(/'/g, "\\'")}')">${opt}</button>`).join('')}
+      </div>
+    </div>
+    <button class="btn-ghost" onclick="renderGames()">← Salir del juego</button>`;
+}
+
+function answerPredict(answer) {
+  const total = Math.min(5, predictQuestions.length);
+  
+  if (predictPhase === 'self') {
+    const selfAnswers = JSON.parse(localStorage.getItem('welo_predict_self') || '[]');
+    selfAnswers.push(answer);
+    localStorage.setItem('welo_predict_self', JSON.stringify(selfAnswers));
+  } else {
+    const partnerAnswers = JSON.parse(localStorage.getItem('welo_predict_partner') || '[]');
+    partnerAnswers.push(answer);
+    localStorage.setItem('welo_predict_partner', JSON.stringify(partnerAnswers));
+  }
+  
+  predictIdx++;
+  if (typeof weloHaptic === 'function') weloHaptic('light');
+  renderPredictQ();
+}
+
+function showPredictResults() {
+  const selfAnswers = JSON.parse(localStorage.getItem('welo_predict_self') || '[]');
+  const partnerAnswers = JSON.parse(localStorage.getItem('welo_predict_partner') || '[]');
+  const total = Math.min(selfAnswers.length, partnerAnswers.length);
+  
+  let matches = 0;
+  let html = `<div class="gradient-header"><h2>🎯 Resultados</h2><p>¿Cuánto os conocéis?</p></div>`;
+  html += `<div class="card">`;
+  
+  for (var i = 0; i < total; i++) {
+    const q = predictQuestions[i];
+    const isMatch = selfAnswers[i] === partnerAnswers[i];
+    if (isMatch) matches++;
+    html += `<div style="padding:10px 0;border-bottom:1px solid #f5f5f5;${isMatch ? 'background:rgba(76,175,80,0.05);margin:0 -20px;padding-left:20px;padding-right:20px;' : ''}">
+      <p style="font-size:0.75rem;color:var(--text-light);">${q.q}</p>
+      <div style="display:flex;justify-content:space-between;margin-top:4px;">
+        <span style="font-size:0.82rem;">👤 ${selfAnswers[i]}</span>
+        <span>${isMatch ? '✅' : '❌'}</span>
+        <span style="font-size:0.82rem;">👫 ${partnerAnswers[i]}</span>
+      </div>
+    </div>`;
+  }
+  html += `</div>`;
+  
+  const pct = total > 0 ? Math.round((matches / total) * 100) : 0;
+  const xpEarned = matches * 5 + 10;
+  
+  html += `<div class="card" style="text-align:center;">
+    <p style="font-size:2.5rem;font-weight:900;color:${pct >= 60 ? '#4caf50' : 'var(--primary)'};">${pct}%</p>
+    <p style="font-size:1rem;font-weight:600;">${matches}/${total} coincidencias</p>
+    <p style="font-size:0.85rem;color:var(--text-light);margin-top:8px;">${pct >= 80 ? '¡Os conocéis increíblemente bien! 🔥' : pct >= 60 ? '¡Buena conexión! Seguís descubriéndoos 💕' : pct >= 40 ? '¡Hay cosas nuevas por descubrir! 🌱' : '¡Sorpresas! Hay mucho por explorar juntos ✨'}</p>
+    <p style="font-size:0.9rem;font-weight:700;color:var(--primary);margin-top:12px;">+${xpEarned} XP ganados</p>
+    <button class="btn-outline" style="margin-top:12px;font-size:0.8rem;" onclick="shareMatchResult(${pct},${total})">📲 Compartir</button>
+  </div>`;
+  
+  html += `<button class="btn-primary" onclick="addXP(${xpEarned});completeMission('juego');renderGames();">Volver a juegos</button>`;
+  
+  document.getElementById('app-content').innerHTML = html;
+  
+  // Cleanup
+  localStorage.removeItem('welo_predict_self');
+  localStorage.removeItem('welo_predict_partner');
+  
+  // Celebration if good score
+  if (pct >= 80 && typeof showConfetti === 'function') showConfetti();
+  if (typeof playSound === 'function') playSound('complete');
+}
