@@ -21,8 +21,12 @@
 <!-- PostHog Web Analytics -->
 <script>
   !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags getFeatureFlag getFeatureFlagPayload reloadFeatureFlags group updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures getActiveMatchingSurveys getSurveys onSessionId".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
-  posthog.init('phc_ye8DtzRMohohkrpM5nS2AmjE8tMGCwfmQ7v3ZuzDbx8f',{api_host:'https://eu.i.posthog.com',persistence:'localStorage',autocapture:false});
+  posthog.init('phc_ye8DtzRMohohkrpM5nS2AmjE8tMGCwfmQ7v3ZuzDbx8f',{api_host:'https://eu.i.posthog.com',persistence:'localStorage',autocapture:false,opt_out_capturing_by_default:true});
+  // Respect stored consent
+  if(localStorage.getItem('welo_consent')==='accepted'){posthog.opt_in_capturing();}
+
 </script>
+<script src="js/consent.js"></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -140,7 +144,8 @@ footer{padding:48px 0;background:var(--dark);color:white;}
 
 /* MOBILE */
 @media(max-width:768px){
-  .hero h1{font-size:2.2rem;}
+  .hero h1{font-size:1.8rem;}
+  .hero p{font-size:1rem;}
   .hero-stats{gap:24px;flex-wrap:wrap;}
   .couples-grid{grid-template-columns:1fr;}
   .footer-grid{grid-template-columns:1fr 1fr;}
@@ -172,25 +177,20 @@ footer{padding:48px 0;background:var(--dark);color:white;}
 <!-- HERO -->
 <section class="hero">
   <div class="container" style="position:relative;z-index:2;">
-    <h1>We flow. We glow.<br><span>We love. We are.</span></h1>
-    <p>La app que conecta tu ciclo con tu relación. Entiende tu cuerpo, mejora tu comunicación, y descubre planes juntos.</p>
+    <h1>La app para parejas que convierte<br><span>la conexión en un hábito.</span></h1>
+    <p>Retos diarios, preguntas y juegos diseñados para acercaros en solo unos minutos al día.</p>
     <div class="hero-buttons">
       <a href="index.html" class="btn-hero btn-hero-primary" onclick="if(window.posthog)posthog.capture('cta_clicked',{page:'landing',position:'hero',destination:'app'})">Empezar gratis</a>
-      <a href="#features" class="btn-hero btn-hero-secondary">Descubre más</a>
-    </div>
-    <div style="margin-top:32px;display:flex;flex-direction:column;align-items:center;gap:8px;">
-      <img id="qr-hero" style="border-radius:12px;width:130px;height:130px;" src="https://api.qrserver.com/v1/create-qr-code/?size=130x130&data=https://rodpinedar-cmd.github.io/WELO/index.html&color=2d3436&bgcolor=ffffff" alt="QR Code WELO">
-      <p style="font-size:0.8rem;color:var(--text-light);">Escanea con tu móvil para abrir la app</p>
+      <a href="#app-preview" class="btn-hero btn-hero-secondary">Ver cómo funciona</a>
     </div>
     <div class="hero-stats">
+      <div class="stat"><div class="stat-number">2 min</div><div class="stat-label">Al día es suficiente</div></div>
       <div class="stat"><div class="stat-number">Gratis</div><div class="stat-label">Para siempre</div></div>
-      <div class="stat"><div class="stat-number">Sin registro</div><div class="stat-label">Empieza al instante</div></div>
-      <div class="stat"><div class="stat-number">6+</div><div class="stat-label">Juegos de conexión</div></div>
-      <div class="stat"><div class="stat-number">20+</div><div class="stat-label">Planes BCN</div></div>
+      <div class="stat"><div class="stat-number">Para dos</div><div class="stat-label">Progreso compartido</div></div>
     </div>
-    <div class="phone-duo">
-      <div class="phone-mini pink"><div class="phone-mini-content"><div class="big-emoji">👩</div><h4>Para Ella</h4><p>Tracking, tips, bienestar</p></div></div>
-      <div class="phone-mini blue"><div class="phone-mini-content"><div class="big-emoji">👨</div><h4>Para Él</h4><p>Entiende, apoya, conecta</p></div></div>
+    <div style="margin-top:32px;display:flex;flex-direction:column;align-items:center;gap:8px;">
+      <img style="border-radius:12px;width:130px;height:130px;" src="https://api.qrserver.com/v1/create-qr-code/?size=130x130&data=https://rodpinedar-cmd.github.io/WELO/index.html&color=2d3436&bgcolor=ffffff" alt="Código QR para abrir WELO en el móvil">
+      <p style="font-size:0.8rem;color:var(--text-light);">Escanea con tu móvil para abrir la app</p>
     </div>
   </div>
 </section>
@@ -215,7 +215,70 @@ footer{padding:48px 0;background:var(--dark);color:white;}
       <div style="font-size:0.85rem;font-weight:600;">🆓 Siempre gratis</div>
       <div style="font-size:0.85rem;font-weight:600;">🎮 Divertida de verdad</div>
       <div style="font-size:0.85rem;font-weight:600;">🇪🇸 Hecha en Barcelona</div>
-      <div style="font-size:0.85rem;font-weight:600;">🏆 Compite y presume tu relación</div>
+      <div style="font-size:0.85rem;font-weight:600;">🏆 Progreso compartido de pareja</div>
+    </div>
+  </div>
+</section>
+
+<!-- APP PREVIEW / SCREENSHOTS -->
+<section id="app-preview" style="padding:80px 0;background:var(--light);">
+  <div class="container" style="max-width:900px;">
+    <h2 style="font-size:2rem;font-weight:800;text-align:center;margin-bottom:8px;">Así es WELO por dentro</h2>
+    <p style="text-align:center;color:var(--text-light);margin-bottom:48px;">2 minutos al día para volver a conectar.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:32px;">
+      <!-- Screenshot 1: Home -->
+      <div style="text-align:center;">
+        <div style="width:200px;height:380px;margin:0 auto 16px;border-radius:28px;border:4px solid #222;background:linear-gradient(180deg,#fef0f5,#fff);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;">
+          <p style="font-size:2rem;margin-bottom:8px;">🎯</p>
+          <p style="font-size:0.85rem;font-weight:700;margin-bottom:4px;">Reto de hoy</p>
+          <p style="font-size:0.7rem;color:var(--text-light);margin-bottom:12px;">Dile 3 cosas que admiras</p>
+          <div style="width:100%;padding:8px;background:white;border-radius:10px;margin-bottom:8px;text-align:left;">
+            <p style="font-size:0.65rem;font-weight:600;">Misiones: 1/3</p>
+            <div style="height:4px;background:#eee;border-radius:2px;margin-top:4px;"><div style="height:100%;width:33%;background:var(--pink);border-radius:2px;"></div></div>
+          </div>
+          <div style="width:100%;padding:8px;background:white;border-radius:10px;text-align:left;">
+            <p style="font-size:0.65rem;">🔥 5 días • 120 XP</p>
+          </div>
+        </div>
+        <h3 style="font-size:1rem;font-weight:700;margin-bottom:4px;">Un reto nuevo cada día</h3>
+        <p style="font-size:0.85rem;color:var(--text-light);">Misiones, XP y racha para mantener el hábito.</p>
+      </div>
+      <!-- Screenshot 2: Match Diario -->
+      <div style="text-align:center;">
+        <div style="width:200px;height:380px;margin:0 auto 16px;border-radius:28px;border:4px solid #222;background:linear-gradient(180deg,#fef0f5,#fff);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;">
+          <p style="font-size:2rem;margin-bottom:8px;">💕</p>
+          <p style="font-size:0.85rem;font-weight:700;margin-bottom:12px;">Match Diario</p>
+          <div style="width:100%;padding:12px;background:white;border-radius:10px;margin-bottom:8px;text-align:center;">
+            <p style="font-size:0.75rem;font-weight:600;color:var(--text);">¿Cuál fue el mejor momento de hoy?</p>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;width:100%;">
+            <div style="padding:8px;background:white;border-radius:8px;border:2px solid #eee;font-size:0.6rem;text-align:center;">Juntos</div>
+            <div style="padding:8px;background:white;border-radius:8px;border:2px solid var(--pink);font-size:0.6rem;text-align:center;color:var(--pink);">La cena</div>
+          </div>
+        </div>
+        <h3 style="font-size:1rem;font-weight:700;margin-bottom:4px;">5 preguntas al día</h3>
+        <p style="font-size:0.85rem;color:var(--text-light);">Descubrid en qué coincidís y qué os sorprende.</p>
+      </div>
+      <!-- Screenshot 3: Progreso -->
+      <div style="text-align:center;">
+        <div style="width:200px;height:380px;margin:0 auto 16px;border-radius:28px;border:4px solid #222;background:linear-gradient(180deg,#fef0f5,#fff);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;">
+          <p style="font-size:2rem;margin-bottom:8px;">✨</p>
+          <p style="font-size:0.85rem;font-weight:700;margin-bottom:12px;">Nivel: Cómplices</p>
+          <div style="width:100%;padding:10px;background:white;border-radius:10px;margin-bottom:8px;text-align:center;">
+            <p style="font-size:1.2rem;font-weight:800;color:var(--pink);">680 XP</p>
+            <p style="font-size:0.6rem;color:var(--text-light);">Pareja • 🔥 12 días</p>
+          </div>
+          <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:center;">
+            <span style="font-size:1rem;">🐣</span>
+            <span style="font-size:1rem;">🔥</span>
+            <span style="font-size:1rem;">⚡</span>
+            <span style="font-size:1rem;">💕</span>
+            <span style="font-size:1rem;">🚀</span>
+          </div>
+        </div>
+        <h3 style="font-size:1rem;font-weight:700;margin-bottom:4px;">Progreso compartido</h3>
+        <p style="font-size:0.85rem;color:var(--text-light);">XP, badges y nivel de pareja que crecen juntos.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -593,8 +656,8 @@ startWQ();
     <div class="footer-grid">
       <div class="footer-brand"><h3>✨ WELO</h3><p>We flow. We glow. We love. We are. Tu luciérnaga de pareja. Ayudamos a parejas a priorizar su conexión y bienestar con información de expertos y herramientas diseñadas con amor. Hecha en Barcelona.</p></div>
       <div class="footer-col"><h4>Producto</h4><a href="index.html">App</a><a href="biblioteca.html">Biblioteca de salud</a><a href="#features">Funciones</a><a href="quiz-compatibilidad.html">Quiz Compatibilidad</a><a href="dias-juntos.html">Días Juntos</a><a href="test-lenguajes-amor.html">Test Lenguajes del Amor</a><a href="ideas-citas.html">Ideas para Citas</a><a href="frases-amor.html">Frases de Amor</a></div>
-      <div class="footer-col"><h4>Empresa</h4><a href="#acerca">Quiénes somos</a><a href="#acerca">Nuestra misión</a><a href="https://instagram.com/weloapp" target="_blank">Contacto</a><a href="mailto:welobcn@gmail.com">Contacto: welobcn@gmail.com</a><a href="#">Novedades</a></div>
-      <div class="footer-col"><h4>Legal</h4><a href="#">Política de privacidad</a><a href="#">Condiciones de uso</a><a href="#">Política de cookies</a><a href="#">Seguridad</a></div>
+      <div class="footer-col"><h4>Empresa</h4><a href="about.html">Sobre WELO</a><a href="mailto:welobcn@gmail.com">welobcn@gmail.com</a><a href="https://instagram.com/weloapp" target="_blank">Instagram</a></div>
+      <div class="footer-col"><h4>Legal</h4><a href="privacy.html">Política de privacidad</a><a href="terms.html">Condiciones de uso</a><a href="privacy.html#cookies">Cookies</a><a href="mailto:welobcn@gmail.com">Contacto</a></div>
     </div>
     <div class="footer-bottom">
       <p>© 2026 WELO. Barcelona, España. Todos los derechos reservados.</p>

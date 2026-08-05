@@ -41,7 +41,15 @@ function loadPostHog() {
       autocapture: ANALYTICS_CONFIG.autocapture,
       capture_pageview: ANALYTICS_CONFIG.capturePageview,
       ip: !ANALYTICS_CONFIG.anonymizeIp,
-      loaded: function() { posthogReady = true; }
+      opt_out_capturing_by_default: true,
+      loaded: function() {
+        // Respect stored consent decision
+        var consent = localStorage.getItem('welo_consent');
+        if (consent === 'accepted') {
+          window.posthog.opt_in_capturing();
+        }
+        posthogReady = true;
+      }
     });
   } catch (e) {
     // Silently fail — analytics should never break the app
