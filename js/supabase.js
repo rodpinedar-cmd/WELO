@@ -15,8 +15,10 @@ function initSupabase() {
   } catch(e) { console.warn('Supabase init error:', e); }
   return false;
 }
-// Try to init after a delay (CDN async)
-setTimeout(initSupabase, 2000);
+// Try to init after a delay (CDN async), retry if needed
+setTimeout(function() {
+  if (!initSupabase()) setTimeout(initSupabase, 3000);
+}, 2000);
 
 // ========== AUTH ==========
 async function signUp(email, password, role) {
