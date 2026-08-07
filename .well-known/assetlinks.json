@@ -1,0 +1,8 @@
+[{
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "app.vercel.welo_gamma.twa",
+        "sha256_cert_fingerprints": ["7B:F0:64:2F:FB:28:4C:2A:90:F4:B5:B0:D4:4E:DD:C4:F4:49:DB:E0:86:67:FF:22:73:23:95:4C:B9:18:E7:9B"]
+      }
+    }]
