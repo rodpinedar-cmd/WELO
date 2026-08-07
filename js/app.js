@@ -882,6 +882,13 @@ try {
   }
 } catch(e) {
   console.error('Init error:', e);
+  // Fallback: if init fails, show onboarding fresh
+  try {
+    localStorage.removeItem('welo_profile');
+    document.getElementById('onboarding').style.display = '';
+    document.getElementById('app').style.display = 'none';
+  } catch(e2) {}
+}
   document.getElementById('onboarding').style.display = 'flex';
   document.getElementById('app').style.display = 'none';
 }
